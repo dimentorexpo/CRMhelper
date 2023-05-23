@@ -273,6 +273,6 @@
     display: flex;
     justify-content: space-between;
 }
-#control_jira_search button textarea input{
+#control_jira_search button{
    flex: 1;
 }
