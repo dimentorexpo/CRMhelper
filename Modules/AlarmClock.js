@@ -2,7 +2,7 @@ var win_Alarmclock =  // описание элементов окна будил
     `<div style="border: 2px double black;; background-color: #464451" id="AlarmclockCRM">
         <div style="margin: 5px; width: 271px;" id="Alarmclock_1str">
             <button class="buttonHide" title="скрывает меню" id="hideAlarmclock">hide</button>
-            <button class="btnCRM" title="Отображение текущего времени" id="clock_jsCRM" style="color: white; margin-top: 5px; float: right;"></button>
+            <button class="btnCRM" title="Отображение текущего времени" id="clock_jsCRM" style="color: white; float: right;"></button>
         </div>
 		<div style="margin: 5px; width: 271px">
 			<label style="margin-left: 5px; color:bisque">Напоминание №1</label>
