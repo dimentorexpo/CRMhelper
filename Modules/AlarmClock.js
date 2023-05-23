@@ -1,25 +1,23 @@
 var win_Alarmclock =  // описание элементов окна будильника
-    `<div style="border: 2px double black;; background-color: #464451" id="AlarmclockCRM">
-        <div style="margin: 5px; width: 271px;" id="Alarmclock_1str">
+    `<div class="maindivst" id="AlarmclockCRM">
+        <div style="margin: 5px; width: 291px;" id="Alarmclock_1str">
             <button class="buttonHide" title="скрывает меню" id="hideAlarmclock">hide</button>
             <button class="btnCRM" title="Отображение текущего времени" id="clock_jsCRM" style="color: white; float: right;"></button>
         </div>
-		<div style="margin: 5px; width: 271px">
-			<label style="margin-left: 5px; color:bisque">Напоминание №1</label>
-			<br>
-            <input class="inputCRM" title="Ввод текста напоминания" id="remindertextCRM"  placeholder="Текст напоминания" autocomplete="off" style="text-align: center; margin-top: 5px; width: 260px; color: black;">
+		<div style="margin: 5px; width: 291px">
+			<label class="spanCRM" style="display: block; margin-left: auto; margin-right: auto; color:bisque;">Напоминание №1</label>
+            <input class="inputCRM" title="Ввод текста напоминания" id="remindertextCRM"  placeholder="Текст напоминания" autocomplete="off" style="text-align: center; margin-top: 5px; width: 284px; color: black;">
 			<input class="inputCRM" title="Ввод часа от 0 до 23 для напоминания" "="" id="setchasCRM" placeholder="HH" autocomplete="off" oninput="maxLengthCheck(this)" type="number" maxlength="2" min="0" max="23" style="text-align: center; margin-top: 5px; width: 50px; color: black;"> <span class="spanCRM" style="color: white; margin-top: 5px;">:</span>
 			<input class="inputCRM" title="Ввод минут от 0 до 59 для напоминания" id="setminutaCRM" placeholder="MM" autocomplete="off" oninput="maxLengthCheck(this)" type="number" maxlength="2" min="0" max="59" style="text-align: center; margin-top: 5px;  width: 50px; color: black;">
 			<button class="btnCRM" title="Запуск напоминания при устаноовленном времени" id="setreminderCRM" style="margin-top: 5px">SET🔔</button>
-            <button class="btnCRM" id="clock_reminCRM" title="Двойной клик = удаление таймера. Кнопка отображения оставшегося времени" style="color: lightgreen; margin-top: 5px">00 : 00 : 00</button>
+            <button class="btnCRM" id="clock_reminCRM" title="Двойной клик = удаление таймера. Кнопка отображения оставшегося времени" style="color: lightgreen; margin-top: 5px; float: right;">00 : 00 : 00</button>
             <br>
-            <label style="margin-left: 5px; color:bisque">Напоминание №2</label>
-            <br>
-			<input class="inputCRM" title="Ввод текста напоминания" id="remindertextCRM1"  placeholder="Текст напоминания" autocomplete="off" style="text-align: center; margin-top: 5px; width: 260px; color: black;">
+            <label class="spanCRM" style="display: block; margin-left: auto; margin-right: auto; color:bisque;">Напоминание №2</label>
+			<input class="inputCRM" title="Ввод текста напоминания" id="remindertextCRM1"  placeholder="Текст напоминания" autocomplete="off" style="text-align: center; margin-top: 5px; width: 284px; color: black;">
 			<input class="inputCRM" title="Ввод часа от 0 до 23 для напоминания" "="" id="setchasCRM1" placeholder="HH" autocomplete="off" oninput="maxLengthCheck(this)" type="number" maxlength="2" min="0" max="23" style="text-align: center; margin-top: 5px; width: 50px; color: black;"> <span class="spanCRM" style="color: white; margin-top: 5px;">:</span>
 			<input class="inputCRM" title="Ввод минут от 0 до 59 для напоминания" id="setminutaCRM1" placeholder="MM" autocomplete="off" oninput="maxLengthCheck(this)" type="number" maxlength="2" min="0" max="59" style="text-align: center; margin-top: 5px;  width: 50px; color: black;">
 			<button class="btnCRM" title="Запуск напоминания при устаноовленном времени" id="setreminderCRM1" style="margin-top: 5px">SET🔔</button>
-            <button class="btnCRM" id="clock_reminCRM1" title="Двойной клик = удаление таймера. Кнопка отображения оставшегося времени" style="color: lightgreen; margin-top: 5px">00 : 00 : 00</button>
+            <button class="btnCRM" id="clock_reminCRM1" title="Двойной клик = удаление таймера. Кнопка отображения оставшегося времени" style="color: lightgreen; margin-top: 5px; float: right;">00 : 00 : 00</button>
 		</div>
 </div>`;
 
