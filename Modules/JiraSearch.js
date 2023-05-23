@@ -11,7 +11,7 @@ var win_Jira =  // описание элементов окна Поиска п�
 								<button class="btnCRM btnCRMsmall" id="jirainstr" style="float:right;" title="Инструкция по этой форме">❓</button>
                         </div>
 
-						<div id="control_jira_search">
+						<div id="control_jira_search" style="margin-left: 5px; margin-right: 5px;">
 							<button class="btnCRM active-query" id="defaultQuery" title="Страница для поиска по умолчанию с заранее записанным JQL запросом">📇Default</button>
 							<button class="btnCRM" id="freshQuery" title="Страница при поиске по ключевому слову, выводящая свежесозданные баги в порядке убывания и с 0 Support Tab с заранее записанным JQL запросом">🍀Fresh</button>
 							<button class="btnCRM" id="customQuery" title="Страница для ручного составления JQL запроса. Поле для ввода поиска не используется, только лишь верхняя часть от выбора отдела до ввода искомого текста в двойных кавычках после надписи text~">📝Custom</button>
@@ -21,7 +21,7 @@ var win_Jira =  // описание элементов окна Поиска п�
                         </div>
 
                         <div id="fields_jira_search">
-							<textarea class="textareaCRM" id="JQLquery" placeholder="JQL запрос" title="Введите сюда JQL запрос" autocomplete="off" type="text" style="text-align: center; width: 500px; color: black; margin-top: 5px; margin-left: 5%;"></textarea>
+							<textarea class="textareaCRM" id="JQLquery" placeholder="JQL запрос" title="Введите сюда JQL запрос" autocomplete="off" type="text" style="text-align: center; width: 500px; color: black; margin-top: 5px; margin-left: 5px;"></textarea>
 							<input class="inputCRM" id="testJira" placeholder="Введите слово или фразу для поиска" title="введите слово или фразу для поиска по Jira при одном клике будет искать по багам, если ввести в поле номер задачи например VIM-7288 и дабл кликнуть на рокету будет поиск по номеру" autocomplete="off" type="text" style="text-align: center; width: 300px; color: black; margin-top: 5px; margin-left: 20%;">
 							<button class="btnCRM btnCRMsmall" id="getJiraTasks">🚀</button>
 						</div>
