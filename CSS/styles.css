@@ -268,4 +268,12 @@
 } 
 .testroomsCRMcreate.active{
     background: coral;
-}	
+}
+#control_jira_search {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  #control_jira_search button {
+    flex: 1;
+  }
