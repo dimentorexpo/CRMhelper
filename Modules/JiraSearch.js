@@ -4,11 +4,11 @@ var win_Jira =  // описание элементов окна Поиска п�
                 <span style="cursor: -webkit-grab;">
                         <div style="margin: 5px; width: 550;" id="jira_1str">
                                 <button class="buttonHide" title="скрывает меню" id="hideMej">hide</button>
-								<button class="btnCRM" id="RefreshJiraStatus" title="Обновляет статус Токена Jira, чтобы проверить авторизованы вы или нет">🔄</button>
-								<button class="btnCRM" id="ClearJiraData" title="Очищает поля с результатами и полем для ввода">🧹</button>
+								<button class="btnCRM btnCRMsmall" id="RefreshJiraStatus" title="Обновляет статус Токена Jira, чтобы проверить авторизованы вы или нет">🔄</button>
+								<button class="btnCRM btnCRMsmall" id="ClearJiraData" title="Очищает поля с результатами и полем для ввода">🧹</button>
 								<span style="color:bisque">Token Status: </span>
 								<span id="searchjiratknstatus"></span>
-								<button class="btnCRM" id="jirainstr" style="float:right;" title="Инструкция по этой форме">❓</button>
+								<button class="btnCRM btnCRMsmall" id="jirainstr" style="float:right;" title="Инструкция по этой форме">❓</button>
                         </div>
 
 						<div id="control_jira_search">
@@ -20,7 +20,7 @@ var win_Jira =  // описание элементов окна Поиска п�
 							<button class="btnCRM" id="favouriteBugs" title="Страница с сохраненными багами для быстрого доступа">❤</button>
 							<textarea id="JQLquery" placeholder="JQL запрос" title="Введите сюда JQL запрос" autocomplete="off" type="text" style="text-align: center; width: 500px; color: black; margin-top: 5px; margin-left: 5%;"></textarea>
 							<input id="testJira" placeholder="Введите слово или фразу для поиска" title="введите слово или фразу для поиска по Jira при одном клике будет искать по багам, если ввести в поле номер задачи например VIM-7288 и дабл кликнуть на рокету будет поиск по номеру" autocomplete="off" type="text" style="text-align: center; width: 300px; color: black; margin-top: 5px; margin-left: 20%;">
-							<button class="btnCRM" id="getJiraTasks" style="width: 30px;">🚀</button>
+							<button class="btnCRM btnCRMsmall" id="getJiraTasks">🚀</button>
 						</div>
 
                         <div style="margin: 5px; width: 550px" id="jira_tasks_box">
