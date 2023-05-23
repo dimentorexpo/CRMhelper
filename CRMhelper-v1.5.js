@@ -506,10 +506,10 @@ testteacher.onclick = function () {
 
 let lboxstyles = document.createElement('link')
 lboxstyles.rel = 'stylesheet'
-lboxstyles.href = "https://dimentorexpo.github.io/Lightbox/dist/css/lightbox.min.css" // подключаем модуль стилей для Lightbox
+lboxstyles.href = "https://dimentorexpo.github.io/CRMhelper/Lightbox/dist/css/lightbox.min.css" // подключаем модуль стилей для Lightbox
 document.querySelector('head').append(lboxstyles)
 
-include("https://dimentorexpo.github.io/Lightbox/dist/js/lightbox.min.js") // подключаем библиотеку обработки изображений при клике на них
+include("https://dimentorexpo.github.io/CRMhelper/Lightbox/dist/js/lightbox.min.js") // подключаем библиотеку обработки изображений при клике на них
 
     function screenshotsCRM() { //просмотр и трансформация скриншотов в активном чате
 	if (document.getElementsByTagName('crm-row').length != 0 || document.getElementsByTagName('crm-row') != null || document.getElementsByTagName('crm-row').length != undefined) {
