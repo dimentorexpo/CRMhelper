@@ -1,7 +1,7 @@
 var win_SettingsApp =  // описание элементов главного окна
     `<div style="border: 2px double black; background-color: #464451" id="SettingsApp_bar">
         <div style="margin: 5px; width: 380px;" id="SettingsApp_1str">
-            <button class="btnCRM" title="скрывает меню" id="hideSettingsApp" style="width:50px; background: #228B22;">hide</button>
+            <button class="buttonHide" title="скрывает меню" id="hideSettingsApp">hide</button>
         </div>
 		<div style="margin: 5px; width: 350px">
                 <select style="height:28px; width:210px; text-align:center" id="soundlistaddrCRM" onchange="changesoundaddrCRM()">

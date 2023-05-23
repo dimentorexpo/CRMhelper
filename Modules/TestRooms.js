@@ -3,7 +3,7 @@ var win_testroomsCRM =  // описание элементов окна созд
       <span style="width: 310px">
           <span style="cursor: -webkit-grab;">
               <div style="width: 310px; margin: 5px;" id="testroomsCRMhead">
-                  <button class="btnCRM" title="скрывает меню" id="hideMetestroomsCRM" style="width:50px; background: #228B22;">hide</button>
+                  <button class="buttonHide" title="скрывает меню" id="hideMetestroomsCRM">hide</button>
                   <button class="btnCRM" onclick="cleartestroomsCRMfields()" title="По нажатию очищает поля" style="width:30px;">🧹</button>
                   <button class="btnCRM" onclick="opentestroomsCRMhelp()" style="width:30px; float: right; margin-right: 10px;" title="Инструкция по этой форме">❓</button>
                   <button class="btnCRM" onclick="opentestroomsCRMconf()" title="Открывает раздел в Confluence по созданию тестовых комнат" style="width:30px; float: right; margin-right: 5px;">📋</button>

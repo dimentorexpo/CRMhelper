@@ -3,7 +3,7 @@ var win_linksd =  // описание элементов окна доступо
         <span style="width: 414px">
                 <span style="cursor: -webkit-grab;">
                         <div style="margin: 5px; width: 409px;" id="linksd_1str">
-                            <button class="btnCRM" title="скрывает меню" id="hideMeLinksd" style="width:50px; background: #228B22;">hide</button>
+                            <button class="buttonHide" title="скрывает меню" id="hideMeLinksd">hide</button>
                         </div>
 						<div>
 							<button class="btnCRM" id="curVeriOSCRM" style="margin-left:5px;"></button>
