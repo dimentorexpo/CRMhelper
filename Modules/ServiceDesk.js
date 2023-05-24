@@ -121,7 +121,7 @@ var win_servicedesk = // описание элементов окна Service De
 
 				</div>
 				<div id="billingsrvdskoptions" style="display: none; margin-left:20px;">
-					<p style="color:bisque;font-size:18px;position:relative; top:7px; left:180px; width:95%;margin-top: 5px;margin-bottom: 5px;">#billing</p>
+					<p style="color:bisque;font-size:18px;position:relative; top:7px; width:95%;margin-top: 5px;margin-bottom: 5px;">#billing</p>
 
 				</div>
 				
@@ -168,7 +168,7 @@ var win_servicedesk = // описание элементов окна Service De
 				</div>
 
 				<div id="inputfieldsdiv" style="display: none;">
-					<select style="height:28px; margin-left: 21px; margin-top: 5px; display: none;" id="prioritymbugs">
+					<select class="inputCRM" style="height:28px; margin-left: 21px; margin-top: 5px; display: none;" id="prioritymbugs">
 							<option selected disabled="">Приоритет</option>
 							<option value="Blocker">Blocker</option>
 							<option value="Critical">Critical</option>
@@ -177,15 +177,15 @@ var win_servicedesk = // описание элементов окна Service De
 							<option value="Minor">Minor</option>
 							<option value="Trivial">Trivial</option>
 					   </select>
-					<input id="custom_id" placeholder="ID Пользователей (Id П, Id У)"  class="sdcustfieldformlines removefield" style="margin-left: 21px;">
-                    <input id="custom_appinfo" placeholder="Приложение / Версия / Платформа"  class="sdcustfieldformlines removefield" style="margin-left: 21px; display: none;"></input>
-                    <input id="custom_deviceinfo" placeholder="Девайс / ОС"  class="sdcustfieldformlines removefield" style="margin-left: 21px; display: none;"></input>
-					<textarea id="custom_descr" placeholder="Описание проблемы"  class="sdcustfieldformlines removefield" style="margin-left: 21px;"></textarea>
-					<textarea id="custom_str" placeholder="Как воспроизвести ошибку?"  class="sdcustfieldformlines removefield" style="margin-left: 21px;"></textarea>
-					<textarea id="custom_er" placeholder="Ожидаемое поведение"  class="sdexpecactual removefield" style="margin-left: 21px;"></textarea>
-					<textarea id="custom_ar" placeholder="Фактическое поведение"  class="sdexpecactual removefield" style="margin-left: 21px;"></textarea>
+					<input class="inputCRM" id="custom_id" placeholder="ID Пользователей (Id П, Id У)"  class="sdcustfieldformlines removefield" style="margin-left: 21px;">
+                    <input class="inputCRM" id="custom_appinfo" placeholder="Приложение / Версия / Платформа"  class="sdcustfieldformlines removefield" style="margin-left: 21px; display: none;"></input>
+                    <input class="inputCRM" id="custom_deviceinfo" placeholder="Девайс / ОС"  class="sdcustfieldformlines removefield" style="margin-left: 21px; display: none;"></input>
+					<textarea class="textareaCRM" id="custom_descr" placeholder="Описание проблемы"  class="sdcustfieldformlines removefield" style="margin-left: 21px;"></textarea>
+					<textarea class="textareaCRM" id="custom_str" placeholder="Как воспроизвести ошибку?"  class="sdcustfieldformlines removefield" style="margin-left: 21px;"></textarea>
+					<textarea class="textareaCRM" id="custom_er" placeholder="Ожидаемое поведение"  class="sdexpecactual removefield" style="margin-left: 21px;"></textarea>
+					<textarea class="textareaCRM" id="custom_ar" placeholder="Фактическое поведение"  class="sdexpecactual removefield" style="margin-left: 21px;"></textarea>
 					<button class="btnCRM" id="createsd" style="width: 150px; position:relative; left:30%; margin-bottom:5px;">Создать</button>
-                    <button class="btnCRM" title="Очищает поля для ввода" onclick ="clearfields()" style="width:30px; float: right; margin-right: 10px;">🧹</button>
+                    <button class="btnCRM btnCRMsmall" title="Очищает поля для ввода" onclick ="clearfields()" style="float: right; margin-right: 10px;">🧹</button>
 				</div>
 	        </span>
 		</span>
