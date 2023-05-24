@@ -1,17 +1,17 @@
 var win_LessonStatus =  // описание элементов окна статуса уроков
-    `<div style="display: flex; width: 550px;">
+    `<div class="maindivst" style="display: flex; width: 550px;">
         <span style="width: 550px">
                 <span style="cursor: -webkit-grab;">
                         <div style="margin: 5px; width: 550px;" id="lessomstatdata">
                                 <button class="buttonHide" id="hideMeLessonStatus">hide</button>
                         </div>
 						 <div style="margin: 5px; width: 550px" id="databox">
-								 <span style="color:bisque; float:center; margin-top:5px; margin-left:10px;">Начальная дата <input type="date" style="color:black; margin-left:20px;  width:125px;" name="StartDataLS" id="dateFromLS"></span>
-								 <span style="color:bisque; margin-top:2px; float:right; margin-right:10px; height:28px;">Конечная дата <input type="date" style="color:black; float:right; margin-left:20px; margin-right:10px; width:125px;" name="EndDataLS" id="dateToLS"</span>
+								 <span class="spanCRM" style="color:bisque; float:center; margin-top:5px; margin-left:10px;">Начальная дата <input class="inputCRM" type="date" style="color:black; margin-left:20px;  width:125px;" name="StartDataLS" id="dateFromLS"></span>
+								 <span class="spanCRM" style="color:bisque; margin-top:2px; float:right; margin-right:10px; height:28px;">Конечная дата <input class="inputCRM" type="date" style="color:black; float:right; margin-left:20px; margin-right:10px; width:125px;" name="EndDataLS" id="dateToLS"</span>
                         </div>
 						<div>
-							<input id="idteacherforsearch" placeholder="Teacher ID" title="Введите ID учителя, чтобы проверить информацию по урокам" autocomplete="off" type="text" style="position:relative; left:33%; text-align: center; width: 100px; color: black;margin-left:5px"">
-							<input id="idstudentforsearch" placeholder="Student ID" title="Введите ID ученика, чтобы отфильтровать поиск" autocomplete="off" type="text" style="position:relative; left:32%; text-align: center; width: 100px; color: black;margin-left:5px"">
+							<input class="inputCRM" id="idteacherforsearch" placeholder="Teacher ID" title="Введите ID учителя, чтобы проверить информацию по урокам" autocomplete="off" type="text" style="position:relative; left:33%; text-align: center; width: 100px; color: black;margin-left:5px"">
+							<input class="inputCRM" id="idstudentforsearch" placeholder="Student ID" title="Введите ID ученика, чтобы отфильтровать поиск" autocomplete="off" type="text" style="position:relative; left:32%; text-align: center; width: 100px; color: black;margin-left:5px"">
 						</div>
 						<div style="position:relative; left:30%; margin-top:5px; margin-bottom:5px;">
 							 <button class="btnCRM" title="Запускает процесс поиска информации по статусам урока (отменен, перенесен, удален)" id="startlookstatus">Получить инфо об уроках</button>
