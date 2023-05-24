@@ -185,7 +185,7 @@ var win_servicedesk = // описание элементов окна Service De
 					<textarea id="custom_er" placeholder="Ожидаемое поведение"  class="textareaCRM sdexpecactual removefield" style="margin-left: 21px;"></textarea>
 					<textarea id="custom_ar" placeholder="Фактическое поведение"  class="textareaCRM sdexpecactual removefield" style="margin-left: 21px;"></textarea>
 					<button class="btnCRM" id="createsd" style="width: 150px; position:relative; left:30%; margin-bottom:5px;">Создать</button>
-                    <button class="btnCRM btnCRMsmall" title="Очищает поля для ввода" onclick ="clearfields()" style="float: right; margin-right: 10px;">🧹</button>
+                    <button class="btnCRM btnCRMsmall" title="Очищает поля для ввода" onclick ="clearfields()" style="float: right; margin-right: 10px;"margin-bottom:5px;>🧹</button>
 				</div>
 	        </span>
 		</span>
