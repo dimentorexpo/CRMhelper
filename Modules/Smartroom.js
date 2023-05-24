@@ -1,5 +1,6 @@
 var win_smartroomform =  // описание элементов окна Мультирум пожелания/баги
     `<div class="maindivst" style="display: flex; width: 414px;">
+		<div>
         <span style="width: 414px">
                 <span style="cursor: -webkit-grab;">
                         <div style="margin: 5px; width: 410px;" id="smartroomsug_form_header">
@@ -86,12 +87,13 @@ var win_smartroomform =  // описание элементов окна Мул�
 							</div>
 							
 						<div>	
-							<textarea class="textareaCRM" id="fullcomentsmartroom" placeholder="Полный комментарий предложения по улучшению" autocomplete="off" type="text" style="text-align: center; width: 405px; color: black; margin-top: 5px" data-gramm="false" wt-ignore-input="true"></textarea>
+							<textarea class="textareaCRM"id="fullcomentsmartroom" placeholder="Полный комментарий предложения по улучшению" autocomplete="off" type="text" style="text-align: center; width: 405px; color: black; margin-top: 5px" data-gramm="false" wt-ignore-input="true"></textarea>
 						<br>
 							<button class="btnCRM" title="Отправляет заполненные поля формы в док" id="send2smartroom" style="width:105px; position: relative; left: 50%; margin-top: 5px; transform: translate(-50%, 0);">Отправить</button>
 						</div>
 				</span>
         </span>
+		</div>
 </div>`;
 
 if (localStorage.getItem('winTopSmartroom') == null) { //начальное положение окна Smartroom
