@@ -4,13 +4,13 @@ var win_testroomsCRM =  // описание элементов окна созд
           <span style="cursor: -webkit-grab;">
               <div style="width: 310px; margin: 5px;" id="testroomsCRMhead">
                   <button class="buttonHide" title="скрывает меню" id="hideMetestroomsCRM">hide</button>
-                  <button class="btnCRM" onclick="cleartestroomsCRMfields()" title="По нажатию очищает поля" style="width:30px;">🧹</button>
-                  <button class="btnCRM" onclick="opentestroomsCRMhelp()" style="width:30px; float: right; margin-right: 10px;" title="Инструкция по этой форме">❓</button>
-                  <button class="btnCRM" onclick="opentestroomsCRMconf()" title="Открывает раздел в Confluence по созданию тестовых комнат" style="width:30px; float: right; margin-right: 5px;">📋</button>
+                  <button class="btnCRM btnCRMsmall" onclick="cleartestroomsCRMfields()" title="По нажатию очищает поля" style="width:30px;">🧹</button>
+                  <button class="btnCRM btnCRMsmall" onclick="opentestroomsCRMhelp()" style="width:30px; float: right; margin-right: 10px;" title="Инструкция по этой форме">❓</button>
+                  <button class="btnCRM btnCRMsmall" onclick="opentestroomsCRMconf()" title="Открывает раздел в Confluence по созданию тестовых комнат" style="width:30px; float: right; margin-right: 5px;">📋</button>
               </div>
 
 					    <div style="width: 310px; margin:5px; display:flex; justify-content:left;">
-                  <select id="subjecttypeselect" style="text-align: center; width: 290px; height: 26px; color: black; margin-left: 7px; margin-top: 5px;">
+                  <select class="inputCRM" id="subjecttypeselect" style="text-align: center; width: 290px; height: 26px; color: black; margin-left: 7px; margin-top: 5px;">
                       <option disabled="" selected="" value="subjnotselect" style="background-color: orange; color: white;">Выбери предмет</option>
                       <option value="api-english">Английский</option>
                       <option value="api-preschool">Дошкольная математика</option>
@@ -24,8 +24,8 @@ var win_testroomsCRM =  // описание элементов окна созд
               </div>
 
               <div style="width: 310px; margin:5px; display:flex; justify-content:left;">
-                  <input id="teachforroom" placeholder="Введи ID П" title="Введи id П для кого создать тестовую комнату" oninput="onlyNumbers(this)" autocomplete="off" type="text" style="text-align: center; width: 135px; color: black; margin-left: 5px; margin-top: 5px;">
-                  <input id="studforroom" placeholder="Введи ID У" title="Введи id У для кого создать тестовую комнату" oninput="onlyNumbers(this)" autocomplete="off" type="text" style="text-align: center; width: 135px; color: black; margin-left: 5px; margin-top: 5px;">
+                  <input class="inputCRM" id="teachforroom" placeholder="Введи ID П" title="Введи id П для кого создать тестовую комнату" oninput="onlyNumbers(this)" autocomplete="off" type="text" style="text-align: center; width: 135px; color: black; margin-left: 5px; margin-top: 5px;">
+                  <input class="inputCRM" id="studforroom" placeholder="Введи ID У" title="Введи id У для кого создать тестовую комнату" oninput="onlyNumbers(this)" autocomplete="off" type="text" style="text-align: center; width: 135px; color: black; margin-left: 5px; margin-top: 5px;">
     					</div>
 
               <div style="width: 310px; margin:2px; display:flex; justify-content:left;">
