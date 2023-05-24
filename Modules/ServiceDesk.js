@@ -191,7 +191,6 @@ var win_servicedesk = // описание элементов окна Service De
 		</span>
 </div>`;
 
-
 //func getOperInfraId
 function getInfraOId() {
 	responseTextarea1.value = `{}`
