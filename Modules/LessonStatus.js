@@ -174,7 +174,7 @@ document.getElementById('startlookstatus').onclick = function () { //Функц�
 
                             let tempor = document.createElement('textarea');
                             document.getElementById('statustable').append(tempor);
-                            tempor.setAttribute('style', 'width: 99%; color: bisque; font-weight:500; background-color:#464451;border-style:double; font-size:13px; height:50px;');
+                            tempor.setAttribute('style', 'width: 98.9%; color: bisque; font-weight:500; background-color:#464451;border-style:double; font-size:13px; height:52px;');
                             tempor.setAttribute('wrap', 'soft');
                             tempor.value = text;
                             //    console.log(text);
@@ -204,7 +204,7 @@ document.getElementById('startlookstatus').onclick = function () { //Функц�
                             let tempor = document.createElement('textarea');
                             document.getElementById('statustable').append(tempor);
                             // tempor.setAttribute('type', 'text');
-                            tempor.setAttribute('style', 'width: 99%; color: bisque; font-weight:500; background-color:#464451;border-style:double; font-size:13px; height:50px;');
+                            tempor.setAttribute('style', 'width: 98.9%; color: bisque; font-weight:500; background-color:#464451;border-style:double; font-size:13px; height:52px;');
                             tempor.setAttribute('wrap', 'soft');
                             tempor.value = text;
                         }
