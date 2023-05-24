@@ -17,8 +17,8 @@ var win_linksd =  // описание элементов окна доступо
                             <button class="btnCRM btnCRMsmall" id="GetUserActions">🔎</button>
                         </div>
                         <div id="dostupbnts" style="margin: 5px; width: 440px">
-                            <button class="btnCRM" title="Открывает Графану с состоянием видеосерверов, при наплыве обращений проверяйте его" id="grafanalnk" >Вид.сервера</button>
-                            <button class="btnCRM" title="Открывает Tableaue для просмотра информации по KPI teachers" id="kpiteachersdashboard">Tableaue Dashboard</button>
+                            <button class="btnCRM" title="Открывает Графану с состоянием видеосерверов, при наплыве обращений проверяйте его" id="grafanalnk">Видео сервера в Grafana</button>
+                            <button class="btnCRM" title="Открывает Tableaue для просмотра информации по KPI teachers" id="kpiteachersdashboard">KPI Teachers Dashboard</button>
                         </div>
                 </span>
         </span>
