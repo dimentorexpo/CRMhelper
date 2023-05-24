@@ -35,7 +35,7 @@ var win_smartroomform =  // описание элементов окна Мул�
 							</div>
 							<div style="color:#c4ffd3; padding:5px; font-weight: 500;">Категория 1</div>
 							<div>
-								<label class="spanCRM catsmartroom" style="color:bisque;"><input class="inputCRM" type="radio" name="catsmartroom" value="Обновление платформы" resolved="" checked> Обновление платформы</label>
+								<label class="spanCRM catsmartroom" style="color:bisque;"><input type="radio" name="catsmartroom" value="Обновление платформы" resolved="" checked> Обновление платформы</label>
 							</div>
 
 							<div style="color:#c4ffd3; padding:5px; font-weight: 500;">Категория 2</div>
