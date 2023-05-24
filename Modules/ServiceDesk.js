@@ -177,13 +177,13 @@ var win_servicedesk = // описание элементов окна Service De
 							<option value="Minor">Minor</option>
 							<option value="Trivial">Trivial</option>
 					   </select>
-					<input id="custom_id" placeholder="ID Пользователей (Id П, Id У)"  class="sdcustfieldformlines removefield" style="margin-left: 21px;">
-                    <input id="custom_appinfo" placeholder="Приложение / Версия / Платформа"  class="sdcustfieldformlines removefield" style="margin-left: 21px; display: none;"></input>
-                    <input id="custom_deviceinfo" placeholder="Девайс / ОС"  class="sdcustfieldformlines removefield" style="margin-left: 21px; display: none;"></input>
-					<textarea id="custom_descr" placeholder="Описание проблемы"  class="sdcustfieldformlines removefield" style="margin-left: 21px;"></textarea>
-					<textarea id="custom_str" placeholder="Как воспроизвести ошибку?"  class="sdcustfieldformlines removefield" style="margin-left: 21px;"></textarea>
-					<textarea id="custom_er" placeholder="Ожидаемое поведение"  class="sdexpecactual removefield" style="margin-left: 21px;"></textarea>
-					<textarea id="custom_ar" placeholder="Фактическое поведение"  class="sdexpecactual removefield" style="margin-left: 21px;"></textarea>
+					<input id="custom_id" placeholder="ID Пользователей (Id П, Id У)"  class="inputCRM sdcustfieldformlines removefield" style="margin-left: 21px;">
+                    <input id="custom_appinfo" placeholder="Приложение / Версия / Платформа"  class="inputCRM sdcustfieldformlines removefield" style="margin-left: 21px; display: none;"></input>
+                    <input id="custom_deviceinfo" placeholder="Девайс / ОС"  class="inputCRM sdcustfieldformlines removefield" style="margin-left: 21px; display: none;"></input>
+					<textarea id="custom_descr" placeholder="Описание проблемы"  class="textareaCRM sdcustfieldformlines removefield" style="margin-left: 21px;"></textarea>
+					<textarea id="custom_str" placeholder="Как воспроизвести ошибку?"  class="textareaCRM sdcustfieldformlines removefield" style="margin-left: 21px;"></textarea>
+					<textarea id="custom_er" placeholder="Ожидаемое поведение"  class="textareaCRM sdexpecactual removefield" style="margin-left: 21px;"></textarea>
+					<textarea id="custom_ar" placeholder="Фактическое поведение"  class="textareaCRM sdexpecactual removefield" style="margin-left: 21px;"></textarea>
 					<button class="btnCRM" id="createsd" style="width: 150px; position:relative; left:30%; margin-bottom:5px;">Создать</button>
                     <button class="btnCRM btnCRMsmall" title="Очищает поля для ввода" onclick ="clearfields()" style="float: right; margin-right: 10px;">🧹</button>
 				</div>
