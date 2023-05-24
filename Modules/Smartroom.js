@@ -12,7 +12,7 @@ var win_smartroomform =  // описание элементов окна Мул�
 
                         <div style="margin: 5px; margin-top: 0px; width: 410px" id="smartroom_form_menu">
 
-							<label style="color:#c4ffd3; padding:5px; font-weight: 600;">Тип клиента</label>
+							<label style="color:#c4ffd3; padding:5px; font-weight: 500;">Тип клиента</label>
 							<br>
 							<div style="margin-top:5px; color:bisque;" id = "smartroomuser">
 								<input type="radio" id="typestudadults" name="typetoform" value="Ученик Adults">
@@ -25,21 +25,21 @@ var win_smartroomform =  // описание элементов окна Мул�
 							    <input type="radio" id="typeteach" name="typetoform" value="Преподаватель">
 								<label class="spanCRM" for="typeteach">Преподаватель</label>
 							</div>
-							<input class="inputCRM" id="clientid" placeholder="ID пользователя" autocomplete="off" type="text">
+							<input class="inputCRM" id="clientid" style="margin-top:5px;" placeholder="ID пользователя" autocomplete="off" type="text">
 							<br>
-							<div style="margin-top:5px; color:#c4ffd3; padding:5px; font-weight: 600;">С чем обратились?</div>
+							<div style="margin-top:5px; color:#c4ffd3; padding:5px; font-weight: 500;">С чем обратились?</div>
 							<div style="margin-top:5px; color:bisque;" id = "smartroomquestion">
-								<input class="inputCRM" type="radio" id="whatobratsugest" name="whatobratform" value="Пожелание по мультирум" checked>
+								<input type="radio" id="whatobratsugest" name="whatobratform" value="Пожелание по мультирум" checked>
 								<label class="spanCRM" for="whatobratsugest">Пожелание по мультирум</label>
-								<input class="inputCRM" type="radio" id="whattonegative" name="whatobratform" value="Негатив по мультирум">
+								<input type="radio" id="whattonegative" name="whatobratform" value="Негатив по мультирум">
 								<label class="spanCRM" for="whattonegative">Негатив по мультирум</label>
 							</div>
-							<div style="color:#c4ffd3; padding:5px; font-weight: 600;">Категория 1</div>
+							<div style="color:#c4ffd3; padding:5px; font-weight: 500;">Категория 1</div>
 							<div>
-								<label class="spanCRM" class="catsmartroom"><input class="inputCRM" type="radio" name="catsmartroom" value="Обновление платформы" resolved="" checked> Обновление платформы</label>
+								<label class="spanCRM catsmartroom" style="color:bisque;"><input class="inputCRM" type="radio" name="catsmartroom" value="Обновление платформы" resolved="" checked> Обновление платформы</label>
 							</div>
 
-							<div style="color:#c4ffd3; padding:5px; font-weight: 600;">Категория 2</div>
+							<div style="color:#c4ffd3; padding:5px; font-weight: 500;">Категория 2</div>
 							<div>
 								<select class="inputCRM" id="cattwosmatrtoom" style="margin-left: 5px; padding-top: 5px; vertical-align: middle; color: black;">
 									<option style="background-color:DarkKhaki;" value="Выбрать категорию" disabled>Выбрать категорию</option>
