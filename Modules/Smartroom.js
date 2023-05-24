@@ -15,14 +15,14 @@ var win_smartroomform =  // описание элементов окна Мул�
 							<label style="color:#c4ffd3; padding:5px; font-weight: 600;">Тип клиента</label>
 							<br>
 							<div style="margin-top:5px; color:bisque;" id = "smartroomuser">
-								<input class="inputCRM" type="radio" id="typestudadults" name="typetoform" value="Ученик Adults">
+								<input type="radio" id="typestudadults" name="typetoform" value="Ученик Adults">
 								<label class="spanCRM" for="typestud">Ученик Adults</label>
-								<input class="inputCRM" type="radio" id="typestudkids" name="typetoform" value="Ученик Kids">
+								<input type="radio" id="typestudkids" name="typetoform" value="Ученик Kids">
 								<label class="spanCRM" for="typestud">Ученик Kids</label>
-								<input class="inputCRM" type="radio" id="typestudprem" name="typetoform" value="Ученик Premium">
+								<input type="radio" id="typestudprem" name="typetoform" value="Ученик Premium">
 								<label class="spanCRM" for="typestudprem">Ученик Premium</label>
 								<br>
-							    <input class="inputCRM" type="radio" id="typeteach" name="typetoform" value="Преподаватель">
+							    <input type="radio" id="typeteach" name="typetoform" value="Преподаватель">
 								<label class="spanCRM" for="typeteach">Преподаватель</label>
 							</div>
 							<input class="inputCRM" id="clientid" placeholder="ID пользователя" autocomplete="off" type="text">
@@ -35,10 +35,12 @@ var win_smartroomform =  // описание элементов окна Мул�
 								<label class="spanCRM" for="whattonegative">Негатив по мультирум</label>
 							</div>
 							<div style="color:#c4ffd3; padding:5px; font-weight: 600;">Категория 1</div>
+							<div>
 								<label class="spanCRM" class="catsmartroom"><input class="inputCRM" type="radio" name="catsmartroom" value="Обновление платформы" resolved="" checked> Обновление платформы</label>
 							</div>
 
 							<div style="color:#c4ffd3; padding:5px; font-weight: 600;">Категория 2</div>
+							<div>
 								<select class="inputCRM" id="cattwosmatrtoom" style="margin-left: 5px; padding-top: 5px; vertical-align: middle; color: black;">
 									<option style="background-color:DarkKhaki;" value="Выбрать категорию" disabled>Выбрать категорию</option>
 									<option value="Домашние задания">-Домашние задания</option>
@@ -51,6 +53,7 @@ var win_smartroomform =  // описание элементов окна Мул�
 							</div>	
 
 							<div style="color:#c4ffd3; padding:5px; font-weight: 500;">Категория 3</div>
+							<div>
 								<select class="inputCRM" id="catthreesmatrtoom" style="margin-left: 5px; padding-top: 5px; vertical-align: middle; color: black;">
 									<option style="background-color:DarkKhaki;" value="Выбрать категорию" disabled>Выбрать категорию</option>
 									<option value="Интерфейс раздела домашки">-Интерфейс раздела домашки</option>
