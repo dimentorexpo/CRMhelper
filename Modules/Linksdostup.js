@@ -1,24 +1,24 @@
 var win_linksd =  // описание элементов окна доступов
-    `<div style="display: flex; width: 414px;">
-        <span style="width: 414px">
+    `<div style="display: flex; width: 450px;">
+        <span style="width: 450px">
                 <span style="cursor: -webkit-grab;">
-                        <div style="margin: 5px; width: 409px;" id="linksd_1str">
+                        <div style="margin: 5px; width: 440px;" id="linksd_1str">
                             <button class="buttonHide" title="скрывает меню" id="hideMeLinksd">hide</button>
-                            <button class="btnCRM" id="curVeriOSCRM" style="float: right; margin-right: 5px;"></button>
-							<button class="btnCRM" id="curVerAndroidCRM" style="float: right; margin-right: 5px;"></button>
+                            <button class="btnCRM" id="curVeriOSCRM" style="float: right;"></button>
+							<button class="btnCRM" id="curVerAndroidCRM" style="float: right; margin-right: 7px;"></button>
                         </div>
-                        <div style="margin: 5px; margin-top: 0px; width: 409px">
-                            <p style="margin-left: 42%; margin-bottom: 0px; margin-top: 0px; color: #F6358A; font-size: 16px">Redash</p>
+                        <div style="margin: 5px; margin-top: 0px; width: 450px">
+                            <p style="margin-left: 44%; margin-bottom: 0px; margin-top: 0px; color: #F6358A; font-size: 16px">Redash</p>
                             <input class="inputCRM" id="mobappid" placeholder="ID mob.app" title="Вводим id пользователя для открытия действий в приложении" autocomplete="off" type="text" style="text-align: center; width: 103px; color: black; margin-top: 5px">
                             <button class="btnCRM btnCRMsmall" id="mobappidbut">🔎</button>
                             <input class="inputCRM" id="rpayid" placeholder="ID платежи" title="Вводим id пользователя для открытия лога платежей" autocomplete="off" type="text" style="text-align: center; width: 103px; color: black; margin-top: 5px">
                             <button class="btnCRM btnCRMsmall" id="rpayidbut">🔎</button>
  							<input class="inputCRM" id="UserActions" placeholder="ID У/П действ" title="Вводим id пользователя для открытия информации о действиях в личном кабинете" autocomplete="off" type="text" style="text-align: center; width: 103px; color: black; margin-top: 5px">
                             <button class="btnCRM btnCRMsmall" id="GetUserActions">🔎</button>
-                            <p style="margin-left: 42%; margin-bottom: 0px; margin-top: 0px; color: #F6358A; font-size: 16px">Grafana</p>
-                            <button class="btnCRM" title="Открывает Графану с состоянием видеосерверов, при наплыве обращений проверяйте его" id="grafanalnk" style="width:105px">Вид.сервера</button>
-							<p style="margin-left: 42%; margin-bottom: 0px; margin-top: 0px; color: #F6358A; font-size: 16px">KPI Teachers</p>
-							<button class="btnCRM" title="Открывает Tableaue для просмотра информации по KPI teachers" id="kpiteachersdashboard" style="width:150px">Tableaue Dashboard</button>
+                        </div>
+                        <div id="dostupbnts" style="margin: 5px; width: 440px">
+                            <button class="btnCRM" title="Открывает Графану с состоянием видеосерверов, при наплыве обращений проверяйте его" id="grafanalnk" >Вид.сервера</button>
+                            <button class="btnCRM" title="Открывает Tableaue для просмотра информации по KPI teachers" id="kpiteachersdashboard">Tableaue Dashboard</button>
                         </div>
                 </span>
         </span>

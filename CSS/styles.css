@@ -271,10 +271,10 @@
 .testroomsCRMcreate.active{
     background: coral;
 }
-#control_jira_search {
+#control_jira_search, #dostupbnts {
     display: flex;
     justify-content: space-between;
 }
-#control_jira_search button{
+#control_jira_search button, #dostupbnts button{
    flex: 1;
 }
