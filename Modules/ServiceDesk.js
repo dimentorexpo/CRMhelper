@@ -68,9 +68,9 @@ var win_servicedesk = // описание элементов окна Service De
 						<span class="spanCRM" style="color:bisque">Infra Id:</span>
 						<span class="spanCRM" id="jiratknstatus">🟢</span>
 						<span class="spanCRM" style="color:yellow">Prev.tsk</span>
-						<button class="btnCRM" id="prevtask" style="width: 78px" title="Предыдущая задача"></button>
+						<button class="btnCRM" id="prevtask" style="width: 85px" title="Предыдущая задача"></button>
 						<span class="spanCRM" style="color:cyan">Last tsk</span>
-						<button class="btnCRM" id="newtask" style="width: 78px" title="Последняя задача"></button>
+						<button class="btnCRM" id="newtask" style="width: 85px" title="Последняя задача"></button>
                 </div>
                 <div id="servicedeskinfo" style="margin-left:10px;">
                     <button class="sdbtn btnCRM" id="optionTeacher" value="36" style="margin-left:2px; width:95px;">👽T&Corp</button>
