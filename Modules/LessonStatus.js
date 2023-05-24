@@ -4,20 +4,17 @@ var win_LessonStatus =  // описание элементов окна стат
                 <span style="cursor: -webkit-grab;">
                         <div style="margin: 5px; width: 550px;" id="lessomstatdata">
                                 <button class="buttonHide" id="hideMeLessonStatus">hide</button>
-                                <button class="btnCRM btnCRMsmall" title="Очищает поля с результатами и полем для ввода">🧹</button>
+                                <button class="btnCRM btnCRMsmall" onclick="setdatesfildsbnt()" title="Очищает поля с результатами и полем для ввода">🧹</button>
                         </div>
-						 <div style="margin: 5px; width: 550px" id="databox">
-								 <span class="spanCRM" style="color:bisque; float:center; margin-top:5px; margin-left:10px;">Начальная дата <input class="inputCRM" type="date" style="color:black; margin-left:20px;  width:125px;" name="StartDataLS" id="dateFromLS"></span>
-								 <span class="spanCRM" style="color:bisque; margin-top:2px; float:right; margin-right:10px; height:28px;">Конечная дата <input class="inputCRM" type="date" style="color:black; float:right; margin-left:20px; margin-right:10px; width:125px;" name="EndDataLS" id="dateToLS"</span>
+						<div style="margin: 5px; width: 550px">
+								 <span class="spanCRM" style="color:bisque; float:center; margin-top:5px; margin-left:10px;">Начальная дата<input class="inputCRM" type="date" style="color:black; margin-left:20px; width:125px;" name="StartDataLS" id="dateFromLS"></span>
+                                 <input class="inputCRM" id="idteacherforsearch" placeholder="Teacher ID" title="Введите ID учителя, чтобы проверить информацию по урокам" autocomplete="off" type="text" style="position:relative; left:33%; text-align: center; width: 100px; color: black;margin-left:5px"">
+                                 <input class="inputCRM" id="idstudentforsearch" placeholder="Student ID" title="Введите ID ученика, чтобы отфильтровать поиск" autocomplete="off" type="text" style="position:relative; left:32%; text-align: center; width: 100px; color: black;margin-left:5px"">
                         </div>
-						<div>
-							<input class="inputCRM" id="idteacherforsearch" placeholder="Teacher ID" title="Введите ID учителя, чтобы проверить информацию по урокам" autocomplete="off" type="text" style="position:relative; left:33%; text-align: center; width: 100px; color: black;margin-left:5px"">
-							<input class="inputCRM" id="idstudentforsearch" placeholder="Student ID" title="Введите ID ученика, чтобы отфильтровать поиск" autocomplete="off" type="text" style="position:relative; left:32%; text-align: center; width: 100px; color: black;margin-left:5px"">
+						<div style="margin: 5px; width: 550px">
+                            <span class="spanCRM" style="color:bisque; float:center; margin-top:5px; margin-left:10px;">Конечная дата<input class="inputCRM" type="date" style="color:black; margin-left:30px; width:125px;" name="EndDataLS" id="dateToLS"</span>
+                            <button class="btnCRM" title="Запускает процесс поиска информации по статусам урока (отменен, перенесен, удален)" id="startlookstatus" style="margin-left:15px;">Получить инфо об уроках</button>
 						</div>
-						<div style="position:relative; left:30%; margin-top:5px; margin-bottom:5px;">
-							 <button class="btnCRM" title="Запускает процесс поиска информации по статусам урока (отменен, перенесен, удален)" id="startlookstatus">Получить инфо об уроках</button>
-							 <button class="btnCRM" title="Очищает поле от полученной инфы" id="clearlessonstatus">Очистить</button>
-					    </div>
 				</span>
 						<div>
 							<p id="statustable" style="margin-top:5px; max-height:400px; overflow:auto; display:none; color:bisque; text-align:center"></p>
@@ -85,15 +82,15 @@ function setdatesfilds(){
         document.getElementById('dateToLS').value = getyearLS + "-" + getcurmonthLS + "-" + todayLS;
     }
 }
-	
-document.getElementById('clearlessonstatus').onclick = function () { // очистить поля проверки статуса урока
+
+function setdatesfildsbnt(){
     setdatesfilds();
 
     document.getElementById('statustable').innerText = "";
     document.getElementById('idteacherforsearch').value = "";
     document.getElementById('idstudentforsearch').value = "";
 }
-
+	
 document.getElementById('butLessonInfoCRM').onclick = function () {
     setdatesfilds();
 
