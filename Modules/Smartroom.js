@@ -1,12 +1,12 @@
 var win_smartroomform =  // описание элементов окна Мультирум пожелания/баги
-    `<div style="display: flex; width: 414px;">
+    `<div class="maindivst" style="display: flex; width: 414px;">
         <span style="width: 414px">
                 <span style="cursor: -webkit-grab;">
                         <div style="margin: 5px; width: 410px;" id="smartroomsug_form_header">
                             <button class="buttonHide" title="скрывает меню" id="hideMeSmartRoomForm">hide</button>
-                            <button class="btnCRM" title="По нажатию обновляет хеш чата в соответствующем поле, на случай, если при открытии формы вы открыли не тот чат, в котором обратился пользователь" id="refreshhashsmartform" style="width:30px;">♻</button>
-                            <button class="btnCRM" title="По нажатию очищает поля и сбрасывает в дефолтное состояние формы" id="clearsmartroomform" style="width:30px;">🧹</button>
-							<button class="btnCRM" title="Инструкция по этой форме" id="smartroomforminstr" style="float:right">❓</button>
+                            <button class="btnCRM btnCRMsmall" title="По нажатию обновляет хеш чата в соответствующем поле, на случай, если при открытии формы вы открыли не тот чат, в котором обратился пользователь" id="refreshhashsmartform" style="width:30px;">♻</button>
+                            <button class="btnCRM btnCRMsmall" title="По нажатию очищает поля и сбрасывает в дефолтное состояние формы" id="clearsmartroomform" style="width:30px;">🧹</button>
+							<button class="btnCRM btnCRMsmall" title="Инструкция по этой форме" id="smartroomforminstr" style="float:right">❓</button>
                         </div>
 
                         <div style="margin: 5px; margin-top: 0px; width: 410px" id="smartroom_form_menu">
@@ -14,31 +14,31 @@ var win_smartroomform =  // описание элементов окна Мул�
 							<label style="color:#c4ffd3; padding:5px; font-weight: 600;">Тип клиента</label>
 							<br>
 							<div style="margin-top:5px; color:bisque;" id = "smartroomuser">
-								<input type="radio" id="typestudadults" name="typetoform" value="Ученик Adults">
-								<label for="typestud">Ученик Adults</label>
-								<input type="radio" id="typestudkids" name="typetoform" value="Ученик Kids">
-								<label for="typestud">Ученик Kids</label>
-								<input type="radio" id="typestudprem" name="typetoform" value="Ученик Premium">
-								<label for="typestudprem">Ученик Premium</label>
+								<input class="inputCRM" type="radio" id="typestudadults" name="typetoform" value="Ученик Adults">
+								<label class="spanCRM" for="typestud">Ученик Adults</label>
+								<input class="inputCRM" type="radio" id="typestudkids" name="typetoform" value="Ученик Kids">
+								<label class="spanCRM" for="typestud">Ученик Kids</label>
+								<input class="inputCRM" type="radio" id="typestudprem" name="typetoform" value="Ученик Premium">
+								<label class="spanCRM" for="typestudprem">Ученик Premium</label>
 								<br>
-							    <input type="radio" id="typeteach" name="typetoform" value="Преподаватель">
-								<label for="typeteach">Преподаватель</label>
+							    <input class="inputCRM" type="radio" id="typeteach" name="typetoform" value="Преподаватель">
+								<label class="spanCRM" for="typeteach">Преподаватель</label>
 							</div>
-							<input id="clientid" placeholder="ID пользователя" autocomplete="off" type="text">
+							<input class="inputCRM" id="clientid" placeholder="ID пользователя" autocomplete="off" type="text">
 							<br>
 							<div style="margin-top:5px; color:#c4ffd3; padding:5px; font-weight: 600;">С чем обратились?</div>
 							<div style="margin-top:5px; color:bisque;" id = "smartroomquestion">
-								<input type="radio" id="whatobratsugest" name="whatobratform" value="Пожелание по мультирум" checked>
-								<label for="whatobratsugest">Пожелание по мультирум</label>
-								<input type="radio" id="whattonegative" name="whatobratform" value="Негатив по мультирум">
-								<label for="whattonegative">Негатив по мультирум</label>
+								<input class="inputCRM" type="radio" id="whatobratsugest" name="whatobratform" value="Пожелание по мультирум" checked>
+								<label class="spanCRM" for="whatobratsugest">Пожелание по мультирум</label>
+								<input class="inputCRM" type="radio" id="whattonegative" name="whatobratform" value="Негатив по мультирум">
+								<label class="spanCRM" for="whattonegative">Негатив по мультирум</label>
 							</div>
 							<div style="color:#c4ffd3; padding:5px; font-weight: 600;">Категория 1</div>
-								<label class="catsmartroom"><input class="radio" type="radio" name="catsmartroom" value="Обновление платформы" resolved="" checked> Обновление платформы</label>
+								<label class="spanCRM" class="catsmartroom"><input class="inputCRM" type="radio" name="catsmartroom" value="Обновление платформы" resolved="" checked> Обновление платформы</label>
 							</div>
 
 							<div style="color:#c4ffd3; padding:5px; font-weight: 600;">Категория 2</div>
-								<select id="cattwosmatrtoom" style="margin-left: 5px; padding-top: 5px; font-size: 16px; vertical-align: middle; color: black;">
+								<select class="inputCRM" id="cattwosmatrtoom" style="margin-left: 5px; padding-top: 5px; vertical-align: middle; color: black;">
 									<option style="background-color:DarkKhaki;" value="Выбрать категорию" disabled>Выбрать категорию</option>
 									<option value="Домашние задания">-Домашние задания</option>
 									<option value="Интерфейс платформы">-Интерфейс платформы</option>
@@ -50,7 +50,7 @@ var win_smartroomform =  // описание элементов окна Мул�
 							</div>	
 
 							<div style="color:#c4ffd3; padding:5px; font-weight: 500;">Категория 3</div>
-								<select id="catthreesmatrtoom" style="margin-left: 5px; padding-top: 5px; font-size: 16px; vertical-align: middle; color: black;">
+								<select class="inputCRM" id="catthreesmatrtoom" style="margin-left: 5px; padding-top: 5px; vertical-align: middle; color: black;">
 									<option style="background-color:DarkKhaki;" value="Выбрать категорию" disabled>Выбрать категорию</option>
 									<option value="Интерфейс раздела домашки">-Интерфейс раздела домашки</option>
 									<option value="Нет">-Нет</option>
@@ -82,12 +82,11 @@ var win_smartroomform =  // описание элементов окна Мул�
 									<option value="Связь У с П">-Связь У с П</option>
 									<option value="Звуки">-Звуки</option>
 									<option value="Перевод слов на стороне У">-Перевод слов на стороне У</option>
-
                                 </select>
 							</div>
 							
 						<div>	
-							<textarea id="fullcomentsmartroom" placeholder="Полный комментарий предложения по улучшению" autocomplete="off" type="text" style="text-align: center; width: 405px; color: black; margin-top: 5px" data-gramm="false" wt-ignore-input="true"></textarea>
+							<textarea class="textareaCRM" id="fullcomentsmartroom" placeholder="Полный комментарий предложения по улучшению" autocomplete="off" type="text" style="text-align: center; width: 405px; color: black; margin-top: 5px" data-gramm="false" wt-ignore-input="true"></textarea>
 						<br>
 							<button class="btnCRM" title="Отправляет заполненные поля формы в док" id="send2smartroom" style="width:105px; position: relative; left: 50%; margin-top: 5px; transform: translate(-50%, 0);">Отправить</button>
 						</div>
