@@ -168,7 +168,7 @@ var win_servicedesk = // описание элементов окна Service De
 				</div>
 
 				<div id="inputfieldsdiv" style="display: none;">
-					<select style="height:28px; margin-left: 21px; margin-top: 5px; display: none;" id="prioritymbugs">
+					<select class="inputCRM" style="height:28px; margin-left: 21px; margin-top: 5px; display: none;" id="prioritymbugs">
 							<option selected disabled="">Приоритет</option>
 							<option value="Blocker">Blocker</option>
 							<option value="Critical">Critical</option>
@@ -184,8 +184,8 @@ var win_servicedesk = // описание элементов окна Service De
 					<textarea id="custom_str" placeholder="Как воспроизвести ошибку?"  class="textareaCRM sdcustfieldformlines removefield" style="margin-left: 21px;"></textarea>
 					<textarea id="custom_er" placeholder="Ожидаемое поведение"  class="textareaCRM sdexpecactual removefield" style="margin-left: 21px;"></textarea>
 					<textarea id="custom_ar" placeholder="Фактическое поведение"  class="textareaCRM sdexpecactual removefield" style="margin-left: 21px;"></textarea>
-					<button class="btnCRM" id="createsd" style="width: 150px; position:relative; left:30%; margin-bottom:5px;">Создать</button>
-                    <button class="btnCRM btnCRMsmall" title="Очищает поля для ввода" onclick ="clearfields()" style="float: right; margin-right: 10px;"margin-bottom:5px;>🧹</button>
+					<button class="btnCRM" id="createsd" style="width: 150px; position:relative; left:35%; margin-bottom:5px;">Создать</button>
+                    <button class="btnCRM btnCRMsmall" title="Очищает поля для ввода" onclick ="clearfields()" style="float: right; margin-right:25px;"margin-bottom:5px;>🧹</button>
 				</div>
 	        </span>
 		</span>
