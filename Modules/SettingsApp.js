@@ -4,36 +4,36 @@ var win_SettingsApp =  // описание элементов главного �
             <button class="buttonHide" title="скрывает меню" id="hideSettingsApp">hide</button>
         </div>
 		<div style="margin: 5px; width: 350px">
-                <select style="height:28px; width:210px; text-align:center" id="soundlistaddrCRM" onchange="changesoundaddrCRM()">
+                <select class="inputCRM" style="height:28px; width:210px; text-align:center" id="soundlistaddrCRM" onchange="changesoundaddrCRM()">
                     <option selected="" disabled="">Звук нового сообщения</option>
                     <option value="othersound">Выбрать свой звук</option>
                     </select>
-				<button class="btnCRM" title="Проверка звука при добавленной ссылке" id="sound_testCRM">▶</button>
+				<button class="btnCRM btnCRMsmall" title="Проверка звука при добавленной ссылке" id="sound_testCRM">▶</button>
 				<label title="Включение и отключение звука входящих запросов" class="checkbox-audio">
 					<input id="audioCRMswitcher" type="checkbox" checked="">
 						<span class="checkbox-audio-switch-CRM"></span>
 				</label>
-                <input id="sound_adrCRM" placeholder="Введи адрес звука" autocomplete="off" type="text" style="display: none; text-align: center; width: 210px; color: black;">
-				<button class="btnCRM" title="Сохраняет ссылки на новый источник звука для входящего запроса" id="sound_saveCRM" style="display: none">💾</button>
+                <input class="inputCRM" id="sound_adrCRM" placeholder="Введи адрес звука" autocomplete="off" type="text" style="display: none; text-align: center; width: 210px; color: black;">
+				<button class="btnCRM btnCRMsmall" title="Сохраняет ссылки на новый источник звука для входящего запроса" id="sound_saveCRM" style="display: none">💾</button>
 				<br>
-				<span style="color:bisque">Громкость звука</span>
+				<span class="spanCRM" style="color:bisque">Громкость звука</span>
 				<input id="rangeCRM" min="0" max="1" value="1.0" step="0.1" type="range">
                     <br>
-				<label style="color:bisque"><input type="checkbox" onchange="changerepeatsoundCRM()" id="repeatsoundselectCRM">Повторять звук новой задачи</label>
+				<label class="spanCRM" style="color:bisque"><input type="checkbox" onchange="changerepeatsoundCRM()" id="repeatsoundselectCRM">Повторять звук новой задачи</label>
                     <br>
-				<span style="color:bisque">Интервал воспроизведения звука:</span>
-				<input title="Ввод интервала в секундах между повторами звука нового чата" id="soundplayintervalCRM" placeholder="N" autocomplete="off" oninput="maxLengthCheck(this)" type="number" maxlength="2" min="0" max="59" style="text-align: center; margin-top: 5px; width: 50px; color: black;">
+				<span class="spanCRM" style="color:bisque">Интервал воспроизведения звука:</span>
+				<input class="inputCRM" title="Ввод интервала в секундах между повторами звука нового чата" id="soundplayintervalCRM" placeholder="N" autocomplete="off" oninput="maxLengthCheck(this)" type="number" maxlength="2" min="0" max="59" style="text-align: center; margin-top: 5px; width: 50px; color: black;">
 				<button class="btnCRM" title="Внести изменения в интервал между повторами звука нового чата" id="setsoundplayintervalCRM" style="margin-top: 5px">SET⌚</button>
 					<br>
 				<div style="margin-top: 5px; width: 320px">
-                    <input id="test_stdCRM" placeholder="ID тест У" autocomplete="off" title = "ID личного тестового ученика" type="text" style="text-align: center; width: 100px; color: black;">
-                    <button class="btnCRM" id="setteststdCRM" title="Добавить в localstorage ID тестового У" style="margin-top: 5px">💾</button>
-                    <input id="test_teachCRM" placeholder="ID тест П" autocomplete="off" title = "ID личного тестового преподавателя" type="text" style="text-align: center; width: 100px; color: black;">
-                    <button class="btnCRM" id="settestteachCRM" title="Добавить в localstorage ID тестового П" style="margin-top: 5px">💾</button>
+                    <input class="inputCRM" id="test_stdCRM" placeholder="ID тест У" autocomplete="off" title = "ID личного тестового ученика" type="text" style="text-align: center; width: 100px; color: black;">
+                    <button class="btnCRM btnCRMsmall" id="setteststdCRM" title="Добавить в localstorage ID тестового У" style="margin-top: 5px">💾</button>
+                    <input class="inputCRM" id="test_teachCRM" placeholder="ID тест П" autocomplete="off" title = "ID личного тестового преподавателя" type="text" style="text-align: center; width: 100px; color: black;">
+                    <button class="btnCRM btnCRMsmall" id="settestteachCRM" title="Добавить в localstorage ID тестового П" style="margin-top: 5px">💾</button>
                 </div>
 				<button class="btnCRM" id="savesettingstofileCRM" onclick="getLocalstorageToFileCRM('settings-CRMhelp')" title="Сохраняет все настройки из localstorage в отдельный .json файл" style="color: #e5ece6; margin-top: 5px">💾 Сохранить настройки</button>
 				<input type="file" id="fileinputCRM" title="Загружает все настройки в localstorage из ранее сохраненного файла настроек в формте .json" style="display:none;">
-				<label style="color: #e5ece6; background: #768d87; padding: 5px; border-radius: 5px; border: 1px solid #566963;" for="fileinputCRM">⤵ Загрузить настройки</label>
+				<label class="btnCRM" style="color: #e5ece6; background: #768d87; padding: 5px; border-radius: 5px; border: 1px solid #566963;" for="fileinputCRM">⤵ Загрузить настройки</label>
 			</div>
 		</div>
     </div>`;
