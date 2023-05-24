@@ -17,7 +17,7 @@ var win_LessonStatus =  // описание элементов окна стат
 						</div>
 				</span>
 						<div>
-							<p id="statustable" style="margin-top:5px; max-height:400px; overflow:auto; display:none; color:bisque; text-align:center"></p>
+							<p id="statustable" style="margin-top:5px; max-height:400px;  overflow:auto; display:none; color:bisque; text-align:center"></p>
 						</div>
         </span>
 </div>`;
@@ -174,7 +174,7 @@ document.getElementById('startlookstatus').onclick = function () { //Функц�
 
                             let tempor = document.createElement('textarea');
                             document.getElementById('statustable').append(tempor);
-                            tempor.setAttribute('style', 'width: 99.4%; height: 20px; color: bisque; font-weight:500; background-color:#464451;border-style:double; font-size:13px; height:48px;');
+                            tempor.setAttribute('style', 'width: 99%;color: bisque; font-weight:500; background-color:#464451;border-style:double; font-size:13px; height:50px;');
                             tempor.setAttribute('wrap', 'soft');
                             tempor.value = text;
                             //    console.log(text);
