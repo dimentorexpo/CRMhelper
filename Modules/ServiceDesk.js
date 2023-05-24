@@ -57,39 +57,39 @@ const otherOptionsCRM = [ // array of buttons categories id's
 ];
 
 var win_servicedesk = // описание элементов окна Service Desk
-    `<div style="display: flex; width: 480px;">
-		<span style="width: 480px">
+    `<div class="maindivst" style="display: flex; width: 520px;">
+		<span style="width: 520px">
         <span style="cursor: -webkit-grab;">
-                <div style="margin: 5px; width: 480px;" id="SrvDskSummary">
+                <div style="margin: 5px; width: 510px;" id="SrvDskSummary">
                         <button class="buttonHide" title="скрывает меню" id="hideMeSrvDsk">hide</button>
-						<button class="btnCRM" id="refreshjiraauth" title="Перепроверить авторизацию в Jira">🔄</button>
-                        <button class="btnCRM" id="infratasklist" title="Откріть список своих задач в Infra">📑</button>
-						<button class="btnCRM" id="ServiceDeskinstr" title="Инструкция по этой форме">❓</button>
-						<span style="color:bisque">Infra Id:</span>
-						<span id="jiratknstatus">🟢</span>
-						<span style="color:yellow">Prev.tsk</span>
-						<button id="prevtask" style="width: 78px" title="Предыдущая задача"></button>
-						<span style="color:cyan">Last tsk</span>
-						<button id="newtask" style="width: 78px" title="Последняя задача"></button>
+						<button class="btnCRM btnCRMsmall" id="refreshjiraauth" title="Перепроверить авторизацию в Jira">🔄</button>
+                        <button class="btnCRM btnCRMsmall" id="infratasklist" title="Откріть список своих задач в Infra">📑</button>
+						<button class="btnCRM btnCRMsmall" id="ServiceDeskinstr" title="Инструкция по этой форме">❓</button>
+						<span class="spanCRM" style="color:bisque">Infra Id:</span>
+						<span class="spanCRM" id="jiratknstatus">🟢</span>
+						<span class="spanCRM" style="color:yellow">Prev.tsk</span>
+						<button class="btnCRM" id="prevtask" style="width: 78px" title="Предыдущая задача"></button>
+						<span class="spanCRM" style="color:cyan">Last tsk</span>
+						<button class="btnCRM" id="newtask" style="width: 78px" title="Последняя задача"></button>
                 </div>
-                <div id="servicedeskinfo" style="margin-left:20px;">
-                    <button class="sdbtn btnCRM" id="optionTeacher" value="36" style="margin-left:2px; width:80px;">👽T&Corp</button>
-                    <button class="sdbtn btnCRM" id="optionCRM2" value="26" style="margin-left:2px; width:80px;">🧮CRM2</button>
-                    <button class="sdbtn btnCRM" id="optionAuth" value="20" style="margin-left:2px; width:80px;">🔐Auth</button>
-                    <button class="sdbtn btnCRM" id="optionSchedule" value="33" style="margin-left:2px; width:80px;">📆Schedul</button>
-                    <button class="sdbtn btnCRM" id="optionBillingQA" value="22" style="margin-left:2px; width:80px;">💲Billing-QA</button>
-                    <button class="sdbtn btnCRM" id="optionOnboarding" value="23" style="margin-left:2px; margin-top:2px; width:80px;">♻Onboard</button>
-                    <button class="sdbtn btnCRM" id="optionBilling"  value="21" style="margin-left:2px; margin-top:2px; width:80px;">💰Billing</button>
-                    <button class="sdbtn btnCRM" id="optionVimbugs" value="38" style="margin-left:2px; margin-top:2px; width:80px;">🐞Vim-bug</button>
-                    <button class="sdbtn btnCRM" id="optionVimvideocall" value="39" style="margin-left:2px; margin-top:2px; width:80px;">📸Vid-call</button>
-                    <button class="sdbtn btnCRM" id="optionStudcab" value="34" style="margin-left:2px; margin-top:2px; width:80px;">👨‍🎓Studcab</button>
-                    <button class="sdbtn btnCRM" id="optionChat" value="24" style="margin-left:2px; margin-top:2px; width:80px;">💬Chat</button>
-                    <button class="sdbtn btnCRM" id="optionTripwire" value="27" style="margin-left:2px; margin-top:2px; width:80px;">🗣Tripwire</button>
-                    <button class="sdbtn btnCRM" id="optionAnalyst"  value="18" style="margin-left:2px; margin-top:2px; width:80px; display: none;">TEST</button>
-                    <button class="sdbtn btnCRM" id="optionEdModel" value="28" style="margin-left:2px; margin-top:2px; width:80px;">🎓SmartL</button>
-                    <button class="sdbtn btnCRM" id="optionStudcabmobbugs" value="35" style="margin-left:2px; margin-top:2px; width:80px;">👨‍🎓📱Bugs</button>
-					<button class="sdbtn btnCRM" id="optionMobbugs" value="30" style="margin-left:2px; margin-top:2px; width:80px;">📱Mobil bug</button>
-                    <button class="sdbtn btnCRM" id="optionAcademymobbugs" value="19" style="margin-left:2px; margin-top:2px; width:80px;">🅰📱🐞</button>
+                <div id="servicedeskinfo" style="margin-left:10px;">
+                    <button class="sdbtn btnCRM" id="optionTeacher" value="36" style="margin-left:2px; width:95px;">👽T&Corp</button>
+                    <button class="sdbtn btnCRM" id="optionCRM2" value="26" style="margin-left:2px; width:95px;">🧮CRM2</button>
+                    <button class="sdbtn btnCRM" id="optionAuth" value="20" style="margin-left:2px; width:95px;">🔐Auth</button>
+                    <button class="sdbtn btnCRM" id="optionSchedule" value="33" style="margin-left:2px; width:95px;">📆Schedul</button>
+                    <button class="sdbtn btnCRM" id="optionBillingQA" value="22" style="margin-left:2px; width:95px;">💲Billing-QA</button>
+                    <button class="sdbtn btnCRM" id="optionOnboarding" value="23" style="margin-left:2px; margin-top:2px; width:95px;">♻Onboard</button>
+                    <button class="sdbtn btnCRM" id="optionBilling"  value="21" style="margin-left:2px; margin-top:2px; width:95px;">💰Billing</button>
+                    <button class="sdbtn btnCRM" id="optionVimbugs" value="38" style="margin-left:2px; margin-top:2px; width:95px;">🐞Vim-bug</button>
+                    <button class="sdbtn btnCRM" id="optionVimvideocall" value="39" style="margin-left:2px; margin-top:2px; width:95px;">📸Vid-call</button>
+                    <button class="sdbtn btnCRM" id="optionStudcab" value="34" style="margin-left:2px; margin-top:2px; width:95px;">👨‍🎓Studcab</button>
+                    <button class="sdbtn btnCRM" id="optionChat" value="24" style="margin-left:2px; margin-top:2px; width:95px;">💬Chat</button>
+                    <button class="sdbtn btnCRM" id="optionTripwire" value="27" style="margin-left:2px; margin-top:2px; width:95px;">🗣Tripwire</button>
+                    <button class="sdbtn btnCRM" id="optionAnalyst"  value="18" style="margin-left:2px; margin-top:2px; width:95px; display: none;">TEST</button>
+                    <button class="sdbtn btnCRM" id="optionEdModel" value="28" style="margin-left:2px; margin-top:2px; width:95px;">🎓SmartL</button>
+                    <button class="sdbtn btnCRM" id="optionStudcabmobbugs" value="35" style="margin-left:2px; margin-top:2px; width:95px;">👨‍🎓📱Bugs</button>
+					<button class="sdbtn btnCRM" id="optionMobbugs" value="30" style="margin-left:2px; margin-top:2px; width:95px;">📱Mobil bug</button>
+                    <button class="sdbtn btnCRM" id="optionAcademymobbugs" value="19" style="margin-left:2px; margin-top:2px; width:95px;">🅰📱🐞</button>
                 </div>
 				<div id="studcabmobbugskoptions" style="display: none; margin-left:20px;">
 					<p style="color:bisque;font-size:18px;position:relative; top:7px; left:10px; width:90%;">#student-cabinet-mobile-bugs; Cообщаем о проблемах в МП Skysmart Parents и в МП Skyeng главные страницы продуктов</p>
