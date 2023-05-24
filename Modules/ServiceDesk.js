@@ -92,83 +92,78 @@ var win_servicedesk = // описание элементов окна Service De
                     <button class="sdbtn btnCRM" id="optionAnalyst"  value="18" style="display: none;">TEST</button>
                 </div>
 				<div id="studcabmobbugskoptions" style="display: none; margin-left:20px;">
-					<p style="color:bisque;font-size:18px;position:relative; width:95%;">#student-cabinet-mobile-bugs; Cообщаем о проблемах в МП Skysmart Parents и в МП Skyeng главные страницы продуктов</p>
+					<p style="color:bisque;font-size:18px;position:relative; width:95%;margin-top: 5px;margin-bottom: 5px;">#student-cabinet-mobile-bugs; Cообщаем о проблемах в МП Skysmart Parents и в МП Skyeng главные страницы продуктов</p>
 
 				</div>
 
 				<div id="teacherssrvdskoptions" style="display: none; margin-left:20px;">
-					<p style="color:bisque;font-size:18px;position:relative; width:95%;">#promise-keepers-qa-support; канал по вопросам ЛКП, ТРМ, corp учеников, ЛККК</p>
+					<p style="color:bisque;font-size:18px;position:relative; width:95%;margin-top: 5px;margin-bottom: 5px;">#promise-keepers-qa-support; канал по вопросам ЛКП, ТРМ, corp учеников, ЛККК</p>
 
 				</div>
 				<div id="crm2srvdskoptions" style="display: none; margin-left:20px;">
-					<p style="color:bisque;font-size:18px;position:relative; width:95%;">#crm2-support</p>
+					<p style="color:bisque;font-size:18px;position:relative; width:95%;margin-top: 5px;margin-bottom: 5px;">#crm2-support</p>
 
 				</div>
 				<div id="authsrvdskoptions" style="display: none; margin-left:20px;">
-					<p style="color:bisque;font-size:18px;position:relative; width:95%;">#auth; Обсуждение общих вопросов по проектам Auth/ID (авторизация, роли и доступы, данные пользователей и т. д.)</p>
+					<p style="color:bisque;font-size:18px;position:relative; width:95%;margin-top: 5px;margin-bottom: 5px;">#auth; Обсуждение общих вопросов по проектам Auth/ID (авторизация, роли и доступы, данные пользователей и т. д.)</p>
 
 				</div>
 				<div id="schedulesrvdskoptions" style="display: none; margin-left:20px;">
-					<p style="color:bisque;font-size:18px;position:relative; width:95%;">#study-coordinations-qa-support Канал по вопросам расписания ученика, ТТ, TRM, автоподбора и ручного подбора</p>
+					<p style="color:bisque;font-size:18px;position:relative; width:95%;margin-top: 5px;margin-bottom: 5px;">#study-coordinations-qa-support Канал по вопросам расписания ученика, ТТ, TRM, автоподбора и ручного подбора</p>
 
 				</div>
 				<div id="billingqasrvdskoptions" style="display: none; margin-left:20px;">
-					<p style="color:bisque;font-size:18px;position:relative; width:95%;">#billing-qa-support; Канал для рассмотрения причины расхождений баланса учеников</p>
+					<p style="color:bisque;font-size:18px;position:relative; width:95%;margin-top: 5px;margin-bottom: 5px;">#billing-qa-support; Канал для рассмотрения причины расхождений баланса учеников</p>
 
 				</div>
 				<div id="c1srvdskoptions" style="display: none; margin-left:20px;">
-					<p style="color:bisque;font-size:18px;position:relative; width:95%;">#c1-support; Поддержка витрины оплаты (Не виджет оплаты в pcs), Onboarding (Kids&Adult), Scoring, AutoIntroLesson (АвтоВУ)</p>
+					<p style="color:bisque;font-size:18px;position:relative; width:95%;margin-top: 5px;margin-bottom: 5px;">#c1-support; Поддержка витрины оплаты (Не виджет оплаты в pcs), Onboarding (Kids&Adult), Scoring, AutoIntroLesson (АвтоВУ)</p>
 
 				</div>
 				<div id="billingsrvdskoptions" style="display: none; margin-left:20px;">
-					<p style="color:bisque;font-size:18px;position:relative; top:7px; left:180px; width:95%;">#billing</p>
+					<p style="color:bisque;font-size:18px;position:relative; top:7px; left:180px; width:95%;margin-top: 5px;margin-bottom: 5px;">#billing</p>
 
 				</div>
 				
 				<div id="vimbugsoptions" style="display: none; margin-left:20px;">
-					<p style="color:bisque;font-size:18px;position:relative; width:95%;">#vim-bugs; Проблемы с Vimbox/Smartroom</p>
+					<p style="color:bisque;font-size:18px;position:relative; width:95%;margin-top: 5px;margin-bottom: 5px;">#vim-bugs; Проблемы с Vimbox/Smartroom</p>
 
 				</div>				
 				<div id="edumodeloptions" style="display: none; margin-left:20px;">
-					<p style="color:bisque;font-size:18px;position:relative; width:95%;">#smart-learning-qa-support: Канал для обращений по функционалу Educational Model</p>
+					<p style="color:bisque;font-size:18px;position:relative; width:95%;margin-top: 5px;margin-bottom: 5px;">#smart-learning-qa-support: Канал для обращений по функционалу Educational Model</p>
 
 				</div>
 				<div id="vimvidoptions" style="display: none; margin-left:20px;">
-					<p style="color:bisque;font-size:18px;position:relative; width:95%;">#vim-video-call; Разработка модуля видеосвязи</p>
+					<p style="color:bisque;font-size:18px;position:relative; width:95%;margin-top: 5px;margin-bottom: 5px;">#vim-video-call; Разработка модуля видеосвязи</p>
 
 				</div>
                 <div id="chatqaoptions" style="display: none; margin-left:20px;">
-					<p style="color:bisque; font-size:18px; position:relative; width:95%;">#chat-qa-support; Решают проблемы с чатами в ЛКП и ЛКУ</p>
+					<p style="color:bisque; font-size:18px; position:relative; width:95%;margin-top: 5px;margin-bottom: 5px;">#chat-qa-support; Решают проблемы с чатами в ЛКП и ЛКУ</p>
 
                 </div>
 				<div id="tripwireoptions" style="display: none; margin-left:20px;">
-					<p style="color:bisque;font-size:18px;position:relative; width:95%;">#eco-tripwire-bugs; Life, Talks, РК adults, расширение переводчик для браузера</p>
+					<p style="color:bisque;font-size:18px;position:relative; width:95%;margin-top: 5px;margin-bottom: 5px;">#eco-tripwire-bugs; Life, Talks, РК adults, расширение переводчик для браузера</p>
 
 				</div>
 				<div id="analystoptions" style="display: none; margin-left:20px;">
-					<p style="color:bisque;font-size:18px;position:relative; width:95%;">#analysts-gm-tl; канал МЕРТВЫЙ НЕ ИСПОЛЬЗУЕМ В РАБОТЕ, ЭТО НЕ ШУТКА!, ТОЛЬКО ДЛЯ ТЕСТИРОВАНИЯ!</p>
+					<p style="color:bisque;font-size:18px;position:relative; width:95%;margin-top: 5px;margin-bottom: 5px;">#analysts-gm-tl; канал МЕРТВЫЙ НЕ ИСПОЛЬЗУЕМ В РАБОТЕ, ЭТО НЕ ШУТКА!, ТОЛЬКО ДЛЯ ТЕСТИРОВАНИЯ!</p>
 
 				</div>
 				<div id="mobbugsoptions" style="display: none; margin-left:20px;">
-					<p style="color:bisque;font-size:18px;position:relative; width:95%;">#mobile-bugs; Канал обработки обращений по мобильному приложению Skyeng и Teachers.</p>
+					<p style="color:bisque;font-size:18px;position:relative; width:95%;margin-top: 5px;margin-bottom: 5px;">#mobile-bugs; Канал обработки обращений по мобильному приложению Skyeng и Teachers.</p>
 
 				</div>
 
 				<div id="academymobbugsoptions" style="display: none; margin-left:20px;">
-					<p style="color:bisque;font-size:18px;position:relative; width:95%;">#academic-mobile-bugs; Канал обработки обращений по МП Skyeng связанных с обучением.</p>
+					<p style="color:bisque;font-size:18px;position:relative; width:95%;margin-top: 5px;margin-bottom: 5px;">#academic-mobile-bugs; Канал обработки обращений по МП Skyeng связанных с обучением.</p>
 
 				</div>
 
                 <div id="studcaboptions" style="display: none; margin-left:20px;">
-					<p style="color:bisque;font-size:18px;position:relative; width:95%;">#student-cabinet-bugs; Сообщаем о проблемах во взрослом и детском ЛКУ (страницы на домене student.skyeng.ru)</p>
+					<p style="color:bisque;font-size:18px;position:relative; width:95%;margin-top: 5px;margin-bottom: 5px;">#student-cabinet-bugs; Сообщаем о проблемах во взрослом и детском ЛКУ (страницы на домене student.skyeng.ru)</p>
 
                 </div>
-				
-				<div id="testsoptions" style="display: none; margin-left:20px;">
-					<p style="color:bisque;font-size:18px;position:relative; width:95%;">Просто проверчка все хорошо здоврья вам, счастья вамЮ добра вам!</p>
-
-				</div>
-				
+								
 				<div id="buttonsfromtest" style="margin-left: 2%; margin-bottom: 5px; max-height: 200px; overflow-x: hidden; overflow-y: auto;">
 				</div>
 
