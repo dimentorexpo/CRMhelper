@@ -11,7 +11,6 @@ var win_smartroomform =  // описание элементов окна Мул�
                         </div>
 
                         <div style="margin: 5px; margin-top: 0px; width: 410px" id="smartroom_form_menu">
-
 							<label style="color:#c4ffd3; padding:5px; font-weight: 500;">Тип клиента</label>
 							<br>
 							<div style="margin-top:5px; color:bisque;" id = "smartroomuser">
