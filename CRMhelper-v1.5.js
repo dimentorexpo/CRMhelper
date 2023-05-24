@@ -173,7 +173,7 @@ document.getElementById('idmymenucrm').append(jirasearchbtn)
 //конец обьявления
 
 let ServiceDeskcrmbtn = document.createElement('div')
-ServiceDeskcrmbtn.innerText = "🛠ServiceDesk"
+ServiceDeskcrmbtn.innerText = "🛠 Service Desk"
 ServiceDeskcrmbtn.id = "SrvDskCRMbtn"
 document.getElementById('idmymenucrm').append(ServiceDeskcrmbtn)
 
