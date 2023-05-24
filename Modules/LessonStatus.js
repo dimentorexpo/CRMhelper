@@ -8,12 +8,12 @@ var win_LessonStatus =  // описание элементов окна стат
                         </div>
 						<div style="margin: 5px; width: 550px">
 								 <span class="spanCRM" style="color:bisque; float:center; margin-top:5px; margin-left:10px;">Начальная дата<input class="inputCRM" type="date" style="color:black; margin-left:20px; width:125px;" name="StartDataLS" id="dateFromLS"></span>
-                                 <input class="inputCRM" id="idteacherforsearch" placeholder="Teacher ID" title="Введите ID учителя, чтобы проверить информацию по урокам" autocomplete="off" type="text" style="position:relative; left:33%; text-align: center; width: 100px; color: black;margin-left:5px"">
-                                 <input class="inputCRM" id="idstudentforsearch" placeholder="Student ID" title="Введите ID ученика, чтобы отфильтровать поиск" autocomplete="off" type="text" style="position:relative; left:32%; text-align: center; width: 100px; color: black;margin-left:5px"">
+                                 <input class="inputCRM" id="idteacherforsearch" placeholder="Teacher ID" title="Введите ID учителя, чтобы проверить информацию по урокам" autocomplete="off" type="text" style=" text-align: center; width: 100px; color: black;margin-left:20px"">
+                                 <input class="inputCRM" id="idstudentforsearch" placeholder="Student ID" title="Введите ID ученика, чтобы отфильтровать поиск" autocomplete="off" type="text" style="text-align: center; width: 100px; color: black;margin-left:5px"">
                         </div>
 						<div style="margin: 5px; width: 550px">
                             <span class="spanCRM" style="color:bisque; float:center; margin-top:5px; margin-left:10px;">Конечная дата<input class="inputCRM" type="date" style="color:black; margin-left:30px; width:125px;" name="EndDataLS" id="dateToLS"</span>
-                            <button class="btnCRM" title="Запускает процесс поиска информации по статусам урока (отменен, перенесен, удален)" id="startlookstatus" style="margin-left:15px;">Получить инфо об уроках</button>
+                            <button class="btnCRM" title="Запускает процесс поиска информации по статусам урока (отменен, перенесен, удален)" id="startlookstatus" style="margin-left:40px;">Получить инфо об уроках</button>
 						</div>
 				</span>
 						<div>
