@@ -21,6 +21,7 @@ function startlisteneraht() {
         var TaskahtBtn = takeTaskBtnlist[13];
         TaskahtBtn.addEventListener("click", startahttimer);
         clearInterval(ahtstartchecklistener)
+        ahtstartchecklistener = '' // отслеживаю прекращение листенера
       }
     }
 }
