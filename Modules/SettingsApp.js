@@ -13,10 +13,10 @@ var win_SettingsApp =  // описание элементов главного �
 					<input id="audioCRMswitcher" type="checkbox" checked="">
 						<span class="checkbox-audio-switch-CRM"></span>
 				</label>
-                <input class="inputCRM" id="sound_adrCRM" placeholder="Введи адрес звука" autocomplete="off" type="text" style="display: none; text-align: center; width: 225px; color: black;">
-				<button class="btnCRM btnCRMsmall" title="Сохраняет ссылки на новый источник звука для входящего запроса" id="sound_saveCRM" style="display: none">💾</button>
+                <input class="inputCRM" id="sound_adrCRM" placeholder="Введи адрес звука" autocomplete="off" type="text" style="display: none; text-align: center; width: 225px; color: black; margin-top: 5px;">
+				<button class="btnCRM btnCRMsmall" title="Сохраняет ссылки на новый источник звука для входящего запроса" id="sound_saveCRM" style="display: none; margin-top: 5px;">💾</button>
 				<br>
-				<span class="spanCRM" style="color:bisque">Громкость звука</span>
+				<span class="spanCRM" style="color:bisque; margin-top: 5px;">Громкость звука</span>
 				<input id="rangeCRM" min="0" max="1" value="1.0" step="0.1" type="range">
                     <br>
 				<label class="spanCRM" style="color:bisque"><input type="checkbox" onchange="changerepeatsoundCRM()" id="repeatsoundselectCRM">Повторять звук новой задачи</label>
