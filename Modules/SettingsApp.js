@@ -14,7 +14,7 @@ var win_SettingsApp =  // описание элементов главного �
 						<span class="checkbox-audio-switch-CRM"></span>
 				</label>
                 <input class="inputCRM" id="sound_adrCRM" placeholder="Введи адрес звука" autocomplete="off" type="text" style="display: none; text-align: center; width: 235px; color: black; margin-top: 5px;">
-				<button class="btnCRM btnCRMsmall" title="Сохраняет ссылки на новый источник звука для входящего запроса" id="sound_saveCRM" style="display: none; margin-top: 5px;">💾</button>
+				<button class="btnCRM btnCRMsmall" title="Сохраняет ссылки на новый источник звука для входящего запроса" id="sound_saveCRM" style="display: none;">💾</button>
 				<br>
 				<span class="spanCRM" style="color:bisque; margin-top: 5px;">Громкость звука</span>
 				<input id="rangeCRM" min="0" max="1" value="1.0" step="0.1" type="range">
