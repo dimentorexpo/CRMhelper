@@ -169,12 +169,14 @@ if (document.querySelector('crm-container') != null) {
 let jirasearchbtn = document.createElement('div')
 jirasearchbtn.innerText = "🔎Jira search"
 jirasearchbtn.id = "jirafinder"
+jirasearchbtn.classList.add('menubtnsCRM')
 document.getElementById('idmymenucrm').append(jirasearchbtn)
 //конец обьявления
 
 let ServiceDeskcrmbtn = document.createElement('div')
 ServiceDeskcrmbtn.innerText = "🛠 Service Desk"
 ServiceDeskcrmbtn.id = "SrvDskCRMbtn"
+ServiceDeskcrmbtn.classList.add('menubtnsCRM')
 document.getElementById('idmymenucrm').append(ServiceDeskcrmbtn)
 
 include("https://dimentorexpo.github.io/CRMhelper/Modules/ServiceDesk.js")
@@ -182,6 +184,7 @@ include("https://dimentorexpo.github.io/CRMhelper/Modules/ServiceDesk.js")
 let butsmartroomCRM = document.createElement('div') // smartroom sugest
 butsmartroomCRM.id = "smartroomformCRM"
 butsmartroomCRM.innerHTML = "🦐Smartroom"
+butsmartroomCRM.classList.add('menubtnsCRM')
 document.getElementById('idmymenucrm').append(butsmartroomCRM)
 
 include("https://dimentorexpo.github.io/CRMhelper/Modules/Smartroom.js")
@@ -189,6 +192,7 @@ include("https://dimentorexpo.github.io/CRMhelper/Modules/Smartroom.js")
 let butLessonInfoCRM = document.createElement('div')
 butLessonInfoCRM.id = "butLessonInfoCRM"
 butLessonInfoCRM.innerHTML = "🎓 Lesson Info"
+butLessonInfoCRM.classList.add('menubtnsCRM')
 document.getElementById('idmymenucrm').append(butLessonInfoCRM)
 
 include("https://dimentorexpo.github.io/CRMhelper/Modules/LessonStatus.js")
@@ -196,7 +200,7 @@ include("https://dimentorexpo.github.io/CRMhelper/Modules/LessonStatus.js")
 let butdiagtoolsCRM = document.createElement('div')
 butdiagtoolsCRM.id = "butdiagtoolsCRM"
 butdiagtoolsCRM.innerHTML = "🛠 Diagnostic tools"
-
+butdiagtoolsCRM.classList.add('menubtnsCRM')
 document.getElementById('idmymenucrm').append(butdiagtoolsCRM)
 
 include("https://dimentorexpo.github.io/CRMhelper/Modules/Linksdostup.js")
@@ -204,7 +208,7 @@ include("https://dimentorexpo.github.io/CRMhelper/Modules/Linksdostup.js")
 let butOperStatus = document.createElement('div')
 butOperStatus.id = "btnOperStatus"
 butOperStatus.innerHTML = "🕵️‍♀️ OperStatus"
-
+butOperStatus.classList.add('menubtnsCRM')
 document.getElementById('idmymenucrm').append(butOperStatus)
 
 include("https://dimentorexpo.github.io/CRMhelper/Modules/OperatorStatuse.js")
@@ -212,7 +216,7 @@ include("https://dimentorexpo.github.io/CRMhelper/Modules/OperatorStatuse.js")
 let butCreateTestRoom = document.createElement('div')
 butCreateTestRoom.id = "btnCreateTestRoom"
 butCreateTestRoom.innerHTML = "🎲 Create Test Room"
-
+butCreateTestRoom.classList.add('menubtnsCRM')
 document.getElementById('idmymenucrm').append(butCreateTestRoom)
 
 include("https://dimentorexpo.github.io/CRMhelper/Modules/TestRooms.js")
@@ -220,7 +224,7 @@ include("https://dimentorexpo.github.io/CRMhelper/Modules/TestRooms.js")
 let butAlarmclock = document.createElement('div')
 butAlarmclock.id = "btnAlarmclock"
 butAlarmclock.innerHTML = "🔕Reminder"
-
+butAlarmclock.classList.add('menubtnsCRM')
 document.getElementById('idmymenucrm').append(butAlarmclock)
 
 include("https://dimentorexpo.github.io/CRMhelper/Modules/AlarmClock.js")
@@ -228,7 +232,7 @@ include("https://dimentorexpo.github.io/CRMhelper/Modules/AlarmClock.js")
 let butSettingsApp = document.createElement('div')
 butSettingsApp.id = "btnSettingsApp"
 butSettingsApp.innerHTML = "⚙ Settings"
-
+butSettingsApp.classList.add('menubtnsCRM')
 document.getElementById('idmymenucrm').append(butSettingsApp)
 
 include("https://dimentorexpo.github.io/CRMhelper/Modules/SettingsApp.js")
