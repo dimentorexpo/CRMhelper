@@ -25,6 +25,7 @@ const buttonsCRM = [ //array of buttonsnames
     '.authbtn',
     '.crm2sbtn',
     '.billbtn',
+    '.mrktbillbtn',
     '.vimbugsbtn',
     '.vimvidsbtn',
     '.studcabbtn',
@@ -44,6 +45,7 @@ const otherOptionsCRM = [ // array of buttons categories id's
     'billingqasrvdskoptions',
     'c1srvdskoptions',
     'billingsrvdskoptions',
+    'mrktbillrvdskoptions',
     'vimbugsoptions',
     'vimvidoptions',
     'studcaboptions',
@@ -80,6 +82,7 @@ var win_servicedesk = // описание элементов окна Service De
                     <button class="sdbtn btnCRM" id="optionBillingQA" value="22">💲Billing-QA</button>
                     <button class="sdbtn btnCRM" id="optionOnboarding" value="23">♻Onboard</button>
                     <button class="sdbtn btnCRM" id="optionBilling"  value="21">💰Billing</button>
+                    <button class="sdbtn btnCRM" id="optionMrktbill"  value="23">📈Mrkt-Bill</button>
                     <button class="sdbtn btnCRM" id="optionVimbugs" value="38">🐞Vim-bug</button>
                     <button class="sdbtn btnCRM" id="optionVimvideocall" value="39">📸Vid-call</button>
                     <button class="sdbtn btnCRM" id="optionStudcab" value="34">👨‍🎓Studcab</button>
