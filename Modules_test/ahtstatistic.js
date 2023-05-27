@@ -1,5 +1,6 @@
 let takeTaskahtBtn;
 let butahttimer = document.createElement('div')
+butahttimer.style.width = "30px"
 butahttimer.id = "ahttimercrm"
 butahttimer.innerText = "00 : 00"
 butahttimer.title = "Таймер aht"
