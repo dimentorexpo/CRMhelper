@@ -4,11 +4,11 @@ butahttimer.id = "ahttimercrm"
 butahttimer.innerText = "00 : 00"
 butahttimer.title = "Таймер aht"
 
-let CRMlogo = document.getElementsByClassName('logo');
+let CRMlogo = document.getElementsByClassName('logo')[0];
 window.addEventListener("load", function() {
     if (ahtshowcrm == 1){
-        CRMlogo[0].style = "widht:150px"
-        CRMlogo[0].appendChild(butahttimer)
+        CRMlogo.style.widht = "150px"
+        CRMlogo.appendChild(butahttimer)
     }
 });
 
