@@ -154,7 +154,7 @@ getText() //вызов функции получающей текст из гу�
 
 let menubarcrm = document.createElement('div')
 menubarcrm.classList.add('menubarcrm')
-menubarcrm.style = `display:none;`
+menubarcrm.style.display = "none"
 menubarcrm.id = 'idmymenucrm'
 
 document.body.append(menubarcrm)
