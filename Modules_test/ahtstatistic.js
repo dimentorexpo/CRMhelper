@@ -1,10 +1,8 @@
 let takeTaskahtBtn;
-let butahttimer = document.createElement('button')
+let butahttimer = document.createElement('div')
 butahttimer.id = "ahttimercrm"
-butahttimer.classList.add('btnCRM')
 butahttimer.innerText = "00 : 00"
 butahttimer.title = "Таймер aht"
-butahttimer.style.color = "lightgreen"
 
 let CRMlogo = document.getElementsByClassName('logo');
 if (ahtshowcrm == 1){
