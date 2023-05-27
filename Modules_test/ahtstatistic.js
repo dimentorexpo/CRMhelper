@@ -20,12 +20,15 @@ function startlisteneraht() {
       if (takeTaskBtnlist[13] && takeTaskBtnlist[13].innerText == 'Взять новую задачу') {
         var TaskahtBtn = takeTaskBtnlist[13];
         TaskahtBtn.addEventListener("click", startahttimer);
+        clearInterval(ahtstartchecklistener)
       }
     }
-  }
+}
   
-  function startahttimer() {
+function startahttimer() {
     if (document.getElementsByClassName('mat-button-disabled').length === 0) {
-      console.log('КЛИК');
+        console.log('КЛИК');
     }
-  }
+}
+
+var ahtstartchecklistener = setInterval(startlisteneraht, 1000);
