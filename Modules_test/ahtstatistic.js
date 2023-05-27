@@ -18,12 +18,15 @@ window.addEventListener("load", function() {
 function startlisteneraht(){
     takeTaskahtBtn = document.getElementsByClassName('mat-button-wrapper');
     if (window.location.href.indexOf('https://crm2.skyeng.ru/customer-support/start') !== -1 && takeTaskahtBtn.length > 0) {
-        if (document.getElementsByClassName('mat-button-disabled').length == 0 && takeTaskahtBtn[13] && takeTaskahtBtn[13].innerText == 'Взять новую задачу') {
+        if (takeTaskahtBtn[13] && takeTaskahtBtn[13].innerText == 'Взять новую задачу') {
             takeTaskahtBtn[13].addEventListener("click", startahttimer())    
         }
     }
 }
 
 function startahttimer(){
-    console.log('КЛИК')
+    if (document.getElementsByClassName('mat-button-disabled').length == 0){
+        console.log('КЛИК')
+    }
+    
 }
