@@ -19,7 +19,13 @@ function startlisteneraht() {
     if (window.location.href.indexOf('https://crm2.skyeng.ru/customer-support/start') !== -1 && takeTaskBtnlist.length > 0) {
       if (takeTaskBtnlist[13] && takeTaskBtnlist[13].innerText == 'Взять новую задачу') {
         var TaskahtBtn = takeTaskBtnlist[13];
-        TaskahtBtn.addEventListener("click", startahttimer);
+        TaskahtBtn.addEventListener("click", function() {
+            if (document.getElementsByClassName('mat-button-disabled').length === 0) {
+                console.log('КЛИК');
+                startahttimer()
+            }
+            console.log("Клик по элементу");
+          });
         clearInterval(ahtstartchecklistener)
         ahtstartchecklistener = '' // отслеживаю прекращение листенера
       }
@@ -27,9 +33,7 @@ function startlisteneraht() {
 }
   
 function startahttimer() {
-    if (document.getElementsByClassName('mat-button-disabled').length === 0) {
-        console.log('КЛИК');
-    }
+    console.log('КЛАК');
 }
 
 var ahtstartchecklistener = setInterval(startlisteneraht, 1000);
