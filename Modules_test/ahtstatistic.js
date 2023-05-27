@@ -12,7 +12,6 @@ window.addEventListener("load", function() {
             CRMlogo[0].appendChild(butahttimer)
         }  
     }, 1000);
-    
 });
 
 function startlisteneraht(){
