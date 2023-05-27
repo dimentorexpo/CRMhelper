@@ -1,7 +1,7 @@
 let butahttimer = document.createElement('button')
 butahttimer.id = "ahttimercrm"
-butAlarmclock.classList.add('btnCRM')
-butAlarmclock.innerText = "00 : 00"
+butahttimer.classList.add('btnCRM')
+butahttimer.innerText = "00 : 00"
 butahttimer.title = "Таймер aht"
 butahttimer.style.color = "lightgreen"
 
