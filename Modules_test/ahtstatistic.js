@@ -7,6 +7,6 @@ butahttimer.style.color = "lightgreen"
 
 let CRMlogo = document.getElementsByClassName('logo');
 if (ahtshowcrm == 1){
-    CRMlogo[0].style = "widht:150px"
+//    CRMlogo[0].style = "widht:150px"
     CRMlogo[0].appendChild(butahttimer)
 }
