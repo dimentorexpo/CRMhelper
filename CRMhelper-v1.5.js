@@ -119,7 +119,7 @@ include("https://dimentorexpo.github.io/CRMhelper/Modules/JiraSearch.js")
 let upmenubtn = document.createElement('span')
 upmenubtn.innerText = "Меню"
 upmenubtn.id = 'MenubarCRM'
-upmenubtn.classList.add('MenubarbtnCRM')
+upmenubtn.style="cursor:pointer;font-weight:500; text-shadow: 1px 0 1px #000, 0 1px 1px #000, -1px 0 1px #000, 0 -1px 1px #000; border: 1px solid black; padding: 8px; background: #5083ff; border-radius:18px"
 //конец обьявления кнопки
 
 function initialize() { //функция инициализации кнопки меню в верхней области CRM
@@ -153,8 +153,7 @@ var init = setInterval(initialize, 3000) //заносим в переменну�
 getText() //вызов функции получающей текст из гугл таблицы страницы Версии приложений
 
 let menubarcrm = document.createElement('div')
-menubarcrm.classList.add('menubarcrm')
-menubarcrm.style.display = "none"
+menubarcrm.style = `background: white; position:absolute; left: 950px; top: 50px; border: 0px solid #000000; display:none; min-height: 60px; min-width:170px; box-shadow: -1px 4px 16px 7px rgba(34, 60, 80, 0.09); z-index:999;`
 menubarcrm.id = 'idmymenucrm'
 
 document.body.append(menubarcrm)
