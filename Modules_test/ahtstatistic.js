@@ -6,14 +6,17 @@ butahttimer.title = "Таймер aht"
 
 let CRMlogo = document.getElementsByClassName('logo');
 window.addEventListener("load", function() {
-    if (ahtshowcrm == 1){
-        CRMlogo[0].style.widht = '150px'
-        CRMlogo[0].appendChild(butahttimer)
-    }
+    setTimeout(() => {
+        if (ahtshowcrm == 1){
+            CRMlogo[0].style.widht = '150px'
+            CRMlogo[0].appendChild(butahttimer)
+        }  
+    }, 1000);
+    
 });
 
 document.addEventListener("DOMContentLoaded", function() {
-    if (window.location.href.indexOf('https://crm2.skyeng.ru/customer-support/start') !== -1) {
+    if (window.location.pathname === "/customer-support/start") {
         console.log("Открыли")
     }
 });
