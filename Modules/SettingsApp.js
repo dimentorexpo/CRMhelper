@@ -1,10 +1,10 @@
 var win_SettingsApp =  // описание элементов главного окна
     `<div style="border: 2px double black; background-color: #464451" id="SettingsApp_bar">
-        <div style="margin: 5px; width: 380px;" id="SettingsApp_1str">
+        <div style="margin: 5px; width: 350px;" id="SettingsApp_1str">
             <button class="buttonHide" title="скрывает меню" id="hideSettingsApp">hide</button>
         </div>
 		<div style="margin: 5px; width: 350px">
-                <select class="inputCRM" style="height:28px; width:210px; text-align:center" id="soundlistaddrCRM" onchange="changesoundaddrCRM()">
+                <select class="inputCRM" style="height:28px; width:242px; text-align:center" id="soundlistaddrCRM" onchange="changesoundaddrCRM()">
                     <option selected="" disabled="">Звук нового сообщения</option>
                     <option value="othersound">Выбрать свой звук</option>
                     </select>
@@ -13,7 +13,7 @@ var win_SettingsApp =  // описание элементов главного �
 					<input id="audioCRMswitcher" type="checkbox" checked="">
 						<span class="checkbox-audio-switch-CRM"></span>
 				</label>
-                <input class="inputCRM" id="sound_adrCRM" placeholder="Введи адрес звука" autocomplete="off" type="text" style="display: none; text-align: center; width: 210px; color: black;">
+                <input class="inputCRM" id="sound_adrCRM" placeholder="Введи адрес звука" autocomplete="off" type="text" style="display: none; text-align: center; width: 225px; color: black;">
 				<button class="btnCRM btnCRMsmall" title="Сохраняет ссылки на новый источник звука для входящего запроса" id="sound_saveCRM" style="display: none">💾</button>
 				<br>
 				<span class="spanCRM" style="color:bisque">Громкость звука</span>
