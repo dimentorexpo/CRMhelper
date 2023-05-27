@@ -1,5 +1,6 @@
 var soundsconteinerCRM;
 var soundintervalsetCRM = null
+var ahtshowcrm = localStorage.getItem('ahtshowcrm')
 let mystyles = document.createElement('link')
 mystyles.rel = 'stylesheet'
 mystyles.href = "https://dimentorexpo.github.io/CRMhelper/CSS/styles.css" // подключаем модуль стилей 
@@ -22,6 +23,8 @@ const copyToClipboardCRM = strznach => { // функция копировани�
     document.body.removeChild(elik);
 };
 // end
+
+if (!ahtshowcrm) {localStorage.setItem('ahtshowcrm', 0)}
 
 // start logginer func
 let tokenlogCRM;
@@ -114,6 +117,9 @@ function getText() { // обьявление функции получающей
 
 include("https://dimentorexpo.github.io/CRMhelper/jquery-3.6.0.js") // подключаем модуль обработки JQuery
 include("https://dimentorexpo.github.io/CRMhelper/Modules/JiraSearch.js")
+if (ahtshowcrm == 1) {
+    include("https://dimentorexpo.github.io/CRMhelper/Modules_test/ahtstatistic.js")
+}
 
 //Объявление кнопки в верхней панели CRM
 let upmenubtn = document.createElement('span')
@@ -235,7 +241,7 @@ butSettingsApp.innerHTML = "⚙ Settings"
 butSettingsApp.classList.add('menubtnsCRM')
 document.getElementById('idmymenucrm').append(butSettingsApp)
 
-include("https://dimentorexpo.github.io/CRMhelper/Modules/SettingsApp.js")
+include("https://dimentorexpo.github.io/CRMhelper/Modules_test/SettingsApp.js")
 
 let teststudent = document.createElement('span')
 teststudent.textContent = "Тест У"
