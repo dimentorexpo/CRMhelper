@@ -119,10 +119,6 @@ var win_servicedesk = // описание элементов окна Service De
 					<p style="color:bisque;font-size:18px;position:relative; width:95%;margin-top: 5px;margin-bottom: 5px;">#billing-qa-support; Канал для рассмотрения причины расхождений баланса учеников</p>
 
 				</div>
-                <div id="mrktbillrvdskoptions" style="display: none; margin-left:20px;">
-					<p style="color:bisque;font-size:18px;position:relative; width:95%;margin-top: 5px;margin-bottom: 5px;">#mrkt-bill-questions; Канал для вопросов по промокодам, сертификатам, реферальной программе</p>
-
-				</div>
 				<div id="c1srvdskoptions" style="display: none; margin-left:20px;">
 					<p style="color:bisque;font-size:18px;position:relative; width:95%;margin-top: 5px;margin-bottom: 5px;">#c1-support; Поддержка витрины оплаты (Не виджет оплаты в pcs), Onboarding (Kids&Adult), Scoring, AutoIntroLesson (АвтоВУ)</p>
 
@@ -131,7 +127,10 @@ var win_servicedesk = // описание элементов окна Service De
 					<p style="color:bisque;font-size:18px;position:relative; top:7px; width:95%;margin-top: 5px;margin-bottom: 5px;">#billing</p>
 
 				</div>
-				
+                <div id="mrktbillrvdskoptions" style="display: none; margin-left:20px;">
+                    <p style="color:bisque;font-size:18px;position:relative; width:95%;margin-top: 5px;margin-bottom: 5px;">#mrkt-bill-questions; Канал для вопросов по промокодам, сертификатам, реферальной программе</p>
+
+                </div>
 				<div id="vimbugsoptions" style="display: none; margin-left:20px;">
 					<p style="color:bisque;font-size:18px;position:relative; width:95%;margin-top: 5px;margin-bottom: 5px;">#vim-bugs; Проблемы с Vimbox/Smartroom</p>
 
