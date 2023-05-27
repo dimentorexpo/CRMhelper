@@ -1,4 +1,4 @@
-let takeTaskahtBtn;
+let takeTaskBtnlist;
 let butahttimer = document.createElement('button')
 butahttimer.id = "ahttimercrm"
 butahttimer.innerText = "00 : 00"
@@ -15,10 +15,11 @@ window.addEventListener("load", function() {
 });
 
 function startlisteneraht(){
-    takeTaskahtBtn = document.getElementsByClassName('mat-button-wrapper');
-    if (window.location.href.indexOf('https://crm2.skyeng.ru/customer-support/start') !== -1 && takeTaskahtBtn.length > 0) {
-        if (takeTaskahtBtn[13] && takeTaskahtBtn[13].innerText == 'Взять новую задачу') {
-            takeTaskahtBtn[13].addEventListener("click", startahttimer())    
+    takeTaskBtnlist = document.getElementsByClassName('mat-button-wrapper');
+    if (window.location.href.indexOf('https://crm2.skyeng.ru/customer-support/start') !== -1 && takeTaskBtnlist.length > 0) {
+        if (takeTaskBtnlist[13] && takeTaskBtnlist[13].innerText == 'Взять новую задачу') {
+            let TaskahtBtn = takeTaskBtnlist[13]
+            TaskahtBtn.addEventListener("click", startahttimer())    
         }
     }
 }
