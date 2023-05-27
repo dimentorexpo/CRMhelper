@@ -117,9 +117,7 @@ function getText() { // обьявление функции получающей
 
 include("https://dimentorexpo.github.io/CRMhelper/jquery-3.6.0.js") // подключаем модуль обработки JQuery
 include("https://dimentorexpo.github.io/CRMhelper/Modules/JiraSearch.js")
-if (ahtshowcrm == 1) {
-    include("https://dimentorexpo.github.io/CRMhelper/Modules_test/ahtstatistic.js")
-}
+include("https://dimentorexpo.github.io/CRMhelper/Modules_test/ahtstatistic.js")
 
 //Объявление кнопки в верхней панели CRM
 let upmenubtn = document.createElement('span')

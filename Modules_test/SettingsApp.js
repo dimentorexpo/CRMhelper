@@ -19,13 +19,13 @@ var win_SettingsApp =  // описание элементов главного �
 				<span class="spanCRM" style="color:bisque; margin-top: 5px;">Громкость звука</span>
 				<input id="rangeCRM" min="0" max="1" value="1.0" step="0.1" type="range">
                     <br>
-				<label class="spanCRM" style="color:bisque"><input type="checkbox" onchange="changerepeatsoundCRM()" id="repeatsoundselectCRM">Повторять звук новой задачи</label>
+				<label class="spanCRM" style="color:bisque"><input type="checkbox" onchange="changerepeatsoundCRM()" id="repeatsoundselectCRM" style="margin-top: 5px;">Повторять звук новой задачи</label>
                     <br>
 				<span class="spanCRM" style="color:bisque">Интервал воспроизведения звука:</span>
 				<input class="inputCRM" title="Ввод интервала в секундах между повторами звука нового чата" id="soundplayintervalCRM" placeholder="N" autocomplete="off" oninput="maxLengthCheck(this)" type="number" maxlength="2" min="0" max="59" style="text-align: center; margin-top: 5px; width: 50px; color: black;">
 				<button class="btnCRM" title="Внести изменения в интервал между повторами звука нового чата" id="setsoundplayintervalCRM" style="margin-top: 5px">SET⌚</button>
 					<br>
-                <label class="spanCRM" style="color:bisque"><input type="checkbox" onchange="changeahtshowcrm()" id="ahtshowcrm">Отображать статистику и таймер aht</label>
+                <label class="spanCRM" style="color:bisque"><input type="checkbox" onchange="changeahtshowcrm()" id="ahtshowcrm" style="margin-top: 5px;">Отображать статистику и таймер aht</label>
 				<div style="margin-top: 5px; width: 350px">
                     <input class="inputCRM" id="test_stdCRM" placeholder="ID тест У" autocomplete="off" title = "ID личного тестового ученика" type="text" style="text-align: center; width: 130px; color: black;">
                     <button class="btnCRM btnCRMsmall" id="setteststdCRM" title="Добавить в localstorage ID тестового У" style="margin-top: 5px">💾</button>
