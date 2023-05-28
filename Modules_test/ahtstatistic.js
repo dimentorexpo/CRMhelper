@@ -16,16 +16,20 @@ window.addEventListener("load", function() {
 
 var TaskahtBtn;
 function listener_for_start_aht() {
+    console.log('Начинаю поиск кнопки')
     var takeTaskBtnlist = document.getElementsByClassName('mat-button-wrapper');
     if (window.location.href.indexOf('https://crm2.skyeng.ru/customer-support/start') !== -1 && takeTaskBtnlist.length > 0) {
+        console.log('Нужная страница')
       if (takeTaskBtnlist[13] && takeTaskBtnlist[13].innerText == 'Взять новую задачу') {
         var TaskahtBtn = takeTaskBtnlist[13].parentNode;
+        console.log('Нашел кнопку')
         TaskahtBtn.addEventListener("click", function() {
             if (!TaskahtBtn.classList.contains('mat-button-disabled')) {
-                startahttimer()
+                startahttimer();
+                console.log('Клик по кнопке');
             }
           });
-        clearInterval(ahtstartchecklistener)
+        clearInterval(ahtstartchecklistener);
       }
     }
 }
@@ -51,14 +55,19 @@ function listener_for_stop_aht() {
 }
 
 function startahttimer() {
+    console.log('Начинаю запуск таймера');
     var datetask = new Date();
     var taskminutes = datetask.getMinutes().toString().padStart(2, '0');
     var taskseconds = datetask.getSeconds().toString().padStart(2, '0');
   
     localStorage.setItem('opintask', true);
+    console.log(localStorage.getItem('opintask'))
     localStorage.setItem('taskminutes', taskminutes);
+    console.log(localStorage.getItem('taskminutes'));
     localStorage.setItem('taskseconds', taskseconds);
+    console.log(localStorage.getItem('taskminutes'));
     setTimeout(listener_for_stop_aht, 5000);
+    console.log('Запрос на поиск кнопки выполнить');
 }
 
 function stopahttimer() {
