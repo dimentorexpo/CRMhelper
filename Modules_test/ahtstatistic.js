@@ -5,7 +5,6 @@ butahttimer.title = "Таймер aht"
 
 let CRMlogo;
 window.addEventListener("load", function() {
-    console.log(window.location.href);
     CRMlogo = document.getElementsByClassName('logo');
     setTimeout(function() {
         if (ahtshowcrm == 1){
@@ -13,6 +12,10 @@ window.addEventListener("load", function() {
             CRMlogo[0].appendChild(butahttimer)
         }  
     }, 1000);
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    console.log(window.location.href);
 });
 
 function listener_for_start_aht() {
