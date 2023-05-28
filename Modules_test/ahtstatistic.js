@@ -30,7 +30,6 @@ function startlisteneraht() {
 }
 var ahtstartchecklistener = setInterval(startlisteneraht, 1000);
 
-var timerisstarted;
 function startahttimer() {
     var datetask = new Date();
     var taskhours = datetask.getHours().toString().padStart(2, '0');
@@ -40,32 +39,35 @@ function startahttimer() {
     localStorage.setItem('opintask', true);
     localStorage.setItem('taskminutes', taskminutes);
     localStorage.setItem('taskseconds', taskseconds);
-    timerisstarted = setInterval(CRM_aht_timer_on_javascript, 1000);
 }
 
-
+var ahttimesetis;
 function CRM_aht_timer_on_javascript() { // таймер c момента взятия задачи
     var data = new Date();
     var minutes = data.getMinutes();
     var seconds = data.getSeconds();
-    
-    var taskMinutes = parseInt(localStorage.getItem('taskminutes'));
-    var taskSeconds = parseInt(localStorage.getItem('taskseconds'));
-        
-    var elapsedMinutes = minutes - taskMinutes;
-    var elapsedSeconds = seconds - taskSeconds;
-        
-    if (elapsedMinutes < 0) {
-        elapsedMinutes += 60;
+    if (localStorage.getItem('opintask') ==='true'){
+        var taskMinutes = parseInt(localStorage.getItem('taskminutes'));
+        var taskSeconds = parseInt(localStorage.getItem('taskseconds'));
+            
+        var elapsedMinutes = minutes - taskMinutes;
+        var elapsedSeconds = seconds - taskSeconds;
+            
+        if (elapsedMinutes < 0) {
+            elapsedMinutes += 60;
+        }
+        if (elapsedSeconds < 0) {
+            elapsedSeconds += 60;
+            elapsedMinutes -= 1;
+        }
+            
+        ahttimesetis = formatTime(elapsedMinutes, elapsedSeconds);
+    } else {
+        ahttimesetis = "00" + " : " + "00";
     }
-    if (elapsedSeconds < 0) {
-        elapsedSeconds += 60;
-        elapsedMinutes -= 1;
-    }
-        
-    var time = formatTime(elapsedMinutes, elapsedSeconds);
-    document.getElementById("ahttimercrm").innerText = time;
+    document.getElementById("ahttimercrm").innerText = ahttimesetis;
 }
+setInterval(CRM_aht_timer_on_javascript, 1000);
   
 function formatTime(minutes, seconds) {
     var formattedMinutes = minutes < 10 ? "0" + minutes : minutes.toString();
