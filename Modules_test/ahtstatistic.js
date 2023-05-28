@@ -32,7 +32,6 @@ var ahtstartchecklistener = setInterval(startlisteneraht, 1000);
 
 function startahttimer() {
     var datetask = new Date();
-    var taskhours = datetask.getHours().toString().padStart(2, '0');
     var taskminutes = datetask.getMinutes().toString().padStart(2, '0');
     var taskseconds = datetask.getSeconds().toString().padStart(2, '0');
   
@@ -41,8 +40,14 @@ function startahttimer() {
     localStorage.setItem('taskseconds', taskseconds);
 }
 
+function stopahttimer() {
+    localStorage.setItem('opintask', false);
+    localStorage.removeItem('taskminutes');
+    localStorage.removeItem('taskseconds');
+}
+
 var ahttimesetis;
-function CRM_aht_timer_on_javascript() { // таймер c момента взятия задачи
+function CRM_aht_timer() { // таймер оператор в задаче
     var data = new Date();
     var minutes = data.getMinutes();
     var seconds = data.getSeconds();
@@ -69,7 +74,7 @@ function CRM_aht_timer_on_javascript() { // таймер c момента взя
         document.getElementById("ahttimercrm").innerText = ahttimesetis;
     }
 }
-setInterval(CRM_aht_timer_on_javascript, 1000);
+setInterval(CRM_aht_timer, 1000);
   
 function formatTime(minutes, seconds) {
     var formattedMinutes = minutes < 10 ? "0" + minutes : minutes.toString();
