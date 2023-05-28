@@ -25,8 +25,10 @@ function listener_for_start_aht() {
         console.log('Нашел кнопку')
         TaskahtBtn.addEventListener("click", function() {
             if (!TaskahtBtn.classList.contains('mat-button-disabled')) {
-                startahttimer();
-                console.log('Клик по кнопке');
+                window.addEventListener('beforeunload', function(event) {
+                    startahttimer();
+                    console.log('Клик по кнопке');
+                });
             }
           });
         clearInterval(ahtstartchecklistener);
@@ -48,11 +50,16 @@ function listener_for_stop_aht() {
         finishbnt = finishspanbtn.parentNode;
         finishbnt.addEventListener("click", function() {
             if (!finishbnt.classList.contains('mat-button-disabled')) {
-                stopahttimer();
+                window.addEventListener('beforeunload', function(event) {
+                    stopahttimer();
+                    console.log('Клик по кнопке');
+                });                
             }
-          });
+        });
+        clearInterval(ahtstopchecklistener);
     }
 }
+var ahtstopchecklistener = setInterval(istener_for_stop_aht, 1000);
 
 function startahttimer() {
     console.log('Начинаю запуск таймера');
