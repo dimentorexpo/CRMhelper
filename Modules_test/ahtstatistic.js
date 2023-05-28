@@ -21,19 +21,57 @@ function startlisteneraht() {
         var TaskahtBtn = takeTaskBtnlist[13];
         TaskahtBtn.addEventListener("click", function() {
             if (document.getElementsByClassName('mat-button-disabled').length === 0) {
-                console.log('КЛИК');
                 startahttimer()
             }
-            console.log("Клик по элементу");
           });
         clearInterval(ahtstartchecklistener)
-        ahtstartchecklistener = '' // отслеживаю прекращение листенера
       }
     }
 }
-  
+var ahtstartchecklistener = setInterval(startlisteneraht, 1000);
+
 function startahttimer() {
-    console.log('КЛАК');
+    var datetask = new Date();
+    var taskhours = datetask.getHours().toString().padStart(2, '0');
+    var taskminutes = datetask.getMinutes().toString().padStart(2, '0');
+    var taskseconds = datetask.getSeconds().toString().padStart(2, '0');
+  
+    localStorage.setItem('opintask', true);
+    localStorage.setItem('taskminutes', taskminutes);
+    localStorage.setItem('taskseconds', taskseconds);
 }
 
-var ahtstartchecklistener = setInterval(startlisteneraht, 1000);
+
+function CRM_aht_timer_on_javascript() { // таймер c момента взятия задачи
+    var data = new Date();
+    var minutes = data.getMinutes();
+    var seconds = data.getSeconds();
+    var time;
+    
+    if (localStorage.getItem('opintask') === 'true'){
+        var taskMinutes = parseInt(localStorage.getItem('taskminutes'));
+        var taskSeconds = parseInt(localStorage.getItem('taskseconds'));
+        
+        var elapsedMinutes = minutes - taskMinutes;
+        var elapsedSeconds = seconds - taskSeconds;
+        
+        if (elapsedMinutes < 0) {
+        elapsedMinutes += 60;
+        }
+        if (elapsedSeconds < 0) {
+        elapsedSeconds += 60;
+        elapsedMinutes -= 1;
+        }
+        
+        time = formatTime(elapsedMinutes, elapsedSeconds);
+    } else {
+        time = "00" + " : " + "00";
+    }
+    document.getElementById("ahttimercrm").innerText = time;
+}
+  
+function formatTime(minutes, seconds) {
+    var formattedMinutes = minutes < 10 ? "0" + minutes : minutes.toString();
+    var formattedSeconds = seconds < 10 ? "0" + seconds : seconds.toString();
+    return formattedMinutes + " : " + formattedSeconds;
+}
