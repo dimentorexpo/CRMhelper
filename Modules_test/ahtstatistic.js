@@ -30,6 +30,7 @@ function startlisteneraht() {
 }
 var ahtstartchecklistener = setInterval(startlisteneraht, 1000);
 
+var timerisstarted;
 function startahttimer() {
     var datetask = new Date();
     var taskhours = datetask.getHours().toString().padStart(2, '0');
@@ -39,6 +40,7 @@ function startahttimer() {
     localStorage.setItem('opintask', true);
     localStorage.setItem('taskminutes', taskminutes);
     localStorage.setItem('taskseconds', taskseconds);
+    timerisstarted = setInterval(CRM_aht_timer_on_javascript, 1000);
 }
 
 
@@ -46,27 +48,22 @@ function CRM_aht_timer_on_javascript() { // таймер c момента взя
     var data = new Date();
     var minutes = data.getMinutes();
     var seconds = data.getSeconds();
-    var time;
     
-    if (localStorage.getItem('opintask') === 'true'){
-        var taskMinutes = parseInt(localStorage.getItem('taskminutes'));
-        var taskSeconds = parseInt(localStorage.getItem('taskseconds'));
+    var taskMinutes = parseInt(localStorage.getItem('taskminutes'));
+    var taskSeconds = parseInt(localStorage.getItem('taskseconds'));
         
-        var elapsedMinutes = minutes - taskMinutes;
-        var elapsedSeconds = seconds - taskSeconds;
+    var elapsedMinutes = minutes - taskMinutes;
+    var elapsedSeconds = seconds - taskSeconds;
         
-        if (elapsedMinutes < 0) {
+    if (elapsedMinutes < 0) {
         elapsedMinutes += 60;
-        }
-        if (elapsedSeconds < 0) {
+    }
+    if (elapsedSeconds < 0) {
         elapsedSeconds += 60;
         elapsedMinutes -= 1;
-        }
-        
-        time = formatTime(elapsedMinutes, elapsedSeconds);
-    } else {
-        time = "00" + " : " + "00";
     }
+        
+    var time = formatTime(elapsedMinutes, elapsedSeconds);
     document.getElementById("ahttimercrm").innerText = time;
 }
   
