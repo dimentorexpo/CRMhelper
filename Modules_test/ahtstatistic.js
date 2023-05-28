@@ -14,7 +14,11 @@ window.addEventListener("load", function() {
     }, 1000);
 });
 
-function startlisteneraht() {
+window.onbeforeunload = function() {
+    console.log(window.location.href);
+};
+
+function listener_for_start_aht() {
     var takeTaskBtnlist = document.getElementsByClassName('mat-button-wrapper');
     if (window.location.href.indexOf('https://crm2.skyeng.ru/customer-support/start') !== -1 && takeTaskBtnlist.length > 0) {
       if (takeTaskBtnlist[13] && takeTaskBtnlist[13].innerText == 'Взять новую задачу') {
@@ -28,7 +32,7 @@ function startlisteneraht() {
       }
     }
 }
-var ahtstartchecklistener = setInterval(startlisteneraht, 1000);
+var ahtstartchecklistener = setInterval(listener_for_start_aht, 1000);
 
 function startahttimer() {
     var datetask = new Date();
