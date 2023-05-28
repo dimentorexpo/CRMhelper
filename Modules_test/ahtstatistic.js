@@ -5,6 +5,7 @@ butahttimer.title = "Таймер aht"
 
 let CRMlogo;
 window.addEventListener("load", function() {
+    console.log(window.location.href);
     CRMlogo = document.getElementsByClassName('logo');
     setTimeout(function() {
         if (ahtshowcrm == 1){
@@ -13,10 +14,6 @@ window.addEventListener("load", function() {
         }  
     }, 1000);
 });
-
-window.onbeforeunload = function() {
-    console.log(window.location.href);
-};
 
 function listener_for_start_aht() {
     var takeTaskBtnlist = document.getElementsByClassName('mat-button-wrapper');
