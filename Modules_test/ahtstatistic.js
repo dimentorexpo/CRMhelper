@@ -65,7 +65,9 @@ function CRM_aht_timer_on_javascript() { // таймер c момента взя
     } else {
         ahttimesetis = "00" + " : " + "00";
     }
-    document.getElementById("ahttimercrm").innerText = ahttimesetis;
+    if (document.getElementById("ahttimercrm")){
+        document.getElementById("ahttimercrm").innerText = ahttimesetis;
+    }
 }
 setInterval(CRM_aht_timer_on_javascript, 1000);
   
