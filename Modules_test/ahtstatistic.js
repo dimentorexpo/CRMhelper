@@ -14,17 +14,14 @@ window.addEventListener("load", function() {
     }, 1000);
 });
 
-document.addEventListener("DOMContentLoaded", function() {
-    console.log(window.location.href);
-});
-
+var TaskahtBtn;
 function listener_for_start_aht() {
     var takeTaskBtnlist = document.getElementsByClassName('mat-button-wrapper');
     if (window.location.href.indexOf('https://crm2.skyeng.ru/customer-support/start') !== -1 && takeTaskBtnlist.length > 0) {
       if (takeTaskBtnlist[13] && takeTaskBtnlist[13].innerText == 'Взять новую задачу') {
-        var TaskahtBtn = takeTaskBtnlist[13];
+        var TaskahtBtn = takeTaskBtnlist[13].parentNode;
         TaskahtBtn.addEventListener("click", function() {
-            if (document.getElementsByClassName('mat-button-disabled').length === 0) {
+            if (!TaskahtBtn.classList.contains('mat-button-disabled')) {
                 startahttimer()
             }
           });
@@ -34,6 +31,25 @@ function listener_for_start_aht() {
 }
 var ahtstartchecklistener = setInterval(listener_for_start_aht, 1000);
 
+var finishspanbtn;
+var finishbnt;
+function listener_for_stop_aht() {
+    if (window.location.href.includes('customer-support/process')) {
+        var finishbtnlist = document.getElementsByClassName('mat-button-wrapper');
+        for (let index = 0; index < finishbtnlist.length; index++) {
+            if (finishbtnlist[index].innerText == "Выполнить"){
+                finishspanbtn = finishbtnlist[index];
+            }
+        }
+        finishbnt = finishspanbtn.parentNode;
+        finishbnt.addEventListener("click", function() {
+            if (!finishbnt.classList.contains('mat-button-disabled')) {
+                stopahttimer();
+            }
+          });
+    }
+}
+
 function startahttimer() {
     var datetask = new Date();
     var taskminutes = datetask.getMinutes().toString().padStart(2, '0');
@@ -42,6 +58,7 @@ function startahttimer() {
     localStorage.setItem('opintask', true);
     localStorage.setItem('taskminutes', taskminutes);
     localStorage.setItem('taskseconds', taskseconds);
+    setTimeout(listener_for_stop_aht, 5000);
 }
 
 function stopahttimer() {
