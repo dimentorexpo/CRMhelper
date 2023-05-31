@@ -23,7 +23,7 @@ window.addEventListener("load", function() { // добавление тайме�
 });
 
 function listener_for_start_aht() {
-    console.log('Начинаю поиск кнопки')
+    console.log('Начинаю поиск кнопки взятия задачи')
     if (window.location.href.includes('customer-support/start')) {
         console.log('Нужная страница')
         var Taskahtspanbtn;
@@ -40,19 +40,8 @@ function listener_for_start_aht() {
             TaskahtBtn = Taskahtspanbtn.parentNode;
             TaskahtBtn.addEventListener("click", function() {
                 if (!TaskahtBtn.classList.contains('mat-button-disabled')) {
-//                    taskbtnisclicked = 1;
-//                    console.log('Клик по кнопке');
-                    console.log('Начинаю запуск таймера');
-                    var datetask = new Date();
-                    var taskminutes = datetask.getMinutes().toString().padStart(2, '0');
-                    var taskseconds = datetask.getSeconds().toString().padStart(2, '0');
-
-                    localStorage.setItem('opintask', true);
-                    console.log(localStorage.getItem('opintask'))
-                    localStorage.setItem('taskminutes', taskminutes);
-                    console.log(localStorage.getItem('taskminutes'));
-                    localStorage.setItem('taskseconds', taskseconds);
-                    console.log(localStorage.getItem('taskminutes'));
+                    taskbtnisclicked = 1;
+                    console.log('Клик по кнопке взятия задачи');
                 }
               });
             console.log('addEventListener');
@@ -77,11 +66,8 @@ function listener_for_stop_aht() {
             finishahtbnt = finishspanbtn.parentNode;
             finishahtbnt.addEventListener("click", function() {
                 if (!finishahtbnt.classList.contains('mat-button-disabled')) {
-//                    finishahtbntisclicked = 1;
-//                    console.log('Клик по кнопке');
-                    localStorage.setItem('opintask', false);
-                    localStorage.removeItem('taskminutes');
-                    localStorage.removeItem('taskseconds');
+                    finishahtbntisclicked = 1;
+                    console.log('Клик по кнопке');
                 }
             });
             clearInterval(ahtstopchecklistener);
@@ -91,18 +77,38 @@ function listener_for_stop_aht() {
 }
 var ahtstopchecklistener = setInterval(listener_for_stop_aht, 1000);
 
-/*
+
 window.addEventListener('beforeunload', function() {
     console.log('пердвыгрузкой страницы')
     if (taskbtnisclicked == 1){
-        console.log('запрашиваю запуск таймера')
-        startahttimer()
+//        console.log('запрашиваю запуск таймера')
+//        startahttimer()
+        console.log('Начинаю запуск таймера');
+        var datetask = new Date();
+        var taskminutes = datetask.getMinutes().toString().padStart(2, '0');
+        var taskseconds = datetask.getSeconds().toString().padStart(2, '0');
+
+        localStorage.setItem('opintask', true);
+        console.log(localStorage.getItem('opintask'))
+        localStorage.setItem('taskminutes', taskminutes);
+        console.log(localStorage.getItem('taskminutes'));
+        localStorage.setItem('taskseconds', taskseconds);
+        console.log(localStorage.getItem('taskminutes'));
+
+        console.log('Таймер запущен');
     }
     if (finishahtbntisclicked == 1){
-        stopahttimer()
+//        stopahttimer()
+        console.log('Начинаю остановку таймера');
+        localStorage.setItem('opintask', false);
+        localStorage.removeItem('taskminutes');
+        localStorage.removeItem('taskseconds');
+
+        console.log('Таймер остановлен');
     }
 });
 
+/*
 function startahttimer() {
     console.log('Начинаю запуск таймера');
     var datetask = new Date();
