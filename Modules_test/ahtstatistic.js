@@ -27,14 +27,16 @@ function listener_for_start_aht() {
     if (window.location.href.includes('customer-support/start')) {
         console.log('Нужная страница')
         var Taskahtspanbtn;
+        let TaskahtBtnflag = 0;
         var takeTaskBtnlist = document.getElementsByClassName('mat-button-wrapper');
         for (let index = 0; index < takeTaskBtnlist.length; index++) {
             if (takeTaskBtnlist[index].innerText == "Взять новую задачу"){
                 Taskahtspanbtn = takeTaskBtnlist[index];
+                TaskahtBtnflag = 1;
                 console.log('Нашел кнопку')
             }
         }
-        if (!Taskahtspanbtn){
+        if (TaskahtBtnflag == 1){
             TaskahtBtn = Taskahtspanbtn.parentNode;
             TaskahtBtn.addEventListener("click", function() {
                 if (!TaskahtBtn.classList.contains('mat-button-disabled')) {
@@ -52,13 +54,15 @@ var ahtstartchecklistener = setInterval(listener_for_start_aht, 1000);
 function listener_for_stop_aht() {
     if (window.location.href.includes('customer-support/process')) {
         var finishspanbtn;
+        let finishahtBtnflag = 0;
         var finishbtnlist = document.getElementsByClassName('mat-button-wrapper');
         for (let index = 0; index < finishbtnlist.length; index++) {
             if (finishbtnlist[index].innerText == "Выполнить"){
                 finishspanbtn = finishbtnlist[index];
+                finishahtBtnflag = 1;
             }
         }
-        if (finishspanbtn.length > 0){
+        if (finishahtBtnflag == 1){
             finishahtbnt = finishspanbtn.parentNode;
             finishahtbnt.addEventListener("click", function() {
                 if (!finishahtbnt.classList.contains('mat-button-disabled')) {
