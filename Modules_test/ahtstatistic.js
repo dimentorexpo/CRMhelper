@@ -75,7 +75,7 @@ function listener_for_stop_aht() {
        
     }
 }
-var ahtstopchecklistener = setInterval(istener_for_stop_aht, 1000);
+var ahtstopchecklistener = setInterval(listener_for_stop_aht, 1000);
 
 window.addEventListener(BeforeUnload, function() {
     if (taskbtnisclicked == 1){
