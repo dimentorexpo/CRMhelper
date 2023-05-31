@@ -1,5 +1,7 @@
 var taskbtnisclicked = 0; // нажатали кнопка взять задачу
 var finishahtbntisclicked = 0; // нажатали кнопка выполнено
+var prevPageaht;
+var curPageaht;
 
 var TaskahtBtn; // кнопка взять задачу
 var finishahtbnt; // кнопка выполнено
@@ -18,6 +20,7 @@ window.addEventListener("load", function() { // добавление тайме�
         if (ahtshowcrm == 1){
             CRMlogo[0].style.widht = '150px'
             CRMlogo[0].appendChild(butahttimer)
+            console.log(window.location.href)
         }  
     }, 1000);
 });
