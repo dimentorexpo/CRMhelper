@@ -28,6 +28,7 @@ if (ahtshowcrm == 1) {
     });
 }
 
+/*
 document.addEventListener("DOMSubtreeModified", function (){
     console.log('taskbtnisclicked :' + taskbtnisclicked + ' finishahtbntisclicked :' + finishahtbntisclicked)
     if(taskbtnisclicked == 1){
@@ -41,7 +42,9 @@ document.addEventListener("DOMSubtreeModified", function (){
         stopahttimer()
     }
 });
+*/
 
+function 
 
 function listener_for_start_aht() {
     console.log('Начинаю поиск кнопки взятия задачи')
