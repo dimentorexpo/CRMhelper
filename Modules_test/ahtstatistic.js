@@ -34,7 +34,7 @@ function listener_for_start_aht() {
                 console.log('Нашел кнопку')
             }
         }
-        if (Taskahtspanbtn.length > 0){
+        if (!Taskahtspanbtn){
             TaskahtBtn = Taskahtspanbtn.parentNode;
             TaskahtBtn.addEventListener("click", function() {
                 if (!TaskahtBtn.classList.contains('mat-button-disabled')) {
