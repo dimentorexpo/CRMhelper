@@ -1,5 +1,7 @@
-var taskbtnisclicked; // нажатали кнопка взять задачу
-var finishahtbntisclicked; // нажатали кнопка выполнено
+var taskbtnisclicked = 0; // нажатали кнопка взять задачу
+var finishahtbntisclicked = 0; // нажатали кнопка выполнено
+var ahtstartchecklistener;
+var ahtstopchecklistener;
 var prevPageaht;
 var curPageaht;
 
@@ -14,23 +16,26 @@ butahttimer.innerText = "00 : 00"
 butahttimer.title = "Таймер aht"
 
 if (ahtshowcrm == 1) {
-    taskbtnisclicked = 0;
-    finishahtbntisclicked = 0;
     setInterval(CRM_aht_timer, 1000);
+    ahtstartchecklistener = setInterval(listener_for_start_aht, 1000);
+    ahtstopchecklistener = setInterval(listener_for_stop_aht, 1000);
     window.addEventListener("load", function() { // добавление таймера в логотип
         CRMlogo = document.getElementsByClassName('logo');
-        setTimeout(function() {            
+        setTimeout(function() {         
             CRMlogo[0].style.widht = '150px'
             CRMlogo[0].appendChild(butahttimer)
-            if (prevPageaht.includes('customer-support/start') && window.location.href.includes('customer-support/process') && taskbtnisclicked === 1) {
-                startahttimer();
-            }
-            if (prevPageaht.includes('customer-support/start') && window.location.href.includes('customer-support/process') && taskbtnisclicked === 1) {
-                stopahttimer();
-            }
         }, 1000);
     });
 }
+
+document.addEventListener("DOMSubtreeModified", function (){
+    if(taskbtnisclicked == 1){
+        startahttimer()
+    }
+    if (finishahtbntisclicked == 1) {
+        stopahttimer()
+    }
+});
 
 
 function listener_for_start_aht() {
@@ -49,7 +54,6 @@ function listener_for_start_aht() {
         }
         if (TaskahtBtnflag == 1){
             TaskahtBtn = Taskahtspanbtn.parentNode;
-            prevPageaht = window.location.href;
             TaskahtBtn.addEventListener("click", function() {
                 if (!TaskahtBtn.classList.contains('mat-button-disabled')) {
                     taskbtnisclicked = 1;
@@ -61,7 +65,6 @@ function listener_for_start_aht() {
         }
     }
 }
-var ahtstartchecklistener = setInterval(listener_for_start_aht, 1000);
 
 function listener_for_stop_aht() {
     if (window.location.href.includes('customer-support/process')) {
@@ -76,7 +79,6 @@ function listener_for_stop_aht() {
         }
         if (finishahtBtnflag == 1){
             finishahtbnt = finishspanbtn.parentNode;
-            prevPageaht = window.location.href;
             finishahtbnt.addEventListener("click", function() {
                 if (!finishahtbnt.classList.contains('mat-button-disabled')) {
                     finishahtbntisclicked = 1;
@@ -88,39 +90,7 @@ function listener_for_stop_aht() {
        
     }
 }
-var ahtstopchecklistener = setInterval(listener_for_stop_aht, 1000);
 
-/*
-window.addEventListener('beforeunload', function() {
-    console.log('пердвыгрузкой страницы')
-    if (taskbtnisclicked == 1){
-//        console.log('запрашиваю запуск таймера')
-//        startahttimer()
-        console.log('Начинаю запуск таймера');
-        var datetask = new Date();
-        var taskminutes = datetask.getMinutes().toString().padStart(2, '0');
-        var taskseconds = datetask.getSeconds().toString().padStart(2, '0');
-
-        localStorage.setItem('opintask', true);
-        console.log(localStorage.getItem('opintask'))
-        localStorage.setItem('taskminutes', taskminutes);
-        console.log(localStorage.getItem('taskminutes'));
-        localStorage.setItem('taskseconds', taskseconds);
-        console.log(localStorage.getItem('taskminutes'));
-
-        console.log('Таймер запущен');
-    }
-    if (finishahtbntisclicked == 1){
-//        stopahttimer()
-        console.log('Начинаю остановку таймера');
-        localStorage.setItem('opintask', false);
-        localStorage.removeItem('taskminutes');
-        localStorage.removeItem('taskseconds');
-
-        console.log('Таймер остановлен');
-    }
-});
-*/
 
 function startahttimer() {
     console.log('Начинаю запуск таймера');
