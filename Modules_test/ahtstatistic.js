@@ -44,8 +44,6 @@ document.addEventListener("DOMSubtreeModified", function (){
 });
 */
 
-function 
-
 function listener_for_start_aht() {
     console.log('Начинаю поиск кнопки взятия задачи')
     if (window.location.href.includes('customer-support/start')) {
