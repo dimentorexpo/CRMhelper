@@ -30,9 +30,11 @@ if (ahtshowcrm == 1) {
 
 document.addEventListener("DOMSubtreeModified", function (){
     if(taskbtnisclicked == 1){
-        startahttimer()
+        taskbtnisclicked = 0;
+        startahttimer()        
     }
     if (finishahtbntisclicked == 1) {
+        finishahtbntisclicked = 0;
         stopahttimer()
     }
 });
@@ -104,14 +106,12 @@ function startahttimer() {
     console.log(localStorage.getItem('taskminutes'));
     localStorage.setItem('taskseconds', taskseconds);
     console.log(localStorage.getItem('taskminutes'));
-    taskbtnisclicked = 0;
 }
 
 function stopahttimer() {
     localStorage.setItem('opintask', false);
     localStorage.removeItem('taskminutes');
     localStorage.removeItem('taskseconds');
-    finishahtbntisclicked = 0;
 }
 
 var ahttimesetis;
