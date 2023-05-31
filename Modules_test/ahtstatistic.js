@@ -40,8 +40,19 @@ function listener_for_start_aht() {
             TaskahtBtn = Taskahtspanbtn.parentNode;
             TaskahtBtn.addEventListener("click", function() {
                 if (!TaskahtBtn.classList.contains('mat-button-disabled')) {
-                    taskbtnisclicked = 1;
-                    console.log('Клик по кнопке');
+//                    taskbtnisclicked = 1;
+//                    console.log('Клик по кнопке');
+                    console.log('Начинаю запуск таймера');
+                    var datetask = new Date();
+                    var taskminutes = datetask.getMinutes().toString().padStart(2, '0');
+                    var taskseconds = datetask.getSeconds().toString().padStart(2, '0');
+
+                    localStorage.setItem('opintask', true);
+                    console.log(localStorage.getItem('opintask'))
+                    localStorage.setItem('taskminutes', taskminutes);
+                    console.log(localStorage.getItem('taskminutes'));
+                    localStorage.setItem('taskseconds', taskseconds);
+                    console.log(localStorage.getItem('taskminutes'));
                 }
               });
             console.log('addEventListener');
@@ -66,8 +77,11 @@ function listener_for_stop_aht() {
             finishahtbnt = finishspanbtn.parentNode;
             finishahtbnt.addEventListener("click", function() {
                 if (!finishahtbnt.classList.contains('mat-button-disabled')) {
-                    finishahtbntisclicked = 1;
-                    console.log('Клик по кнопке');            
+//                    finishahtbntisclicked = 1;
+//                    console.log('Клик по кнопке');
+                    localStorage.setItem('opintask', false);
+                    localStorage.removeItem('taskminutes');
+                    localStorage.removeItem('taskseconds');
                 }
             });
             clearInterval(ahtstopchecklistener);
@@ -77,6 +91,7 @@ function listener_for_stop_aht() {
 }
 var ahtstopchecklistener = setInterval(listener_for_stop_aht, 1000);
 
+/*
 window.addEventListener('beforeunload', function() {
     console.log('пердвыгрузкой страницы')
     if (taskbtnisclicked == 1){
@@ -107,6 +122,7 @@ function stopahttimer() {
     localStorage.removeItem('taskminutes');
     localStorage.removeItem('taskseconds');
 }
+*/
 
 var ahttimesetis;
 function CRM_aht_timer() { // таймер оператор в задаче
