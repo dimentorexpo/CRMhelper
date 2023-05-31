@@ -1,5 +1,5 @@
-var taskbtnisclicked = 0; // нажатали кнопка взять задачу
-var finishahtbntisclicked = 0; // нажатали кнопка выполнено
+var taskbtnisclicked; // нажатали кнопка взять задачу
+var finishahtbntisclicked; // нажатали кнопка выполнено
 var prevPageaht;
 var curPageaht;
 
@@ -13,17 +13,25 @@ butahttimer.id = "ahttimercrm"
 butahttimer.innerText = "00 : 00"
 butahttimer.title = "Таймер aht"
 
-
-window.addEventListener("load", function() { // добавление таймера в логотип
-    CRMlogo = document.getElementsByClassName('logo');
-    setTimeout(function() {
-        if (ahtshowcrm == 1){
+if (ahtshowcrm == 1) {
+    taskbtnisclicked = 0;
+    finishahtbntisclicked = 0;
+    setInterval(CRM_aht_timer, 1000);
+    window.addEventListener("load", function() { // добавление таймера в логотип
+        CRMlogo = document.getElementsByClassName('logo');
+        setTimeout(function() {            
             CRMlogo[0].style.widht = '150px'
             CRMlogo[0].appendChild(butahttimer)
-            console.log(window.location.href)
-        }  
-    }, 1000);
-});
+            if (prevPageaht.includes('customer-support/start') && window.location.href.includes('customer-support/process') && taskbtnisclicked === 1) {
+                startahttimer();
+            }
+            if (prevPageaht.includes('customer-support/start') && window.location.href.includes('customer-support/process') && taskbtnisclicked === 1) {
+                stopahttimer();
+            }
+        }, 1000);
+    });
+}
+
 
 function listener_for_start_aht() {
     console.log('Начинаю поиск кнопки взятия задачи')
@@ -41,6 +49,7 @@ function listener_for_start_aht() {
         }
         if (TaskahtBtnflag == 1){
             TaskahtBtn = Taskahtspanbtn.parentNode;
+            prevPageaht = window.location.href;
             TaskahtBtn.addEventListener("click", function() {
                 if (!TaskahtBtn.classList.contains('mat-button-disabled')) {
                     taskbtnisclicked = 1;
@@ -67,6 +76,7 @@ function listener_for_stop_aht() {
         }
         if (finishahtBtnflag == 1){
             finishahtbnt = finishspanbtn.parentNode;
+            prevPageaht = window.location.href;
             finishahtbnt.addEventListener("click", function() {
                 if (!finishahtbnt.classList.contains('mat-button-disabled')) {
                     finishahtbntisclicked = 1;
@@ -80,7 +90,7 @@ function listener_for_stop_aht() {
 }
 var ahtstopchecklistener = setInterval(listener_for_stop_aht, 1000);
 
-
+/*
 window.addEventListener('beforeunload', function() {
     console.log('пердвыгрузкой страницы')
     if (taskbtnisclicked == 1){
@@ -110,8 +120,8 @@ window.addEventListener('beforeunload', function() {
         console.log('Таймер остановлен');
     }
 });
+*/
 
-/*
 function startahttimer() {
     console.log('Начинаю запуск таймера');
     var datetask = new Date();
@@ -124,14 +134,15 @@ function startahttimer() {
     console.log(localStorage.getItem('taskminutes'));
     localStorage.setItem('taskseconds', taskseconds);
     console.log(localStorage.getItem('taskminutes'));
+    taskbtnisclicked = 0;
 }
 
 function stopahttimer() {
     localStorage.setItem('opintask', false);
     localStorage.removeItem('taskminutes');
     localStorage.removeItem('taskseconds');
+    finishahtbntisclicked = 0;
 }
-*/
 
 var ahttimesetis;
 function CRM_aht_timer() { // таймер оператор в задаче
@@ -161,7 +172,6 @@ function CRM_aht_timer() { // таймер оператор в задаче
         document.getElementById("ahttimercrm").innerText = ahttimesetis;
     }
 }
-setInterval(CRM_aht_timer, 1000);
   
 function formatTime(minutes, seconds) {
     var formattedMinutes = minutes < 10 ? "0" + minutes : minutes.toString();
