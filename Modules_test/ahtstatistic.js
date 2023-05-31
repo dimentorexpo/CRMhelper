@@ -1,10 +1,18 @@
-let butahttimer = document.createElement('button')
+var taskbtnisclicked = 0; // нажатали кнопка взять задачу
+var finishahtbntisclicked = 0; // нажатали кнопка выполнено
+
+var TaskahtBtn; // кнопка взять задачу
+var finishahtbnt; // кнопка выполнено
+
+let CRMlogo; // див с логотипом
+
+let butahttimer = document.createElement('button') // создание формы для таймера
 butahttimer.id = "ahttimercrm"
 butahttimer.innerText = "00 : 00"
 butahttimer.title = "Таймер aht"
 
-let CRMlogo;
-window.addEventListener("load", function() {
+
+window.addEventListener("load", function() { // добавление таймера в логотип
     CRMlogo = document.getElementsByClassName('logo');
     setTimeout(function() {
         if (ahtshowcrm == 1){
@@ -14,52 +22,64 @@ window.addEventListener("load", function() {
     }, 1000);
 });
 
-var TaskahtBtn;
 function listener_for_start_aht() {
     console.log('Начинаю поиск кнопки')
-    var takeTaskBtnlist = document.getElementsByClassName('mat-button-wrapper');
-    if (window.location.href.indexOf('https://crm2.skyeng.ru/customer-support/start') !== -1 && takeTaskBtnlist.length > 0) {
+    if (window.location.href.includes('customer-support/start')) {
         console.log('Нужная страница')
-      if (takeTaskBtnlist[13] && takeTaskBtnlist[13].innerText == 'Взять новую задачу') {
-        var TaskahtBtn = takeTaskBtnlist[13].parentNode;
-        console.log('Нашел кнопку')
-        TaskahtBtn.addEventListener("click", function() {
-            if (!TaskahtBtn.classList.contains('mat-button-disabled')) {
-                window.addEventListener('beforeunload', function(event) {
-                    startahttimer();
-                    console.log('Клик по кнопке');
-                });
+        var Taskahtspanbtn;
+        var takeTaskBtnlist = document.getElementsByClassName('mat-button-wrapper');
+        for (let index = 0; index < takeTaskBtnlist.length; index++) {
+            if (takeTaskBtnlist[index].innerText == "Взять новую задачу"){
+                Taskahtspanbtn = takeTaskBtnlist[index];
+                console.log('Нашел кнопку')
             }
-          });
-        clearInterval(ahtstartchecklistener);
-      }
+        }
+        if (Taskahtspanbtn.length > 0){
+            TaskahtBtn = Taskahtspanbtn.parentNode;
+            TaskahtBtn.addEventListener("click", function() {
+                if (!TaskahtBtn.classList.contains('mat-button-disabled')) {
+                    taskbtnisclicked = 1;
+                    console.log('Клик по кнопке');
+                }
+              });
+              clearInterval(ahtstartchecklistener);
+        }
     }
 }
 var ahtstartchecklistener = setInterval(listener_for_start_aht, 1000);
 
-var finishspanbtn;
-var finishbnt;
 function listener_for_stop_aht() {
     if (window.location.href.includes('customer-support/process')) {
+        var finishspanbtn;
         var finishbtnlist = document.getElementsByClassName('mat-button-wrapper');
         for (let index = 0; index < finishbtnlist.length; index++) {
             if (finishbtnlist[index].innerText == "Выполнить"){
                 finishspanbtn = finishbtnlist[index];
             }
         }
-        finishbnt = finishspanbtn.parentNode;
-        finishbnt.addEventListener("click", function() {
-            if (!finishbnt.classList.contains('mat-button-disabled')) {
-                window.addEventListener('beforeunload', function(event) {
-                    stopahttimer();
-                    console.log('Клик по кнопке');
-                });                
-            }
-        });
-        clearInterval(ahtstopchecklistener);
+        if (finishspanbtn.length > 0){
+            finishahtbnt = finishspanbtn.parentNode;
+            finishahtbnt.addEventListener("click", function() {
+                if (!finishahtbnt.classList.contains('mat-button-disabled')) {
+                    finishahtbntisclicked = 1;
+                    console.log('Клик по кнопке');            
+                }
+            });
+            clearInterval(ahtstopchecklistener);
+        }
+       
     }
 }
 var ahtstopchecklistener = setInterval(istener_for_stop_aht, 1000);
+
+window.addEventListener(BeforeUnload, function() {
+    if (taskbtnisclicked == 1){
+        startahttimer()
+    }
+    if (finishahtbntisclicked == 1){
+        stopahttimer()
+    }
+});
 
 function startahttimer() {
     console.log('Начинаю запуск таймера');
@@ -73,8 +93,6 @@ function startahttimer() {
     console.log(localStorage.getItem('taskminutes'));
     localStorage.setItem('taskseconds', taskseconds);
     console.log(localStorage.getItem('taskminutes'));
-    setTimeout(listener_for_stop_aht, 5000);
-    console.log('Запрос на поиск кнопки выполнить');
 }
 
 function stopahttimer() {
