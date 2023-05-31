@@ -77,7 +77,7 @@ function listener_for_stop_aht() {
 }
 var ahtstopchecklistener = setInterval(listener_for_stop_aht, 1000);
 
-window.addEventListener(BeforeUnload, function() {
+window.addEventListener('beforeunload', function() {
     if (taskbtnisclicked == 1){
         startahttimer()
     }
