@@ -29,11 +29,14 @@ if (ahtshowcrm == 1) {
 }
 
 document.addEventListener("DOMSubtreeModified", function (){
+    console.log('taskbtnisclicked :' + taskbtnisclicked + ' finishahtbntisclicked :' + finishahtbntisclicked)
     if(taskbtnisclicked == 1){
+        console.log('Поймал запуск таймера')
         taskbtnisclicked = 0;
         startahttimer()        
     }
     if (finishahtbntisclicked == 1) {
+        console.log('Поймал остановку таймера')
         finishahtbntisclicked = 0;
         stopahttimer()
     }
