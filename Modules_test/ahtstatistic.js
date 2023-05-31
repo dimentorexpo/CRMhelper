@@ -42,7 +42,8 @@ function listener_for_start_aht() {
                     console.log('Клик по кнопке');
                 }
               });
-              clearInterval(ahtstartchecklistener);
+            console.log('addEventListener');
+            clearInterval(ahtstartchecklistener);
         }
     }
 }
