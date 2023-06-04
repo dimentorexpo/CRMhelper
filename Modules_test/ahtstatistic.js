@@ -1,14 +1,9 @@
-var taskbtnisclicked = 0; // нажатали кнопка взять задачу
-var finishahtbntisclicked = 0; // нажатали кнопка выполнено
-var ahtstartchecklistener;
-var ahtmanualstartchecklistener;
-var ahtstopchecklistener;
+var ahttimerchecklistener;
 var ahtcheckbuttons;
 var prevPageaht;
 var curPageaht;
 
 var TaskahtBtn; // кнопка взять задачу
-var ManualtaskahtBtn;
 var finishahtbnt; // кнопка выполнено
 
 let CRMlogo; // див с логотипом
@@ -20,9 +15,7 @@ butahttimer.title = "Таймер aht"
 
 if (ahtshowcrm == 1) {
     setInterval(CRM_aht_timer, 1000);
-    ahtstartchecklistener = setInterval(listener_for_start_aht, 1000);
-    ahtmanualstartchecklistener = setInterval(listener_for_manual_task_aht, 1000);
-    ahtstopchecklistener = setInterval(listener_for_stop_aht, 1000);
+    ahttimerchecklistener = setInterval(listener_for_aht_timer, 1000);
     ahtcheckbuttons = setInterval(listener_aht_buttons_is_clicked, 1000);
     window.addEventListener("load", function() { // добавление таймера в логотип
         CRMlogo = document.getElementsByClassName('logo');
@@ -33,121 +26,84 @@ if (ahtshowcrm == 1) {
     });
 }
 
-/*
-document.addEventListener("DOMSubtreeModified", function (){
-    console.log('taskbtnisclicked :' + taskbtnisclicked + ' finishahtbntisclicked :' + finishahtbntisclicked)
-    if(taskbtnisclicked == 1){
-        console.log('Поймал запуск таймера')
-        taskbtnisclicked = 0;
-        startahttimer()        
-    }
-    if (finishahtbntisclicked == 1) {
-        console.log('Поймал остановку таймера')
-        finishahtbntisclicked = 0;
-        stopahttimer()
-    }
-});
-*/
 
 function listener_aht_buttons_is_clicked(){
-    console.log('taskbtnisclicked :' + taskbtnisclicked + ' finishahtbntisclicked :' + finishahtbntisclicked)
-    if(taskbtnisclicked == 1){
-        console.log('Поймал запуск таймера');
+    if (localStorage.getItem('opintask') === 'false' && window.location.href.includes('customer-support/process') && (prevPageaht.includes('customer-support/start') || prevPageaht.includes('customer-support/list'))) {
         startahttimer();
+        prevPageaht = "";
     }
-    if (finishahtbntisclicked == 1) {
-        console.log('Поймал остановку таймера');
+
+    if (localStorage.getItem('opintask') === 'true' && window.location.href.includes('customer-support/start') && prevPageaht.includes('customer-support/process')) {
         stopahttimer();
+        prevPageaht = "";
     }
 }
 
-function listener_for_start_aht() {
-    console.log('Начинаю поиск кнопки взятия задачи')
-    if (window.location.href.includes('customer-support/start')) {
-        console.log('Страница customer-support/start')
-        var Taskahtspanbtn;
-        let TaskahtBtnflag = 0;
-        var takeTaskBtnlist = document.getElementsByClassName('mat-button-wrapper');
+const observerOptions = {
+    attributes: true,  // Наблюдать за изменениями атрибутов
+    attributeFilter: ['class'],  // Отслеживать только изменения атрибута 'class'
+    attributeOldValue: true,  // Сохранять старое значение атрибута
+};
+
+const observer = new MutationObserver(handleClassChange);
+
+function handleClassChange(mutationsList, observer) {
+    for (let mutation of mutationsList) {
+        if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+            const targetElement = mutation.target;
+            const currentClass = targetElement.getAttribute('class');
+            console.log('Изменен класс объекта:', currentClass);
+
+            if ((targetElement === TaskahtBtn || targetElement === ManualtaskahtBtn || targetElement === finishahtbnt) && !currentClass.includes('mat-button-disabled')) {
+                prevPageaht = window.location.href;
+            }
+        }
+    }
+}
+
+function listener_for_aht_timer() {
+    curPageaht = window.location.href;
+
+    if (curPageaht.includes('customer-support/start')) {
+        const takeTaskBtnlist = document.getElementsByClassName('mat-button-wrapper');
         for (let index = 0; index < takeTaskBtnlist.length; index++) {
-            if (takeTaskBtnlist[index].innerText == "Взять новую задачу"){
-                Taskahtspanbtn = takeTaskBtnlist[index];
-                TaskahtBtnflag = 1;
-                console.log('Нашел кнопку Взять новую задачу')
-            }
+          if (takeTaskBtnlist[index].innerText === "Взять новую задачу") {
+            TaskahtBtn = takeTaskBtnlist[index].parentNode;
+            observer.observe(TaskahtBtn, observerOptions);
+            console.log('Наблюдение за кнопкой Взять новую задачу');
+            break;
+          }
         }
-        if (TaskahtBtnflag == 1){
-            TaskahtBtn = Taskahtspanbtn.parentNode;
-            TaskahtBtn.addEventListener("click", function() {
-                if (!TaskahtBtn.classList.contains('mat-button-disabled')) {
-                    taskbtnisclicked = 1;
-                    console.log('Клик по кнопке Взять новую задачу');
-                }
-              });
-            console.log('addEventListener');
-            clearInterval(ahtstartchecklistener);
-        }
-    }
-}
-
-function listener_for_manual_task_aht() {
-    console.log('Начинаю поиск кнопки взятия задачи вручную')
-    if (window.location.href.includes('customer-support/list')) {
-        console.log('Страница customer-support/list')
-        var Manualtaskahtspanbtn;
-        let ManualtaskahtBtnflag = 0;
-        var ManuatakeTaskBtnlist = document.getElementsByClassName('mat-button-wrapper');
+      }
+    
+      if (curPageaht.includes('customer-support/list')) {
+        const ManuatakeTaskBtnlist = document.getElementsByClassName('mat-button-wrapper');
         for (let index = 0; index < ManuatakeTaskBtnlist.length; index++) {
-            if (ManuatakeTaskBtnlist[index].innerText == "Взять задачу"){
-                Manualtaskahtspanbtn = ManuatakeTaskBtnlist[index];
-                ManualtaskahtBtnflag = 1;
-                console.log('Нашел кнопку Взять задачу')
-            }
+          if (ManuatakeTaskBtnlist[index].innerText === "Взять задачу") {
+            ManualtaskahtBtn = ManuatakeTaskBtnlist[index].parentNode;
+            observer.observe(ManualtaskahtBtn, observerOptions);
+            console.log('Наблюдение за кнопкой Взять задачу');
+            break;
+          }
         }
-        if (ManualtaskahtBtnflag == 1){
-            ManualtaskahtBtn = Manualtaskahtspanbtn.parentNode;
-            ManualtaskahtBtn.addEventListener("click", function() {
-                if (!ManualtaskahtBtn.classList.contains('mat-button-disabled')) {
-                    taskbtnisclicked = 1;
-                    console.log('Клик по кнопке Взять задачу');
-                }
-              });
-            console.log('addEventListener');
-            clearInterval(ahtmanualstartchecklistener);
-        }
-    }
-}
-
-function listener_for_stop_aht() {
-    console.log('Начинаю поиск кнопки выполнить')
-    if (window.location.href.includes('customer-support/process')) {
-        console.log('Страница customer-support/process')
-        var finishspanbtn;
-        let finishahtBtnflag = 0;
-        var finishbtnlist = document.getElementsByClassName('mat-button-wrapper');
+      }
+    
+      if (curPageaht.includes('customer-support/process')) {
+        const finishbtnlist = document.getElementsByClassName('mat-button-wrapper');
         for (let index = 0; index < finishbtnlist.length; index++) {
-            if (finishbtnlist[index].innerText == "Выполнить"){
-                finishspanbtn = finishbtnlist[index];
-                finishahtBtnflag = 1;
-                console.log('Нашел кнопку Выполнить')
-            }
+          if (finishbtnlist[index].innerText === "Выполнить") {
+            finishahtbnt = finishbtnlist[index].parentNode;
+            observer.observe(finishahtbnt, observerOptions);
+            console.log('Наблюдение за кнопкой Выполнить');
+            break;
+          }
         }
-        if (finishahtBtnflag == 1){
-            finishahtbnt = finishspanbtn.parentNode;
-            finishahtbnt.addEventListener("click", function() {
-                if (!finishahtbnt.classList.contains('mat-button-disabled')) {
-                    finishahtbntisclicked = 1;
-                    console.log('Клик по кнопке Выполнить');
-                }
-            });
-            clearInterval(ahtstopchecklistener);
-        }
-       
-    }
+      }
 }
-
 
 function startahttimer() {
     console.log('Начинаю запуск таймера');
+
     var datetask = new Date();
     var taskminutes = datetask.getMinutes().toString().padStart(2, '0');
     var taskseconds = datetask.getSeconds().toString().padStart(2, '0');
@@ -158,7 +114,7 @@ function startahttimer() {
     console.log(localStorage.getItem('taskminutes'));
     localStorage.setItem('taskseconds', taskseconds);
     console.log(localStorage.getItem('taskminutes'));
-    taskbtnisclicked = 0;
+
     console.log('Таймер запущен');
 }
 
