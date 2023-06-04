@@ -18,7 +18,8 @@ let butahttimer = document.createElement('button') // создание форм�
 butahttimer.id = "ahttimercrm"
 butahttimer.innerText = "00 : 00"
 butahttimer.title = "Таймер aht"
-butahttimer.style = 'top: ' + localStorage.getItem('winTopbutahttimer') + 'px; left: ' + localStorage.getItem('winLeftbutahttimer') + 'px;';
+butahttimer.style.top = localStorage.getItem('winTopbutahttimer') + 'px;'
+butahttimer.style.left = localStorage.getItem('winLeftbutahttimer') + 'px;'
 
 var listenerbutahttimer = function (e, a) { // сохранение позиции окна настроек
     butahttimer.style.left = Number(e.clientX - myX5) + "px";
