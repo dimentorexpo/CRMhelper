@@ -7,6 +7,8 @@ var TaskahtBtn; // кнопка взять задачу
 var ManualtaskahtBtn;
 var finishahtbnt; // кнопка выполнено
 
+var ahtisshowcrm = localStorage.getItem('ahtshowcrm')
+
 let CRMlogo; // див с логотипом
 
 let butahttimer = document.createElement('button') // создание формы для таймера
@@ -14,7 +16,7 @@ butahttimer.id = "ahttimercrm"
 butahttimer.innerText = "00 : 00"
 butahttimer.title = "Таймер aht"
 
-if (ahtshowcrm == 1) {
+if (ahtisshowcrm == 1) {
     setInterval(CRM_aht_timer, 1000);
     ahttimerchecklistener = setInterval(listener_for_aht_timer, 1000);
     ahtcheckbuttons = setInterval(listener_aht_buttons_is_clicked, 1000);
