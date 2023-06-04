@@ -14,28 +14,28 @@ if (localStorage.getItem('winTopbutahttimer') == null) { // началоное �
     localStorage.setItem('winLeftbutahttimer', '295');
 }
 
-let butahttimer = document.createElement('button') // создание формы для таймера
+let butahttimer = document.createElement('div') // создание формы для таймера
 butahttimer.id = "ahttimercrm"
 butahttimer.innerText = "00 : 00"
 butahttimer.title = "Таймер aht"
 butahttimer.style.top = localStorage.getItem('winTopbutahttimer') + 'px;'
 butahttimer.style.left = localStorage.getItem('winLeftbutahttimer') + 'px;'
 
-var listenerbutahttimer = function (e, a) { // сохранение позиции окна настроек
+var listenerbutahttimer = function (e, a) { // сохранение позиции окна таймера
     butahttimer.style.left = Number(e.clientX - myX5) + "px";
     butahttimer.style.top = Number(e.clientY - myY5) + "px";
     localStorage.setItem('winTopbutahttimer', String(Number(e.clientY - myY5)));
     localStorage.setItem('winLeftbutahttimer', String(Number(e.clientX - myX5)));
 };
     
-butahttimer.onmousedown = function (a) { // изменение позиции окна настроек
+butahttimer.onmousedown = function (a) { // изменение позиции окна таймера
     if (checkelementtype(a)) {
         window.myX5 = a.layerX;
         window.myY5 = a.layerY;
         document.addEventListener('mousemove', listenerbutahttimer);
     }
 }
-butahttimer.onmouseup = function () { document.removeEventListener('mousemove', listenerbutahttimer); } // прекращение изменения позиции окна настроек
+butahttimer.onmouseup = function () { document.removeEventListener('mousemove', listenerbutahttimer); } // прекращение изменения позиции окна таймера
 
 if (ahtisshowcrm == 1) {
     setInterval(CRM_aht_timer, 1000);
