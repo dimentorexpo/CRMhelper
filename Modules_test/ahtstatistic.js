@@ -169,7 +169,6 @@ function stopahttimer() {
     localStorage.removeItem('taskminutes');
     localStorage.removeItem('taskseconds');
 
-    console.log('Начинаю остановку таймера');
     console.log('Таймер остановлен');
 }
 
