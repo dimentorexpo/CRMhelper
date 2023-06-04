@@ -22,16 +22,16 @@ butahttimer.style.top = localStorage.getItem('winTopbutahttimer') + 'px;'
 butahttimer.style.left = localStorage.getItem('winLeftbutahttimer') + 'px;'
 
 var listenerbutahttimer = function (e, a) { // сохранение позиции окна таймера
-    butahttimer.style.left = Number(e.clientX - myX5) + "px";
-    butahttimer.style.top = Number(e.clientY - myY5) + "px";
-    localStorage.setItem('winTopbutahttimer', String(Number(e.clientY - myY5)));
-    localStorage.setItem('winLeftbutahttimer', String(Number(e.clientX - myX5)));
+    butahttimer.style.left = Number(e.clientX - myX10) + "px";
+    butahttimer.style.top = Number(e.clientY - myY10) + "px";
+    localStorage.setItem('winTopbutahttimer', String(Number(e.clientY - myY10)));
+    localStorage.setItem('winLeftbutahttimer', String(Number(e.clientX - myX10)));
 };
     
 butahttimer.onmousedown = function (a) { // изменение позиции окна таймера
     if (checkelementtype(a)) {
-        window.myX5 = a.layerX;
-        window.myY5 = a.layerY;
+        window.myX10 = a.layerX;
+        window.myY10 = a.layerY;
         document.addEventListener('mousemove', listenerbutahttimer);
     }
 }
