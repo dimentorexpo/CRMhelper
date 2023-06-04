@@ -26,6 +26,10 @@ var win_SettingsApp =  // описание элементов главного �
 				<button class="btnCRM" title="Внести изменения в интервал между повторами звука нового чата" id="setsoundplayintervalCRM" style="margin-top: 5px">SET⌚</button>
 					<br>
                 <label class="spanCRM" style="color:bisque"><input type="checkbox" onchange="changeahtshowcrm()" id="ahtshowselectCRM" style="margin-top: 5px;">Отображать статистику и таймер aht</label>
+                <br>
+				<span class="spanCRM" style="color:bisque">Показатель Aht:</span>
+				<input class="inputCRM" title="Ввод показателя Aht в минутах" id="ahtminutesCRM" placeholder="N" autocomplete="off" oninput="maxLengthCheck(this)" type="number" maxlength="2" min="0" max="59" style="text-align: center; margin-top: 5px; width: 50px; color: black;">
+				<button class="btnCRM" title="Внести изменения в показатель Aht" id="setahtminutesCRM" style="margin-top: 5px">SET⌚</button>
 				<div style="margin-top: 5px; width: 350px">
                     <input class="inputCRM" id="test_stdCRM" placeholder="ID тест У" autocomplete="off" title = "ID личного тестового ученика" type="text" style="text-align: center; width: 130px; color: black;">
                     <button class="btnCRM btnCRMsmall" id="setteststdCRM" title="Добавить в localstorage ID тестового У" style="margin-top: 5px">💾</button>
