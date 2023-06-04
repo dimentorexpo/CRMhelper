@@ -18,8 +18,8 @@ let butahttimer = document.createElement('div') // создание формы �
 butahttimer.id = "ahttimercrm"
 butahttimer.innerText = "00 : 00"
 butahttimer.title = "Таймер aht"
-butahttimer.style.top = localStorage.getItem('winTopbutahttimer') + 'px;';
-butahttimer.style.left = localStorage.getItem('winLeftbutahttimer') + 'px;';
+butahttimer.style.top = localStorage.getItem('winTopbutahttimer') + 'px';
+butahttimer.style.left = localStorage.getItem('winLeftbutahttimer') + 'px';
 
 var listenerbutahttimer = function (e, a) { // сохранение позиции окна таймера
     butahttimer.style.left = Number(e.clientX - myX10) + "px";
@@ -41,9 +41,7 @@ if (ahtisshowcrm == 1) {
     setInterval(CRM_aht_timer, 1000);
     ahttimerchecklistener = setInterval(listener_for_aht_timer, 1000);
     ahtcheckbuttons = setInterval(listener_aht_buttons_is_clicked, 1000);
-    setTimeout(() => {
-        document.body.append(butahttimer);    
-    }, 1000);
+    document.body.append(butahttimer);
 }
 
 
