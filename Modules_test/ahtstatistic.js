@@ -34,13 +34,13 @@ function listener_aht_buttons_is_clicked(){
     if (localStorage.getItem('opintask') === 'false' && window.location.href.includes('customer-support/process') && (prevPageaht.includes('customer-support/start') || prevPageaht.includes('customer-support/list'))) {
         startahttimer();
         prevPageaht = "";
-        ahttimerchecklistener = setInterval(listener_for_aht_timer, 1000);
+//        ahttimerchecklistener = setInterval(listener_for_aht_timer, 1000);
     }
 
     if (localStorage.getItem('opintask') === 'true' && window.location.href.includes('customer-support/start') && prevPageaht.includes('customer-support/process')) {
         stopahttimer();
         prevPageaht = "";
-        ahttimerchecklistener = setInterval(listener_for_aht_timer, 1000);
+//        ahttimerchecklistener = setInterval(listener_for_aht_timer, 1000);
     }
 }
 
@@ -77,7 +77,7 @@ function listener_for_aht_timer() {
             TaskahtBtn = takeTaskBtnlist[index].parentNode;
             observer.observe(TaskahtBtn, observerOptions);
             console.log('Наблюдение за кнопкой Взять новую задачу');
-            clearInterval(ahttimerchecklistener);
+//            clearInterval(ahttimerchecklistener);
             break;
           }
         }
@@ -90,7 +90,7 @@ function listener_for_aht_timer() {
             ManualtaskahtBtn = ManuatakeTaskBtnlist[index].parentNode;
             observer.observe(ManualtaskahtBtn, observerOptions);
             console.log('Наблюдение за кнопкой Взять задачу');
-            clearInterval(ahttimerchecklistener);
+//            clearInterval(ahttimerchecklistener);
             break;
           }
         }
@@ -103,7 +103,7 @@ function listener_for_aht_timer() {
             finishahtbnt = finishbtnlist[index].parentNode;
             observer.observe(finishahtbnt, observerOptions);
             console.log('Наблюдение за кнопкой Выполнить');
-            clearInterval(ahttimerchecklistener);
+//            clearInterval(ahttimerchecklistener);
             break;
           }
         }
