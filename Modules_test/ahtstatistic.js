@@ -1,11 +1,14 @@
 var taskbtnisclicked = 0; // нажатали кнопка взять задачу
 var finishahtbntisclicked = 0; // нажатали кнопка выполнено
 var ahtstartchecklistener;
+var ahtmanualstartchecklistener;
 var ahtstopchecklistener;
+var ahtcheckbuttons;
 var prevPageaht;
 var curPageaht;
 
 var TaskahtBtn; // кнопка взять задачу
+var ManualtaskahtBtn;
 var finishahtbnt; // кнопка выполнено
 
 let CRMlogo; // див с логотипом
@@ -18,7 +21,9 @@ butahttimer.title = "Таймер aht"
 if (ahtshowcrm == 1) {
     setInterval(CRM_aht_timer, 1000);
     ahtstartchecklistener = setInterval(listener_for_start_aht, 1000);
+    ahtmanualstartchecklistener = setInterval(listener_for_manual_task_aht, 1000);
     ahtstopchecklistener = setInterval(listener_for_stop_aht, 1000);
+    ahtcheckbuttons = setInterval(listener_aht_buttons_is_clicked, 1000);
     window.addEventListener("load", function() { // добавление таймера в логотип
         CRMlogo = document.getElementsByClassName('logo');
         setTimeout(function() {         
@@ -44,6 +49,19 @@ document.addEventListener("DOMSubtreeModified", function (){
 });
 */
 
+function listener_aht_buttons_is_clicked(){
+    if(taskbtnisclicked == 1){
+        console.log('Поймал запуск таймера')
+        taskbtnisclicked = 0;
+        startahttimer()        
+    }
+    if (finishahtbntisclicked == 1) {
+        console.log('Поймал остановку таймера')
+        finishahtbntisclicked = 0;
+        stopahttimer()
+    }
+}
+
 function listener_for_start_aht() {
     console.log('Начинаю поиск кнопки взятия задачи')
     if (window.location.href.includes('customer-support/start')) {
@@ -68,6 +86,34 @@ function listener_for_start_aht() {
               });
             console.log('addEventListener');
             clearInterval(ahtstartchecklistener);
+        }
+    }
+}
+
+function listener_for_manual_task_aht() {
+    console.log('Начинаю поиск кнопки взятия задачи')
+    if (window.location.href.includes('customer-support/list')) {
+        console.log('Нужная страница')
+        var Manualtaskahtspanbtn;
+        let ManualtaskahtBtnflag = 0;
+        var ManuatakeTaskBtnlist = document.getElementsByClassName('mat-button-wrapper');
+        for (let index = 0; index < ManuatakeTaskBtnlist.length; index++) {
+            if (ManuatakeTaskBtnlist[index].innerText == "Взять задачу"){
+                Manualtaskahtspanbtn = ManuatakeTaskBtnlist[index];
+                ManualtaskahtBtnflag = 1;
+                console.log('Нашел кнопку')
+            }
+        }
+        if (ManualtaskahtBtnflag == 1){
+            ManualtaskahtBtn = Manualtaskahtspanbtn.parentNode;
+            ManualtaskahtBtn.addEventListener("click", function() {
+                if (!ManualtaskahtBtn.classList.contains('mat-button-disabled')) {
+                    taskbtnisclicked = 1;
+                    console.log('Клик по кнопке взятия задачи');
+                }
+              });
+            console.log('addEventListener');
+            clearInterval(ahtmanualstartchecklistener);
         }
     }
 }
