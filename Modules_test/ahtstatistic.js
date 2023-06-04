@@ -41,7 +41,9 @@ if (ahtisshowcrm == 1) {
     setInterval(CRM_aht_timer, 1000);
     ahttimerchecklistener = setInterval(listener_for_aht_timer, 1000);
     ahtcheckbuttons = setInterval(listener_aht_buttons_is_clicked, 1000);
-    document.body.append(butahttimer);
+    setTimeout(() => {
+        document.body.append(butahttimer);    
+    }, 1000);
 }
 
 
