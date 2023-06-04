@@ -44,6 +44,9 @@
     z-index: 50; 
     position: fixed;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .btnCRM:hover, .widthofsd:hover, #testuchenik:hover, #testprepod:hover  {
     background: #6A5ACD;
