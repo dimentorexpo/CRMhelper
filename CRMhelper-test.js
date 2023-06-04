@@ -1,6 +1,5 @@
 var soundsconteinerCRM;
 var soundintervalsetCRM = null
-var ahtshowcrm = localStorage.getItem('ahtshowcrm')
 let mystyles = document.createElement('link')
 mystyles.rel = 'stylesheet'
 mystyles.href = "https://dimentorexpo.github.io/CRMhelper/CSS/styles.css" // подключаем модуль стилей 
@@ -24,7 +23,8 @@ const copyToClipboardCRM = strznach => { // функция копировани�
 };
 // end
 
-if (!ahtshowcrm) {localStorage.setItem('ahtshowcrm', 0)}
+if (!localStorage.getItem('ahtshowcrm')) {localStorage.setItem('ahtshowcrm', 0)}
+if (!localStorage.getItem('opintask')) {localStorage.setItem('opintask', false)}
 
 // start logginer func
 let tokenlogCRM;

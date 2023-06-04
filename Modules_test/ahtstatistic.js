@@ -4,6 +4,7 @@ var prevPageaht;
 var curPageaht;
 
 var TaskahtBtn; // кнопка взять задачу
+var ManualtaskahtBtn;
 var finishahtbnt; // кнопка выполнено
 
 let CRMlogo; // див с логотипом
