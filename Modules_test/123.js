@@ -143,3 +143,53 @@ function handleButtonClick() {
         // Do something with prevPage
     }
 }
+
+
+
+let b = document.cookie.match(/jwt=(.*)/)
+let operator12
+
+function parseJwt (token) {
+    var base64Url = token.split('.')[1];
+    var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+    var jsonPayload = decodeURIComponent(window.atob(base64).split('').map(function(c) {
+        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+    }).join(''));
+    operator12 = JSON.parse(jsonPayload).user.id
+};
+
+parseJwt(b[1]) 
+
+
+await fetch("https://uat.autofaq.ai/api/reason8/operator/status", {
+        "credentials": "include"
+    }).then(r => r.json()).then(result => tutspisok = result)
+
+for (){
+
+}
+
+async function whoAmI() { // функция получения айди оператора, который работает и запустил расширение
+  let tokenis = document.cookie.match(/jwt=(.*)/);
+  let token = tokenis[1];
+
+  var base64Url = token.split('.')[1];
+  var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+  var jsonPayload = decodeURIComponent(window.atob(base64).split('').map(function(c) {
+      return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+  }).join(''));
+  operatorId = JSON.parse(jsonPayload).user.id
+
+  const a = await fetch('ttps://uat.autofaq.ai/api/reason8/operator/status', {
+      credentials: 'include',
+  });
+  const b = await a.json();
+  operatorsarray = b.res;
+
+  operatorsarray.forEach((s) => {
+    if (s.operator != null && me && s.operator.id === operatorId) {
+        afopername = s.operator.fullName;
+        opsection = s.operator.fullName.split('-')[0];
+    }
+  });
+}

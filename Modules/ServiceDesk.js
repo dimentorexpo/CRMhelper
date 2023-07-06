@@ -75,7 +75,7 @@ var win_servicedesk = // описание элементов окна Service De
 						<button class="btnCRM" id="newtask" style="width: 85px" title="Последняя задача"></button>
                 </div>
                 <div id="servicedeskinfo" style="margin-left:10px;">
-                    <button class="sdbtn btnCRM" id="optionTeacher" value="36">👽T&Corp</button>
+                    <button class="sdbtn btnCRM" id="optionTeacher" value="36">👺Corp</button>
                     <button class="sdbtn btnCRM" id="optionCRM2" value="26">🧮CRM2</button>
                     <button class="sdbtn btnCRM" id="optionAuth" value="20">🔐Auth</button>
                     <button class="sdbtn btnCRM" id="optionSchedule" value="33">📆Schedul</button>
@@ -100,7 +100,7 @@ var win_servicedesk = // описание элементов окна Service De
 				</div>
 
 				<div id="teacherssrvdskoptions" style="display: none; margin-left:20px;">
-					<p style="color:bisque;font-size:18px;position:relative; width:95%;margin-top: 5px;margin-bottom: 5px;">#promise-keepers-qa-support; канал по вопросам ЛКП, ТРМ, corp учеников, ЛККК</p>
+					<p style="color:bisque;font-size:18px;position:relative; width:95%;margin-top: 5px;margin-bottom: 5px;">#promise-keepers-qa-support; канал по вопросам corp учеников</p>
 
 				</div>
 				<div id="crm2srvdskoptions" style="display: none; margin-left:20px;">
@@ -166,7 +166,7 @@ var win_servicedesk = // описание элементов окна Service De
 				</div>
 
                 <div id="studcaboptions" style="display: none; margin-left:20px;">
-					<p style="color:bisque;font-size:18px;position:relative; width:95%;margin-top: 5px;margin-bottom: 5px;">#student-cabinet-bugs; Сообщаем о проблемах во взрослом и детском ЛКУ (страницы на домене student.skyeng.ru)</p>
+					<p style="color:bisque;font-size:18px;position:relative; width:95%;margin-top: 5px;margin-bottom: 5px;">#student-cabinet-bugs; Сообщаем о проблемах во взрослом и детском ЛКУ (страницы на домене student.skyeng.ru), в ЛККК и в ЛКП</p>
 
                 </div>
 								
