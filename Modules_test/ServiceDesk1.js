@@ -35,7 +35,6 @@ const buttonsCRM = [ //array of buttonsnames
     '.academymobbugsbtn',
     '.stcabmbsbtn',
     '.analystbtn',
-    '.CommProblemsbtn'
 ];
 
 const otherOptionsCRM = [ // array of buttons categories id's
@@ -56,8 +55,7 @@ const otherOptionsCRM = [ // array of buttons categories id's
     'studcabmobbugskoptions',
     'mobbugsoptions',
     'academymobbugsoptions',
-    'analystoptions',
-    'CommProblemsoptions'
+    'analystoptions'
 ];
 
 var win_servicedesk = // описание элементов окна Service Desk
@@ -94,7 +92,6 @@ var win_servicedesk = // описание элементов окна Service De
                     <button class="sdbtn btnCRM" id="optionStudcabmobbugs" value="35">👨‍🎓📱Bugs</button>
 					<button class="sdbtn btnCRM" id="optionMobbugs" value="30">📱Mobil bug</button>
                     <button class="sdbtn btnCRM" id="optionAcademymobbugs" value="19">🅰📱🐞</button>
-                    <button class="sdbtn btnCRM" id="optionCommProblems" value="75">📧Comm</button>
                     <button class="sdbtn btnCRM" id="optionAnalyst"  value="18" style="display: none;">TEST</button>
                 </div>
 				<div id="studcabmobbugskoptions" style="display: none; margin-left:20px;">
@@ -168,11 +165,6 @@ var win_servicedesk = // описание элементов окна Service De
 
 				</div>
 
-                <div id="CommProblemsoptions" style="display: none; margin-left:20px;">
-                    <p style="color:bisque;font-size:18px;position:relative; width:95%;margin-top: 5px;margin-bottom: 5px;"">#communication-problems</p>
-
-                </div>
-
                 <div id="studcaboptions" style="display: none; margin-left:20px;">
 					<p style="color:bisque;font-size:18px;position:relative; width:95%;margin-top: 5px;margin-bottom: 5px;">#student-cabinet-bugs; Сообщаем о проблемах во взрослом и детском ЛКУ (страницы на домене student.skyeng.ru), в ЛККК и в ЛКП</p>
 
@@ -190,12 +182,8 @@ var win_servicedesk = // описание элементов окна Service De
 							<option value="Major">Major</option>
 							<option value="Minor">Minor</option>
 							<option value="Trivial">Trivial</option>
-					    </select>
-                    <select class="inputCRM" style="height:28px; margin-left: 21px; margin-top: 5px; display: none;" id="categoryCommproblems">
-                            <option selected disabled="">Категория проблемы</option>
-                        </select>
+					   </select>
 					<input id="custom_id" placeholder="ID Пользователей (Id П, Id У)"  class="inputCRM sdcustfieldformlines removefield" style="margin-left: 21px;">
-                    <input id="custom_email" placeholder="Почта пользователей"  class="inputCRM sdcustfieldformlines removefield" style="margin-left: 21px; display: none;">
                     <input id="custom_appinfo" placeholder="Приложение / Версия / Платформа"  class="inputCRM sdcustfieldformlines removefield" style="margin-left: 21px; display: none;"></input>
                     <input id="custom_deviceinfo" placeholder="Девайс / ОС"  class="inputCRM sdcustfieldformlines removefield" style="margin-left: 21px; display: none;"></input>
 					<textarea id="custom_descr" placeholder="Описание проблемы"  class="textareaCRM sdcustfieldformlines removefield" style="margin-left: 21px;"></textarea>
@@ -324,58 +312,6 @@ function sendRequest(idstdserv, dscr, str, erx, ary, code) {
    setTimeout(getmmlinkCRM, 8000);
 }
 
-function sendRequestCommprob(categoryvalue, usermail, idstdserv, dscr, code) {
-    let formData = new URLSearchParams();
-    formData.append('requestTypeId', code);
-    formData.append('reporterId', varinfraOIDCRM);
-    formData.append('initiatorId', varinfraOIDCRM);
-    formData.append('data[category]', decodeURIComponent(categoryvalue).replaceAll('<br>','\n'))
-    formData.append('data[description]', decodeURIComponent(dscr).replaceAll('<br>','\n'))
-    formData.append('data[user_id]', decodeURIComponent(idstdserv).replaceAll('<br>','\n'))
-    formData.append('data[user_email]', decodeURIComponent(usermail).replaceAll('<br>','\n'))    
-  
-    let requestOptions = {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-      },
-      body: formData.toString(),
-      mode: 'cors',
-      credentials: 'include',
-    };
-  
-    let requestOptionsString = JSON.stringify(requestOptions);
-  
-    responseTextarea1.value = requestOptionsString;
-    responseTextarea2.value = "https://api-infra.skyeng.ru/api/v1/rs/request";
-    responseTextarea3.value = 'responseRequest';
-  
-    // логируем входящие переменные и значение полей отправки запроса
-    console.log(`${idstdserv} ${dscr} ${categoryvalue} ${usermail} ${code}`);
-    console.log(responseTextarea1.value);
-    console.log(responseTextarea2.value);
-  
-    document.getElementById('sendResponse').click();
-      
-        responseTextarea1.addEventListener("DOMSubtreeModified", function () {
-          const reqvarr = JSON.parse(responseTextarea1.getAttribute('responseRequest'));
-          if (reqvarr) {
-              lasttsk = reqvarr.jiraIssueKey;
-              newtask.innerText = lasttsk;
-              sendComment("Jira PS link:" + ' ' + "https://jira.skyeng.tech/browse/" + lasttsk);
-              
-              const removefields = document.getElementsByClassName('removefield');
-              for (let i = 0; i < removefields.length; i++) {
-                  removefields[i].value = '';
-              }
-              document.getElementById('categoryCommproblems').children[0].selected = true;
-          }
-          responseTextarea1.removeAttribute('responseRequest');
-      });
-  
-     setTimeout(getmmlinkCRM, 8000);
-}
-
 let checkingId = [];
 function getthemesfrominfra(categoryId,index) {
   responseTextarea1.value = '{}';
@@ -403,53 +339,6 @@ function getthemesfrominfra(categoryId,index) {
     }
     responseTextarea1.removeAttribute('sendrequest');
   });
-}
-
-function getcommproboptions(){
-    const commprobselect = document.getElementById('categoryCommproblems');
-    let addoptflag = 0;
-    if (commprobselect.length < 2){
-    
-    let infraOIDCRM = localStorage.getItem('infraOID')
-    const requestopt = {
-        headers: {
-            'accept': 'application/json',
-            'content-type': 'application/json'
-        },
-        referrer: 'https://infra.skyeng.ru/',
-        body: `{\"reporterId\":${infraOIDCRM},\"data\":{}}`,
-        method: 'PATCH',
-        credentials: 'include'
-    };
-
-        responseTextarea1.value = JSON.stringify(requestopt);
-        responseTextarea2.value = "https://api-infra.skyeng.ru/api/v1/rs/request-types/541/form";
-        responseTextarea3.value = 'getoptionscomm';
-      
-        document.getElementById('sendResponse').click();
-      
-        responseTextarea1.addEventListener("DOMSubtreeModified", function () {
-            const commprobarr = JSON.parse(responseTextarea1.getAttribute('getoptionscomm'));
-            if (commprobarr !== '') {
-                commprobarr.forEach((item) => {
-                    if (item.label == "Категория проблемы") {
-                      const commprobarropt = item.attributes.options;
-                      if (addoptflag < commprobarropt.length) {
-                        addoptflag = commprobarropt.length;
-                        commprobarropt.forEach((option) => {
-                          if (option !== '') {
-                            let opt = JSON.stringify(option);
-                            const [value, text] = opt.split(":").map(item => item.replace(/["{\\}]/g, '').trim());
-                            addOption(commprobselect, text, value);
-                          }
-                        });
-                      }
-                    responseTextarea1.removeAttribute('getoptionscomm');
-                    }
-                  }); 
-            }
-        });
-    }
 }
 
 function sendRequestMobNoPriority(idstdserv, ary, erx, str, dscr, deviceinfo , appinfo, code) {
@@ -631,50 +520,15 @@ document.getElementById('SrvDskCRMbtn').onclick = function () { // функци�
                 document.getElementById('prioritymbugs').style.display = '';
                 document.getElementById('custom_appinfo').style.display = '';
                 document.getElementById('custom_deviceinfo').style.display = '';
-                document.getElementById('custom_id').style.display = '';
-                document.getElementById('custom_descr').style.display = '';
-                document.getElementById('custom_str').style.display = '';
-                document.getElementById('custom_er').style.display = '';
-                document.getElementById('custom_ar').style.display = '';
-                document.getElementById('categoryCommproblems').style.display = 'none';
-                document.getElementById('categoryCommproblems').children[0].selected = true
-                document.getElementById('custom_email').style.display = 'none';
             } else if (elementId === 'studcabmobbugskoptions') {
+                document.getElementById('prioritymbugs').style.display = 'none';
                 document.getElementById('custom_appinfo').style.display = '';
                 document.getElementById('custom_deviceinfo').style.display = '';
-                document.getElementById('custom_id').style.display = '';
-                document.getElementById('custom_descr').style.display = '';
-                document.getElementById('custom_str').style.display = '';
-                document.getElementById('custom_er').style.display = '';
-                document.getElementById('custom_ar').style.display = '';
-                document.getElementById('prioritymbugs').style.display = 'none';
-                document.getElementById('categoryCommproblems').style.display = 'none';
-                document.getElementById('categoryCommproblems').children[0].selected = true
-                document.getElementById('custom_email').style.display = 'none';
-            } else if(elementId === 'CommProblemsoptions') {
-                getcommproboptions();
-                document.getElementById('categoryCommproblems').style.display = '';
-                document.getElementById('custom_email').style.display = '';
-                document.getElementById('prioritymbugs').style.display = 'none';
-                document.getElementById('custom_appinfo').style.display = 'none';
-                document.getElementById('custom_deviceinfo').style.display = 'none';
-                document.getElementById('custom_str').style.display = 'none';
-                document.getElementById('custom_er').style.display = 'none';
-                document.getElementById('custom_ar').style.display = 'none';
             } else {
-                document.getElementById('custom_id').style.display = '';
-                document.getElementById('custom_descr').style.display = '';
-                document.getElementById('custom_str').style.display = '';
-                document.getElementById('custom_er').style.display = '';
-                document.getElementById('custom_ar').style.display = '';
                 document.getElementById('prioritymbugs').style.display = 'none';
                 document.getElementById('custom_appinfo').style.display = 'none';
                 document.getElementById('custom_deviceinfo').style.display = 'none';
-                document.getElementById('categoryCommproblems').style.display = 'none';
-                document.getElementById('categoryCommproblems').children[0].selected = true
-                document.getElementById('custom_email').style.display = 'none';
             }
-            
         }
     }
 
@@ -740,12 +594,9 @@ function remres(a) { // функция переключения класса п�
   }
 }
 
-
 document.getElementById('createsd').addEventListener('click', function () { //функция создания задачи на сервис деск
 
     let priorityMobile = document.getElementById('prioritymbugs')
-    let catcommprob = document.getElementById('categoryCommproblems')
-    let usermail = document.getElementById('custom_email')
     let idUser = document.getElementById('custom_id')
     let appInfo = document.getElementById('custom_appinfo')
     let deviceInfo = document.getElementById('custom_deviceinfo')
@@ -771,12 +622,7 @@ document.getElementById('createsd').addEventListener('click', function () { //ф
     }))
     let activeButtons = document.querySelectorAll('.activebtn');
 
-    if (catcommprob.style.display == ''){
-        for (const button of activeButtons) {
-            sendRequestCommprob(catcommprob.value, usermail.value, idUser.value, descriptionField, button.value);
-            console.log(`Selected topic: ${button.innerText}`);
-        }
-    } else if (priorityMobile.style.display == 'none' && appInfo.style.display == 'none' && deviceInfo.style.display == 'none') {
+    if (priorityMobile.style.display == 'none' && appInfo.style.display == 'none' && deviceInfo.style.display == 'none') {
         for (const button of activeButtons) {
             sendRequest(idUser.value, descriptionField, stepsToReproduce, expectedResult, actualResult, button.value);
             console.log(`Selected topic: ${button.innerText}`);
