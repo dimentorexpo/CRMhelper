@@ -191,7 +191,7 @@ var win_servicedesk = // описание элементов окна Service De
 							<option value="Minor">Minor</option>
 							<option value="Trivial">Trivial</option>
 					    </select>
-                    <select class="inputCRM" style="height:28px; margin-left: 21px; margin-top: 5px; display: none;" id="categoryCommproblems">
+                    <select class="inputCRM" style="height:28px; margin-left: 21px; margin-top: 5px; width: 476px; display: none;" id="categoryCommproblems">
                             <option selected disabled="">Категория проблемы</option>
                         </select>
 					<input id="custom_id" placeholder="ID Пользователей (Id П, Id У)"  class="inputCRM sdcustfieldformlines removefield" style="margin-left: 21px;">
