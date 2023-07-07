@@ -34,8 +34,8 @@ const buttonsCRM = [ //array of buttonsnames
     '.mobbugsbtn',
     '.academymobbugsbtn',
     '.stcabmbsbtn',
-    '.analystbtn',
-    '.CommProblemsbtn'
+    '.CommProblemsbtn',
+    '.analystbtn'
 ];
 
 const otherOptionsCRM = [ // array of buttons categories id's
@@ -56,8 +56,8 @@ const otherOptionsCRM = [ // array of buttons categories id's
     'studcabmobbugskoptions',
     'mobbugsoptions',
     'academymobbugsoptions',
-    'analystoptions',
-    'CommProblemsoptions'
+    'CommProblemsoptions',
+    'analystoptions'
 ];
 
 var win_servicedesk = // описание элементов окна Service Desk
