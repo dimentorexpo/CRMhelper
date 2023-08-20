@@ -1,22 +1,22 @@
 //Global variables
-let jiratokenCRM;
-let jiratokenCRMnew;
+let jiratoken;
+let jiratokennew;
 let responsejira;
-let psarrCRM = [];
+let psarr = [];
 let firstEl;
-let mmlinkCRM;
+let mmlink;
 // let infoarr;
-let lasttskCRM;
-let prevtskCRM;
+let lasttsk;
+let prevtsk;
 let flagpsis = 0;
 let msgissnd = 0;
-let varinfraOIDCRM; //переменная для хранения значения ID оператора в Infra
+let varinfraOID; //переменная для хранения значения ID оператора в Infra
 const responseTextarea1 = document.getElementById('responseTextarea1');
 const responseTextarea2 = document.getElementById('responseTextarea2');
 const responseTextarea3 = document.getElementById('responseTextarea3');
 const sendResponse = document.getElementById('sendResponse');
 
-const buttonsCRM = [ //array of buttonsnames
+const buttons = [ //array of buttonsnames
     '.edumodbtn',
     '.bilqabtn',
     '.teacbtn',
@@ -34,11 +34,11 @@ const buttonsCRM = [ //array of buttonsnames
     '.mobbugsbtn',
     '.academymobbugsbtn',
     '.stcabmbsbtn',
-    '.analystbtn',
-    '.CommProblemsbtn'
+    '.CommProblemsbtn',
+    '.analystbtn'
 ];
 
-const otherOptionsCRM = [ // array of buttons categories id's
+const otherOptions = [ // array of buttons categories id's
     'teacherssrvdskoptions',
     'crm2srvdskoptions',
     'authsrvdskoptions',
@@ -56,8 +56,8 @@ const otherOptionsCRM = [ // array of buttons categories id's
     'studcabmobbugskoptions',
     'mobbugsoptions',
     'academymobbugsoptions',
-    'analystoptions',
-    'CommProblemsoptions'
+    'CommProblemsoptions',
+    'analystoptions'
 ];
 
 var win_servicedesk = // описание элементов окна Service Desk
@@ -191,17 +191,20 @@ var win_servicedesk = // описание элементов окна Service De
 							<option value="Minor">Minor</option>
 							<option value="Trivial">Trivial</option>
 					    </select>
-                    <select class="inputCRM" style="height:28px; margin-left: 21px; margin-top: 5px; display: none;" id="categoryCommproblems">
+                    <select class="inputCRM" style="height:28px; margin-left: 21px; margin-top: 5px; width: 476px; display: none;" id="categoryCommproblems">
                             <option selected disabled="">Категория проблемы</option>
                         </select>
-					<input id="custom_id" placeholder="ID Пользователей (Id П, Id У)"  class="inputCRM sdcustfieldformlines removefield" style="margin-left: 21px;">
-                    <input id="custom_email" placeholder="Почта пользователей"  class="inputCRM sdcustfieldformlines removefield" style="margin-left: 21px; display: none;">
-                    <input id="custom_appinfo" placeholder="Приложение / Версия / Платформа"  class="inputCRM sdcustfieldformlines removefield" style="margin-left: 21px; display: none;"></input>
-                    <input id="custom_deviceinfo" placeholder="Девайс / ОС"  class="inputCRM sdcustfieldformlines removefield" style="margin-left: 21px; display: none;"></input>
-					<textarea id="custom_descr" placeholder="Описание проблемы"  class="textareaCRM sdcustfieldformlines removefield" style="margin-left: 21px;"></textarea>
-					<textarea id="custom_str" placeholder="Как воспроизвести ошибку?"  class="textareaCRM sdcustfieldformlines removefield" style="margin-left: 21px;"></textarea>
-					<textarea id="custom_er" placeholder="Ожидаемое поведение"  class="textareaCRM sdexpecactual removefield" style="margin-left: 21px;"></textarea>
-					<textarea id="custom_ar" placeholder="Фактическое поведение"  class="textareaCRM sdexpecactual removefield" style="margin-left: 21px;"></textarea>
+                    <input id="custom_CMS" placeholder="Ссылка на CMS" class="inputCRM sdcustfieldformlines removefield" style="margin-left: 21px; display: none;">
+                    <input id="custom_id" placeholder="ID Пользователей (Id П, Id У)" class="inputCRM sdcustfieldformlines removefield" style="margin-left: 21px;">
+                    <input id="custom_service" placeholder="ID Услуги" class="inputCRM sdcustfieldformlines removefield" style="margin-left: 21px; display: none;">
+                    <input id="custom_hesh" placeholder="Хэш урока" class="inputCRM sdcustfieldformlines removefield" style="margin-left: 21px; display: none;">
+                    <input id="custom_email" placeholder="Почта пользователей" class="inputCRM sdcustfieldformlines removefield" style="margin-left: 21px; display: none;">
+                    <input id="custom_appinfo" placeholder="Приложение / Версия / Платформа" class="inputCRM sdcustfieldformlines removefield" style="margin-left: 21px; display: none;"></input>
+                    <input id="custom_deviceinfo" placeholder="Девайс / ОС" class="inputCRM sdcustfieldformlines removefield" style="margin-left: 21px; display: none;"></input>
+					<textarea id="custom_descr" placeholder="Описание проблемы" class="textareaCRM sdcustfieldformlines removefield" style="margin-left: 21px;"></textarea>
+					<textarea id="custom_str" placeholder="Как воспроизвести ошибку?" class="textareaCRM sdcustfieldformlines removefield" style="margin-left: 21px;"></textarea>
+					<textarea id="custom_er" placeholder="Ожидаемое поведение" class="textareaCRM sdexpecactual removefield" style="margin-left: 21px;"></textarea>
+					<textarea id="custom_ar" placeholder="Фактическое поведение" class="textareaCRM sdexpecactual removefield" style="margin-left: 21px;"></textarea>
 					<button class="btnCRM" id="createsd" style="width: 150px; position:relative; left:35%; margin-bottom:5px;">Создать</button>
                     <button class="btnCRM btnCRMsmall" title="Очищает поля для ввода" onclick ="clearfields()" style="float: right; margin-right:25px;"margin-bottom:5px;>🧹</button>
 				</div>
@@ -230,21 +233,21 @@ function getprsuplasttask() { //функция для получения ссы�
     const prevtask = document.getElementById('prevtask');
 
     responseTextarea1.value = `{}`;
-    responseTextarea2.value = `https://api-infra.skyeng.ru/api/v1/rs/requests?reporterId=${varinfraOIDCRM}&approverId=${varinfraOIDCRM}&maxResults=40&page=1`;
+    responseTextarea2.value = `https://api-infra.skyeng.ru/api/v1/rs/requests?reporterId=${varinfraOID}&approverId=${varinfraOID}&maxResults=40&page=1`;
     responseTextarea3.value = 'pstickets';
     sendResponse.click();
 
     responseTextarea1.addEventListener("DOMSubtreeModified", function () {
-        const psarrCRM = JSON.parse(responseTextarea1.getAttribute('pstickets'));
-        if (psarrCRM) {
-            prevtskCRM = psarrCRM.items[0].jiraIssueKey;
-            prevtask.innerText = prevtskCRM;
+        const psarr = JSON.parse(responseTextarea1.getAttribute('pstickets'));
+        if (psarr) {
+            prevtsk = psarr.items[0].jiraIssueKey;
+            prevtask.innerText = prevtsk;
 
             prevtask.onclick = function () {
                 if (prevtask.innerText === "") {
                     console.log('Задача не найдена');
                 } else {
-                    window.open(`https://jira.skyeng.tech/browse/${prevtskCRM}`);
+                    window.open(`https://jira.skyeng.tech/browse/${prevtsk}`);
                 }
             }
         }
@@ -252,7 +255,7 @@ function getprsuplasttask() { //функция для получения ссы�
     });
 }
 
-function getmmlinkCRM() {
+function getmmlink() {
 	        if (newtask.innerText != '') {
             responseTextarea1.value = `{}`
             responseTextarea2.value = "https://jira.skyeng.tech/browse/" + newtask.innerText ;
@@ -262,10 +265,10 @@ function getmmlinkCRM() {
 			    responseTextarea1.addEventListener("DOMSubtreeModified", function () {
 				const infoarr = responseTextarea1.getAttribute('mmlinkhere');
 				if (infoarr) {
-					mmlinkCRM = infoarr.match(/">(https:\/\/mattermost.skyeng.tech.*?)<\/a>/)[1];
-					console.log("Jira PS link:" + ' ' + "https://jira.skyeng.tech/browse/" + lasttskCRM);
-                    console.log("Mattermost link " + mmlinkCRM)
-                    document.getElementById('custom_ar').value = "Jira PS link:" + ' ' + "https://jira.skyeng.tech/browse/" + lasttskCRM + "\nMattermost link: " + mmlinkCRM;
+					mmlink = infoarr.match(/">(https:\/\/mattermost.skyeng.tech.*?)<\/a>/)[1];
+					console.log("Jira PS link:" + ' ' + "https://jira.skyeng.tech/browse/" + lasttsk);
+                    console.log("Mattermost link " + mmlink)
+                    document.getElementById('custom_ar').value = "Jira PS link:" + ' ' + "https://jira.skyeng.tech/browse/" + lasttsk + "\nMattermost link: " + mmlink;
 				}
 				responseTextarea1.removeAttribute('mmlinkhere');
 			});
@@ -276,8 +279,8 @@ function getmmlinkCRM() {
 function sendRequest(idstdserv, dscr, str, erx, ary, code) {
   let formData = new URLSearchParams();
   formData.append('requestTypeId', code);
-  formData.append('reporterId', varinfraOIDCRM);
-  formData.append('initiatorId', varinfraOIDCRM);
+  formData.append('reporterId', varinfraOID);
+  formData.append('initiatorId', varinfraOID);
   formData.append('data[description]', decodeURIComponent(dscr).replaceAll('<br>','\n'))
   formData.append('data[reproduceSteps]', decodeURIComponent(str).replaceAll('<br>','\n'))
   formData.append('data[expectedResult]', decodeURIComponent(erx).replaceAll('<br>','\n'))
@@ -310,8 +313,8 @@ function sendRequest(idstdserv, dscr, str, erx, ary, code) {
       responseTextarea1.addEventListener("DOMSubtreeModified", function () {
         const reqvarr = JSON.parse(responseTextarea1.getAttribute('responseRequest'));
         if (reqvarr) {
-            lasttskCRM = reqvarr.jiraIssueKey;
-            newtask.innerText = lasttskCRM;
+            lasttsk = reqvarr.jiraIssueKey;
+            newtask.innerText = lasttsk;
 			
 			const removefields = document.getElementsByClassName('removefield');
             for (let i = 0; i < removefields.length; i++) {
@@ -321,14 +324,14 @@ function sendRequest(idstdserv, dscr, str, erx, ary, code) {
         responseTextarea1.removeAttribute('responseRequest');
     });
 
-   setTimeout(getmmlinkCRM, 8000);
+   setTimeout(getmmlink, 8000);
 }
 
 function sendRequestCommprob(categoryvalue, usermail, idstdserv, dscr, code) {
     let formData = new URLSearchParams();
     formData.append('requestTypeId', code);
-    formData.append('reporterId', varinfraOIDCRM);
-    formData.append('initiatorId', varinfraOIDCRM);
+    formData.append('reporterId', varinfraOID);
+    formData.append('initiatorId', varinfraOID);
     formData.append('data[category]', decodeURIComponent(categoryvalue).replaceAll('<br>','\n'))
     formData.append('data[description]', decodeURIComponent(dscr).replaceAll('<br>','\n'))
     formData.append('data[user_id]', decodeURIComponent(idstdserv).replaceAll('<br>','\n'))
@@ -373,7 +376,7 @@ function sendRequestCommprob(categoryvalue, usermail, idstdserv, dscr, code) {
           responseTextarea1.removeAttribute('responseRequest');
       });
   
-     setTimeout(getmmlinkCRM, 8000);
+     setTimeout(getmmlink, 8000);
 }
 
 let checkingId = [];
@@ -393,9 +396,9 @@ function getthemesfrominfra(categoryId,index) {
       }
 	  buttonsfromtest.innerHTML = ''
 	  for (let j=0; j<checkingId.length; j++) {
-			buttonsfromtest.innerHTML += `<button class="${buttonsCRM[index].replace('.','')} widthofsd" value=${checkingId[j].id}>${checkingId[j].summary}</button>`
+			buttonsfromtest.innerHTML += `<button class="${buttons[index].replace('.','')} widthofsd" value=${checkingId[j].id}>${checkingId[j].summary}</button>`
 		}
-	      buttonsCRM.forEach(button => {
+	      buttons.forEach(button => {
         $(button).click(function () {
             remres(this);
         });
@@ -410,14 +413,14 @@ function getcommproboptions(){
     let addoptflag = 0;
     if (commprobselect.length < 2){
     
-    let infraOIDCRM = localStorage.getItem('infraOID')
+    let infraOID = localStorage.getItem('infraOID')
     const requestopt = {
         headers: {
             'accept': 'application/json',
             'content-type': 'application/json'
         },
         referrer: 'https://infra.skyeng.ru/',
-        body: `{\"reporterId\":${infraOIDCRM},\"data\":{}}`,
+        body: `{\"reporterId\":${infraOID},\"data\":{}}`,
         method: 'PATCH',
         credentials: 'include'
     };
@@ -456,8 +459,8 @@ function sendRequestMobNoPriority(idstdserv, ary, erx, str, dscr, deviceinfo , a
 		
   let formData = new URLSearchParams();
   formData.append('requestTypeId', code);
-  formData.append('reporterId', varinfraOIDCRM);
-  formData.append('initiatorId', varinfraOIDCRM);
+  formData.append('reporterId', varinfraOID);
+  formData.append('initiatorId', varinfraOID);
   formData.append('data[appInfo]', decodeURIComponent(appinfo).replaceAll('<br>','\n'))
   formData.append('data[userDeviceInfo]', decodeURIComponent(deviceinfo).replaceAll('<br>','\n'))
   formData.append('data[description]', decodeURIComponent(dscr).replaceAll('<br>','\n'))
@@ -491,8 +494,8 @@ function sendRequestMobNoPriority(idstdserv, ary, erx, str, dscr, deviceinfo , a
 	      responseTextarea1.addEventListener("DOMSubtreeModified", function () {
         const reqvarr = JSON.parse(responseTextarea1.getAttribute('responseRequest'));
         if (reqvarr) {
-            lasttskCRM = reqvarr.jiraIssueKey;
-            newtask.innerText = lasttskCRM;
+            lasttsk = reqvarr.jiraIssueKey;
+            newtask.innerText = lasttsk;
 			
 			const removefields = document.getElementsByClassName('removefield');
             for (let i = 0; i < removefields.length; i++) {
@@ -502,15 +505,15 @@ function sendRequestMobNoPriority(idstdserv, ary, erx, str, dscr, deviceinfo , a
         responseTextarea1.removeAttribute('responseRequest');
     });
 
-    setTimeout(getmmlinkCRM, 8000);
+    setTimeout(getmmlink, 8000);
 }
 
 function sendRequestMobWithPriority(priorvalue, appinfo, deviceinfo, dscr, str, erx, ary, idstdserv, code) {
 	
   let formData = new URLSearchParams();
   formData.append('requestTypeId', code);
-  formData.append('reporterId', varinfraOIDCRM);
-  formData.append('initiatorId', varinfraOIDCRM);
+  formData.append('reporterId', varinfraOID);
+  formData.append('initiatorId', varinfraOID);
   formData.append('data[appInfo]', decodeURIComponent(appinfo).replaceAll('<br>','\n'))
   formData.append('data[userDeviceInfo]', decodeURIComponent(deviceinfo).replaceAll('<br>','\n'))
   formData.append('data[description]', decodeURIComponent(dscr).replaceAll('<br>','\n'))
@@ -545,8 +548,8 @@ function sendRequestMobWithPriority(priorvalue, appinfo, deviceinfo, dscr, str, 
 	      responseTextarea1.addEventListener("DOMSubtreeModified", function () {
         const reqvarr = JSON.parse(responseTextarea1.getAttribute('responseRequest'));
         if (reqvarr) {
-            lasttskCRM = reqvarr.jiraIssueKey;
-            newtask.innerText = lasttskCRM;
+            lasttsk = reqvarr.jiraIssueKey;
+            newtask.innerText = lasttsk;
 			
 			const removefields = document.getElementsByClassName('removefield');
             for (let i = 0; i < removefields.length; i++) {
@@ -556,7 +559,7 @@ function sendRequestMobWithPriority(priorvalue, appinfo, deviceinfo, dscr, str, 
         responseTextarea1.removeAttribute('responseRequest');
     });
 
-    setTimeout(getmmlinkCRM, 8000);
+    setTimeout(getmmlink, 8000);
 }
 
 //main
@@ -595,7 +598,7 @@ document.getElementById('SrvDskCRMbtn').onclick = function () { // функци�
         document.getElementById('CRMServDsk').style.display = 'none'
         document.getElementById('idmymenucrm').style.display = 'none'
         document.getElementById('newtask').textContent = ''
-        lasttskCRM = '';
+        lasttsk = '';
     } else {
         document.getElementById('CRMServDsk').style.display = ''
         document.getElementById('idmymenucrm').style.display = 'none'
@@ -604,7 +607,7 @@ document.getElementById('SrvDskCRMbtn').onclick = function () { // функци�
 	if (localStorage.getItem('infraOID') == null) {
 		document.getElementById('jiratknstatus').innerText = "🔴"
 		getInfraOId()
-	} else varinfraOIDCRM = localStorage.getItem('infraOID');
+	} else varinfraOID = localStorage.getItem('infraOID');
 	
     setTimeout(getprsuplasttask, 2000)
 
@@ -619,10 +622,10 @@ document.getElementById('SrvDskCRMbtn').onclick = function () { // функци�
                 activeBtnsd[j].classList.remove('activebtnsd');
             }
             this.classList.toggle('activebtnsd');
-            let elementId = otherOptionsCRM[index];
+            let elementId = otherOptions[index];
             document.getElementById(elementId).style.display = "block";
 
-            let otherElements = document.querySelectorAll(otherOptionsCRM.filter((_, idx) => idx !== index).map(id => '#' + id).join(', '));
+            let otherElements = document.querySelectorAll(otherOptions.filter((_, idx) => idx !== index).map(id => '#' + id).join(', '));
             for (let k = 0; k < otherElements.length; k++) {
                 otherElements[k].style.display = 'none';
             }
@@ -678,7 +681,7 @@ document.getElementById('SrvDskCRMbtn').onclick = function () { // функци�
         }
     }
 
-    buttonsCRM.forEach(button => {
+    buttons.forEach(button => {
         $(button).click(function () {
             inputsFieldsSD.style.display = 'none';
             remres(this);
@@ -706,7 +709,7 @@ document.getElementById('hideMeSrvDsk').onclick = function () { //форма hid
             // $(this).toggleClass('activebtnsd');
         // });
 
-        buttonsCRM.forEach(button => {
+        buttons.forEach(button => {
             $(button).click(function () {
                 remres(this);
             });
@@ -725,12 +728,12 @@ function remres(a) { // функция переключения класса п�
     let isThemeBtn = $(a).hasClass('sdbtn');
   
     if (isActive || isThemeBtn) {
-    buttonsCRM.forEach(button => {
+    buttons.forEach(button => {
       $(button).show().removeClass('activebtn');
     });
       inputsFieldsSD.style.display = 'none';
   } else {
-    buttonsCRM.forEach(button => {
+    buttons.forEach(button => {
       if (button !== a) {
         $(button).hide().removeClass('activebtn');
       }
