@@ -469,7 +469,6 @@ function sendRequestCommprob(categoryvalue, usermail, idstdserv, dscr, code) {
           if (reqvarr) {
               lasttsk = reqvarr.jiraIssueKey;
               newtask.innerText = lasttsk;
-              sendComment("Jira PS link:" + ' ' + "https://jira.skyeng.tech/browse/" + lasttsk);
               
               const removefields = document.getElementsByClassName('removefield');
               for (let i = 0; i < removefields.length; i++) {
