@@ -39,6 +39,7 @@ var win_Jira =  // описание элементов окна Поиска п�
                         <div style="margin: 5px; width: 550px" id="jira_tasks_box">
                                 <p id="issuetable" style="max-height:400px; margin-left:5px; overflow:auto"></p>
                                 <p id="favouriteissuetable" style="max-height:400px; margin-left:5px; overflow:auto; display:none"></p>
+                                <span style="color:bisque" id="foundIssuesAmount"></span>
                         </div>
                 </span>
         </span>
