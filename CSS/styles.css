@@ -275,3 +275,10 @@
 #control_jira_search button, #dostupbnts button{
    flex: 1;
 }
+span[name=changeList].active {
+    background:SeaGreen !important;
+}
+
+span[name=changeList]:hover {
+    background:#af622c !important;
+}
