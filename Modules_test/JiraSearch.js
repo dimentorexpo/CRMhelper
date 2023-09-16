@@ -141,7 +141,7 @@ function toggleAndDeactivateQueries(currentId) { // Смена класса кн
 }
 
 function showelemonpages() { // открываем элементы окна если они скрыты
-                document.getElementById('testJira').value = ""
+    document.getElementById('testJira').value = ""
 	document.getElementById('testJira').style.display = ""
 	document.getElementById('issuetable').style.display = ""
 	document.getElementById('getJiraTasks').style.display = ""
@@ -173,7 +173,6 @@ function formatIssue(item, currentNumber, issueKey, searchText, currentpic, curr
         ${currentNumber ? `<span class="newcount" style="width:20px; margin-left: 5px; background:#3CB371; padding:2px; padding-left:6px; font-weight:700; border-radius:10px;">${currentNumber} </span>` : ""}
         <a name="buglinks" href="https://jira.skyeng.tech/browse/${issueKey}" target="_blank" style="margin-left:5px; color: #ffe4c4">${temporarka}</a>
         <span name="issueIds" style="display:none">${currentIds}</span>
-        <span class="jiraissues" style="margin-left: 5px; cursor: pointer">💬</span>
         ${currentNumber ? `
             <span class="refreshissues" style="color:#ADFF2F; margin-left: 1px; cursor: pointer">&#69717;&#120783;</span>
             <span name="addtofavourites" style="margin-left: 4px; cursor:pointer;" title="Добавить задачу в Избранное">🤍</span>
@@ -344,9 +343,6 @@ function getJiraTask() { // поиск задач в jira
 
     document.getElementById('foundIssuesAmount').innerHTML = `Всего найдено задач: ${foundIssuesAmount}`;
 
-	const barray = document.querySelectorAll('.jiraissues');
-    addJiraIssueOnClickEvent(barray, issueKeys);
-
     addFavouritesOnClickEvent(
         document.getElementsByName('addtofavourites'),
         document.getElementsByName('buglinks'),
@@ -408,9 +404,6 @@ function switchJiraPages() {
                 }
 
                 document.getElementById('issuetable').innerHTML = issues;
-
-                const barray = document.querySelectorAll('.jiraissues');
-                addJiraIssueOnClickEvent(barray, issueKeys);
 
 				addFavouritesOnClickEvent(
 					document.getElementsByName('addtofavourites'),
@@ -721,28 +714,9 @@ document.getElementById('JiraOpenForm').onclick = function () { // открыв�
                 textArea1.removeAttribute('getissuetable1')
                     if (rezissuetable != null) {
                         let issues = [];
-                    issues = '<span style="color: #00FA9A">&#5129;</span>' + '<a href="' + rezissuetable[0].items[0].url + '" onclick="" target="_blank" style="color: #ffe4c4">' + rezissuetable[0].items[0].subtitle + " - " + rezissuetable[0].items[0].title + '</a>' + " " + '<span class = "jiraissues" style="margin-left: 10px; cursor: pointer">💬</span>';
+                    issues = '<span style="color: #00FA9A">&#5129;</span>' + '<a href="' + rezissuetable[0].items[0].url + '" onclick="" target="_blank" style="color: #ffe4c4">' + rezissuetable[0].items[0].subtitle + " - " + rezissuetable[0].items[0].title + '</a>';
 
                         document.getElementById('issuetable').innerHTML = issues;
-
-                    let barray = document.querySelector('.jiraissues');
-                    barray.onclick = function () {
-                        sendComment(rezissuetable[0].items[0].url)
-                        let b = document.URL.split('/')
-                        fetch("https://skyeng.autofaq.ai/api/conversation/" + b[5] + "/payload", {
-                            "headers": {
-                                "accept": "*/*",
-                                "content-type": "application/json",
-                                "sec-fetch-dest": "empty",
-                                "sec-fetch-mode": "cors",
-                                "sec-fetch-site": "same-origin"
-                            },
-                            "body": "{\"conversationId\":\"${b[5]}\",\"elements\":[{\"name\":\"taskUrl\",\"value\":\"" + rezissuetable[0].items[0].url + "\"}]}",
-                            "method": "POST",
-                            "mode": "cors",
-                            "credentials": "include"
-                        })
-                    }
 
                         setTimeout(function () { issues = []; testJira.value = ""; }, 5000)
                     }
