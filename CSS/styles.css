@@ -272,7 +272,8 @@
     display: flex;
     justify-content: space-between;
 }
-#control_jira_search button, #dostupbnts button{
+/* #control_jira_search button, */
+#dostupbnts button{
    flex: 1;
 }
 span[name=changeList].active {
