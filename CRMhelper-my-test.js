@@ -116,8 +116,8 @@ function getText() { // обьявление функции получающей
 
 
 include("https://dimentorexpo.github.io/CRMhelper/jquery-3.6.0.js") // подключаем модуль обработки JQuery
-include("https://dimentorexpo.github.io/CRMhelper/Modules/JiraSearch.js")
-include("https://dimentorexpo.github.io/CRMhelper/Modules_test/ahtstatistic.js")
+include("https://dimentorexpo.github.io/CRMhelper/Modules_test/JiraSearch.js")
+//include("https://dimentorexpo.github.io/CRMhelper/Modules_test/ahtstatistic.js")
 
 //Объявление кнопки в верхней панели CRM
 let upmenubtn = document.createElement('span')
@@ -183,7 +183,7 @@ ServiceDeskcrmbtn.id = "SrvDskCRMbtn"
 ServiceDeskcrmbtn.classList.add('menubtnsCRM')
 document.getElementById('idmymenucrm').append(ServiceDeskcrmbtn)
 
-include("https://dimentorexpo.github.io/CRMhelper/Modules_test/ServiceDesk.js")
+include("https://dimentorexpo.github.io/CRMhelper/Modules/ServiceDesk.js")
 
 let butsmartroomCRM = document.createElement('div') // smartroom sugest
 butsmartroomCRM.id = "smartroomformCRM"
@@ -239,7 +239,7 @@ butSettingsApp.innerHTML = "⚙ Settings"
 butSettingsApp.classList.add('menubtnsCRM')
 document.getElementById('idmymenucrm').append(butSettingsApp)
 
-include("https://dimentorexpo.github.io/CRMhelper/Modules_test/SettingsApp.js")
+include("https://dimentorexpo.github.io/CRMhelper/Modules/SettingsApp.js")
 
 let teststudent = document.createElement('span')
 teststudent.textContent = "Тест У"
