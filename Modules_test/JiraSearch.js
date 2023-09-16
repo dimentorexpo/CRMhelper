@@ -373,55 +373,57 @@ function switchJiraPages() {
 
     pageSwArr.forEach((page, d) => {
         page.onclick = async function() {
-            document.getElementById('issuetable').innerHTML = '<span style="color:bisque">Загрузка...</span>';
-            
-            pageSwArr.forEach(p => p.classList.remove('active'));
-            this.classList.add('active');
-
-            const optionsValue = optionsforfetch(requesttojiratext, page.getAttribute('value'));
-
-            textArea1.value = `{${optionsValue}}`;
-            textArea2.value = "https://jira.skyeng.tech/rest/issueNav/1/issueTable";
-            textArea3.value = 'newPageIssue';
-            sendRespbtn.click();
-
-            setTimeout(function() {
-                const rezissuetable = JSON.parse(textArea1.getAttribute('newPageIssue'));
-                textArea1.removeAttribute('newPageIssue');
-
-				const { issueKeys, table, issueIds } = rezissuetable.issueTable;
-				const matchedItems = table.match(/(\w+-\d+">.*?).<\/a>/gmi).filter(filterItems);
-				const matchedNumbers = table.match(/(">.)*?([0-9]+)\n/gm);
-				const searchText = document.getElementById('testJira').value;
+            if (!this.classList.contains('active')) {
+                document.getElementById('issuetable').innerHTML = '<span style="color:bisque">Загрузка...</span>';
                 
-                let issues = '';
-                for (let i = 0; i < rezissuetable.issueTable.displayed; i++) {
-					const currentNumber = matchedNumbers ? matchedNumbers[i] : null;
-					const currentIssue = matchedItems[i];
-					const currentKey = issueKeys[i];
-					const currentIds = issueIds[i];
-					const currentpic = table.match(/https:\/\/jira.skyeng.tech\/images\/icons\/priorities\/.*svg/gm)[i];
+                pageSwArr.forEach(p => p.classList.remove('active'));
+                this.classList.add('active');
 
-                    if (currentIssue && currentKey) {
-                        issues += formatIssue(currentIssue, currentNumber, currentKey, searchText, currentpic, currentIds);
-                    } else {
-                        console.error("Не удалось найти соответствие для индекса: " + i);
+                const optionsValue = optionsforfetch(requesttojiratext, page.getAttribute('value'));
+
+                textArea1.value = `{${optionsValue}}`;
+                textArea2.value = "https://jira.skyeng.tech/rest/issueNav/1/issueTable";
+                textArea3.value = 'newPageIssue';
+                sendRespbtn.click();
+
+                setTimeout(function() {
+                    const rezissuetable = JSON.parse(textArea1.getAttribute('newPageIssue'));
+                    textArea1.removeAttribute('newPageIssue');
+
+                    const { issueKeys, table, issueIds } = rezissuetable.issueTable;
+                    const matchedItems = table.match(/(\w+-\d+">.*?).<\/a>/gmi).filter(filterItems);
+                    const matchedNumbers = table.match(/(">.)*?([0-9]+)\n/gm);
+                    const searchText = document.getElementById('testJira').value;
+                    
+                    let issues = '';
+                    for (let i = 0; i < rezissuetable.issueTable.displayed; i++) {
+                        const currentNumber = matchedNumbers ? matchedNumbers[i] : null;
+                        const currentIssue = matchedItems[i];
+                        const currentKey = issueKeys[i];
+                        const currentIds = issueIds[i];
+                        const currentpic = table.match(/https:\/\/jira.skyeng.tech\/images\/icons\/priorities\/.*svg/gm)[i];
+
+                        if (currentIssue && currentKey) {
+                            issues += formatIssue(currentIssue, currentNumber, currentKey, searchText, currentpic, currentIds);
+                        } else {
+                            console.error("Не удалось найти соответствие для индекса: " + i);
+                        }
                     }
-                }
 
-                document.getElementById('issuetable').innerHTML = issues;
+                    document.getElementById('issuetable').innerHTML = issues;
 
-				addFavouritesOnClickEvent(
-					document.getElementsByName('addtofavourites'),
-					document.getElementsByName('buglinks'),
-					document.getElementsByName('issueIds'),
-					document.getElementById('favouriteissuetable')
-				);
+                    addFavouritesOnClickEvent(
+                        document.getElementsByName('addtofavourites'),
+                        document.getElementsByName('buglinks'),
+                        document.getElementsByName('issueIds'),
+                        document.getElementById('favouriteissuetable')
+                    );
 
-                const refreshissuesarr = document.querySelectorAll('.refreshissues');
-                addRefreshIssueOnClickEvent(refreshissuesarr, issueIds);
-                
-            }, 1000);
+                    const refreshissuesarr = document.querySelectorAll('.refreshissues');
+                    addRefreshIssueOnClickEvent(refreshissuesarr, issueIds);
+                    
+                }, 1000);
+            }
         }
     });
 }
