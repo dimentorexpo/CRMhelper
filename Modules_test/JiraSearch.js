@@ -41,6 +41,10 @@ var win_Jira =  // описание элементов окна Поиска п�
                                 <p id="favouriteissuetable" style="max-height:400px; margin-left:5px; overflow:auto; display:none"></p>
                                 <span style="color:bisque" id="foundIssuesAmount"></span>
                         </div>
+
+                        <div>
+                            <div id="pagesSwitcher" style="display:flex; color:bisque; cursor:pointer; justify-content:space-evenly; padding:5px;"></div>
+                        </div>
                 </span>
         </span>
 </div>`;
