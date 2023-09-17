@@ -272,7 +272,6 @@
     display: flex;
     justify-content: space-between;
 }
-/* #control_jira_search button, */
 #dostupbnts button{
    flex: 1;
 }
