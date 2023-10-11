@@ -77,6 +77,10 @@ function onlyNumbers(object) { // функция для разрешения в�
     object.value = object.value.replace(/[^0-9]/g, '');
 }
 
+function onlyNumbersAndComma(object) { // функция для разрешения ввода только цифр и запятой
+    object.value = object.value.replace(/[^0-9,]/g, '');
+}
+
 function include(url) {
     var script = document.createElement('script');
     script.src = url;
