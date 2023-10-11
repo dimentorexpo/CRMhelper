@@ -38,7 +38,7 @@ var win_testroomsCRM =  // описание элементов окна созд
               </div>
 
               <div style="width: 310px; margin:5px; display:flex; justify-content:left;">
-                  <input class="inputCRM" id="lessonidforroom" placeholder="Введи ID П" title="Введи id урока для того чтобы начать урок сразу с материалом" oninput="onlyNumbers(this)" autocomplete="off" type="text" style="text-align: center; width: 290px; color: black; margin-left: 7px;">
+                  <input class="inputCRM" id="lessonidforroom" placeholder="Введи ID П" title="Введи id урока для того чтобы начать урок сразу с материалом" oninput="onlyNumbers(this)" autocomplete="off" type="text" style="text-align: center; width: 280px; color: black; margin-left: 7px;">
               </div>
 
               <div style="width: 310px; margin:5px; display:flex; justify-content:left;">
