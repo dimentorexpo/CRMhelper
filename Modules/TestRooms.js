@@ -38,10 +38,6 @@ var win_testroomsCRM =  // описание элементов окна созд
               </div>
 
               <div style="width: 310px; margin:5px; display:flex; justify-content:left;">
-                  <input class="inputCRM" id="lessonidforroom" placeholder="Введи ID П" title="Введи id урока для того чтобы начать урок сразу с материалом" oninput="onlyNumbers(this)" autocomplete="off" type="text" style="text-align: center; width: 280px; color: black; margin-left: 7px;">
-              </div>
-
-              <div style="width: 310px; margin:5px; display:flex; justify-content:left;">
                   <input class="inputCRM" id="teachforroom" placeholder="Введи ID П" title="Введи id П для кого создать тестовую комнату" oninput="onlyNumbers(this)" autocomplete="off" type="text" style="text-align: center; width: 135px; color: black; margin-left: 5px;">
                   <input class="inputCRM" id="studforroom" placeholder="Введи ID У" title="Введи id У для кого создать тестовую комнату(Если У несколько, вводите через запятую)" oninput="onlyNumbersAndComma(this)" autocomplete="off" type="text" style="text-align: center; width: 135px; color: black; margin-left: 5px;">
     					</div>
@@ -116,7 +112,6 @@ document.getElementById('btnCreateTestRoom').onclick = function () { // откр
 function cleartestroomsCRMfields(){ // очистка полей окно создания тестовых комнат
   document.getElementById('teachforroom').value = '';
   document.getElementById('studforroom').value = '';
-  document.getElementById('lessonidforroom').value = '';
   document.getElementById('subjecttypeselect').children[0].selected = true;
   document.getElementById('lessontypeselect').children[0].selected = true;
 }
@@ -175,10 +170,6 @@ document.getElementById('starttestroom').onclick = function () { // добавл
   let lessontype = '';
   let massagetexttoshow = '';
 
-  let lessonid = document.getElementById('lessonidforroom').value 
-    ? document.getElementById('lessonidforroom').value.replace(/[^0-9]/g, '')
-    : '';
-
   if (document.getElementById('lessontypeselect').value == 'lessonnotselect') { // проверяем выбран ли тип урока
     flagemptyttfields = '1';
     massagetexttoshow += 'Не выбран тип урока\n'
@@ -213,7 +204,7 @@ document.getElementById('starttestroom').onclick = function () { // добавл
   if (flagemptyttfields === '0'){
     randomHash = GenerateHash(14);
 
-    const requestBody = `${randomHash}%5Btype%5D=${lessontype}&${randomHash}%5BteacherId%5D=${teacheridforroom}&${randomHash}%5BstudentIds%5D=${studentidforroom}%5BcontentLessonId%5D=${lessonid}&btn_create_and_create=`;
+    const requestBody = `${randomHash}%5Btype%5D=${lessontype}&${randomHash}%5BteacherId%5D=${teacheridforroom}&${randomHash}%5BstudentIds%5D=${studentidforroom}&btn_create_and_list=`;
     const requestreferrer = `https://${lessonsubjecttype}.skyeng.ru/admin/tech-support-room/create`;
     const requestAdr = `https://${lessonsubjecttype}.skyeng.ru/admin/tech-support-room/create?uniqid=${randomHash}`;
     const requestHeaders = {
