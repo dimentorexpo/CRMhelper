@@ -323,7 +323,7 @@ function getJiraTask() { // поиск задач в jira
 
     const { issueKeys, table, issueIds } = rezissuetable.issueTable;
     if (!table) {
-        document.getElementById('issuetable').innerHTML = '<a style="margin-left:5px; color: #ffe4c4">Задачь не найдено</a>'
+        document.getElementById('issuetable').innerHTML = '<a style="margin-left:5px; color: #ffe4c4">Задач не найдено</a>'
         return;
     }
     const matchedItems = table.match(/(\w+-\d+">.*?).<\/a>/gmi).filter(filterItems);
